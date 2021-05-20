@@ -4,7 +4,4 @@
    <FileRef
       location = "group:ios_fitness/ios_fitness.xcodeproj">
    </FileRef>
-   <FileRef
-      location = "group:Body-Tracking-ARKit-master/iOS/Human Body Tracking/Unity-iPhone.xcodeproj">
-   </FileRef>
 </Workspace>
