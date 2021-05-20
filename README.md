@@ -1,2 +1,1 @@
 # ios_fitness
-fitness
