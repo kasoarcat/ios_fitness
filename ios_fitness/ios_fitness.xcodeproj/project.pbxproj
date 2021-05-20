@@ -25,7 +25,6 @@
 		A23957CB26552937007DC44F /* SettingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingView.swift; sourceTree = "<group>"; };
 		A23957EE26553BBA007DC44F /* GymView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GymView.swift; sourceTree = "<group>"; };
 		A23957F026553D4B007DC44F /* ReportView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportView.swift; sourceTree = "<group>"; };
-		A239580A265562DF007DC44F /* UnityFramework.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = UnityFramework.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A2886A6D26551762007739C7 /* ios_fitness.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ios_fitness.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A2886A7026551762007739C7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A2886A7226551762007739C7 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -37,9 +36,6 @@
 		A2886A8126551766007739C7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A2886A9B265518AE007739C7 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		A2886A9D265518EC007739C7 /* Unity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Unity.swift; sourceTree = "<group>"; };
-		A28BAAA42655ECE9001386A8 /* UnityFramework.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = UnityFramework.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		A2BEB1FE2655EFEF00604E2C /* UnityFramework.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = UnityFramework.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		A2BEB20A2655F03200604E2C /* UnityFramework.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = UnityFramework.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -89,10 +85,6 @@
 		A2886A9726551811007739C7 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				A2BEB20A2655F03200604E2C /* UnityFramework.framework */,
-				A2BEB1FE2655EFEF00604E2C /* UnityFramework.framework */,
-				A28BAAA42655ECE9001386A8 /* UnityFramework.framework */,
-				A239580A265562DF007DC44F /* UnityFramework.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
