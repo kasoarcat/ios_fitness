@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		A289B30A26577F5B0047A194 /* ios_fitnessApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = A289B30926577F5B0047A194 /* ios_fitnessApp.swift */; };
-		A289B30C26577F5B0047A194 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A289B30B26577F5B0047A194 /* ContentView.swift */; };
+		A289B30C26577F5B0047A194 /* DataView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A289B30B26577F5B0047A194 /* DataView.swift */; };
 		A289B30E26577F5E0047A194 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A289B30D26577F5E0047A194 /* Assets.xcassets */; };
 		A289B31126577F5E0047A194 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A289B31026577F5E0047A194 /* Preview Assets.xcassets */; };
 		A289B31326577F5E0047A194 /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = A289B31226577F5E0047A194 /* Persistence.swift */; };
@@ -17,12 +17,13 @@
 		A289B32526577FBE0047A194 /* ReportView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A289B32126577FBE0047A194 /* ReportView.swift */; };
 		A289B32626577FBE0047A194 /* SettingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A289B32326577FBE0047A194 /* SettingView.swift */; };
 		A289B3502657B3E00047A194 /* character in Resources */ = {isa = PBXBuildFile; fileRef = A289B34F2657B3E00047A194 /* character */; };
+		A289B3552657D0670047A194 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A289B3542657D0670047A194 /* ContentView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		A289B30626577F5B0047A194 /* ios_fitness.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ios_fitness.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A289B30926577F5B0047A194 /* ios_fitnessApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ios_fitnessApp.swift; sourceTree = "<group>"; };
-		A289B30B26577F5B0047A194 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		A289B30B26577F5B0047A194 /* DataView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataView.swift; sourceTree = "<group>"; };
 		A289B30D26577F5E0047A194 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A289B31026577F5E0047A194 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		A289B31226577F5E0047A194 /* Persistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Persistence.swift; sourceTree = "<group>"; };
@@ -32,6 +33,7 @@
 		A289B32126577FBE0047A194 /* ReportView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReportView.swift; sourceTree = "<group>"; };
 		A289B32326577FBE0047A194 /* SettingView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingView.swift; sourceTree = "<group>"; };
 		A289B34F2657B3E00047A194 /* character */ = {isa = PBXFileReference; lastKnownFileType = folder; path = character; sourceTree = "<group>"; };
+		A289B3542657D0670047A194 /* ContentView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -68,7 +70,8 @@
 				A289B32026577FBE0047A194 /* Report */,
 				A289B32226577FBE0047A194 /* Setting */,
 				A289B30926577F5B0047A194 /* ios_fitnessApp.swift */,
-				A289B30B26577F5B0047A194 /* ContentView.swift */,
+				A289B3542657D0670047A194 /* ContentView.swift */,
+				A289B30B26577F5B0047A194 /* DataView.swift */,
 				A289B34F2657B3E00047A194 /* character */,
 				A289B30D26577F5E0047A194 /* Assets.xcassets */,
 				A289B31226577F5E0047A194 /* Persistence.swift */,
@@ -182,7 +185,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				A289B31326577F5E0047A194 /* Persistence.swift in Sources */,
-				A289B30C26577F5B0047A194 /* ContentView.swift in Sources */,
+				A289B30C26577F5B0047A194 /* DataView.swift in Sources */,
+				A289B3552657D0670047A194 /* ContentView.swift in Sources */,
 				A289B32526577FBE0047A194 /* ReportView.swift in Sources */,
 				A289B32626577FBE0047A194 /* SettingView.swift in Sources */,
 				A289B32426577FBE0047A194 /* GymView.swift in Sources */,

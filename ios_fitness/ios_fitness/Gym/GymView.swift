@@ -107,6 +107,8 @@ struct GymView: View {
         #if arch(arm64)
         return ARViewContainer()
             .edgesIgnoringSafeArea(.all)
+        #else
+            Text("運動場")
         #endif
     }
 }
