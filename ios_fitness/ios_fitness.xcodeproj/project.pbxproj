@@ -16,6 +16,7 @@
 		A289B32426577FBE0047A194 /* GymView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A289B31F26577FBE0047A194 /* GymView.swift */; };
 		A289B32526577FBE0047A194 /* ReportView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A289B32126577FBE0047A194 /* ReportView.swift */; };
 		A289B32626577FBE0047A194 /* SettingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A289B32326577FBE0047A194 /* SettingView.swift */; };
+		A289B3502657B3E00047A194 /* character in Resources */ = {isa = PBXBuildFile; fileRef = A289B34F2657B3E00047A194 /* character */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +31,7 @@
 		A289B31F26577FBE0047A194 /* GymView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GymView.swift; sourceTree = "<group>"; };
 		A289B32126577FBE0047A194 /* ReportView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReportView.swift; sourceTree = "<group>"; };
 		A289B32326577FBE0047A194 /* SettingView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingView.swift; sourceTree = "<group>"; };
+		A289B34F2657B3E00047A194 /* character */ = {isa = PBXFileReference; lastKnownFileType = folder; path = character; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -67,6 +69,7 @@
 				A289B32226577FBE0047A194 /* Setting */,
 				A289B30926577F5B0047A194 /* ios_fitnessApp.swift */,
 				A289B30B26577F5B0047A194 /* ContentView.swift */,
+				A289B34F2657B3E00047A194 /* character */,
 				A289B30D26577F5E0047A194 /* Assets.xcassets */,
 				A289B31226577F5E0047A194 /* Persistence.swift */,
 				A289B31726577F5E0047A194 /* Info.plist */,
@@ -165,6 +168,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A289B3502657B3E00047A194 /* character in Resources */,
 				A289B31126577F5E0047A194 /* Preview Assets.xcassets in Resources */,
 				A289B30E26577F5E0047A194 /* Assets.xcassets in Resources */,
 			);
@@ -313,7 +317,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"ios_fitness/Preview Content\"";
-				DEVELOPMENT_TEAM = 6BN37J89SH;
+				DEVELOPMENT_TEAM = 4DQ2P92QE7;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = ios_fitness/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
@@ -321,7 +325,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "com.jakey.ios-fitness";
+				PRODUCT_BUNDLE_IDENTIFIER = com.jakey.fitness;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -335,7 +339,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"ios_fitness/Preview Content\"";
-				DEVELOPMENT_TEAM = 6BN37J89SH;
+				DEVELOPMENT_TEAM = 4DQ2P92QE7;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = ios_fitness/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
@@ -343,7 +347,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "com.jakey.ios-fitness";
+				PRODUCT_BUNDLE_IDENTIFIER = com.jakey.fitness;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";

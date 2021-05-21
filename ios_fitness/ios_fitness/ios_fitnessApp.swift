@@ -15,6 +15,7 @@ struct ios_fitnessApp: App {
         WindowGroup {
             ContentView()
                 .environment(\.managedObjectContext, persistenceController.container.viewContext)
+//            GymView()
 //            ReportView()
         }
     }

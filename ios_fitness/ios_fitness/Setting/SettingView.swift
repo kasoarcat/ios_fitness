@@ -9,12 +9,8 @@ import SwiftUI
 
 struct SettingView: View {
     var body: some View {
-        ZStack {
-            Color.white
-                .edgesIgnoringSafeArea(.all)
-            VStack {
-                Text("設定")
-            }
+        VStack {
+            Text("設定")
         }
     }
 }

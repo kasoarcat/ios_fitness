@@ -9,10 +9,8 @@ import SwiftUI
 
 struct ReportView: View {
     var body: some View {
-        ZStack {
-            VStack {
-                Text("報告")
-            }
+        VStack {
+            Text("報告")
         }
     }
 }
