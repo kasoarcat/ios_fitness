@@ -20,7 +20,7 @@ struct ContentView: View {
                     Image(systemName: "music.house.fill")
                     Text("報告")
                 }
-            SettingView()
+            MySettingView()
                 .tabItem {
                     Image(systemName: "music.house.fill")
                     Text("我的設定")
@@ -32,5 +32,6 @@ struct ContentView: View {
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
         ContentView()
+            .environment(\.managedObjectContext, PersistenceController.preview.container.viewContext)
     }
 }

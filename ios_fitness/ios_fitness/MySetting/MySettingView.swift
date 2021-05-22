@@ -8,9 +8,9 @@
 import SwiftUI
 import CoreData
 
-struct SettingDataView: View {
+struct MySettingView: View {
     @Environment(\.managedObjectContext) private var viewContext
-
+    
     @FetchRequest(
         sortDescriptors: [NSSortDescriptor(keyPath: \MySetting.weight, ascending: true)],
         animation: .default)
@@ -18,6 +18,7 @@ struct SettingDataView: View {
 
     var body: some View {
         VStack {
+            Text("我的設定")
             List {
                 ForEach(items) { item in
                     Text("Height: \(item.height) Weight: \(item.weight) Sex: \(item.sex ?? "無")")
@@ -26,16 +27,18 @@ struct SettingDataView: View {
             }
             HStack {
                 Button(action: addItem) {
+//                Button(action: addItem) {
                     Label("Add Item", systemImage: "plus")
                         .foregroundColor(.green)
                 }
                 #if os(iOS)
                 EditButton()
+                    .foregroundColor(.red)
                 #endif
             }
         }
     }
-
+    
     private func addItem() {
         withAnimation {
             let newItem = MySetting(context: viewContext)
@@ -56,7 +59,7 @@ struct SettingDataView: View {
             }
         }
     }
-
+//
     private func deleteItems(offsets: IndexSet) {
         withAnimation {
             offsets.map { items[$0] }.forEach(viewContext.delete)
@@ -71,8 +74,8 @@ struct SettingDataView: View {
             }
         }
     }
+    
 }
-
 
 private let itemFormatter: DateFormatter = {
     let formatter = DateFormatter()
@@ -82,10 +85,10 @@ private let itemFormatter: DateFormatter = {
 }()
 
 
-struct SettingDataView_Previews: PreviewProvider {
+struct MySettingView_Previews: PreviewProvider {
     static var previews: some View {
         Group {
-            SettingDataView().environment(\.managedObjectContext, PersistenceController.preview.container.viewContext)
+            MySettingView().environment(\.managedObjectContext, PersistenceController.preview.container.viewContext)
         }
     }
 }

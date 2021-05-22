@@ -13,10 +13,8 @@ struct ios_fitnessApp: App {
     
     var body: some Scene {
         WindowGroup {
-//            ContentView()
-            SettingDataView()
-                .environment(\.managedObjectContext, persistenceController.container.viewContext)
-//                .environment(\.managedObjectContext, PersistenceController.preview.container.viewContext)
+            ContentView()
+                .environment(\.managedObjectContext, PersistenceController.preview.container.viewContext)
         }
     }
 }

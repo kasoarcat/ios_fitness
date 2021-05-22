@@ -18,5 +18,6 @@ struct ReportView: View {
 struct ReportView_Previews: PreviewProvider {
     static var previews: some View {
         ReportView()
+            .environment(\.managedObjectContext, PersistenceController.preview.container.viewContext)
     }
 }

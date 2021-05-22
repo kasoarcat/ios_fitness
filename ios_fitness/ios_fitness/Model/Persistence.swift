@@ -9,11 +9,13 @@ import CoreData
 
 struct PersistenceController {
     static let shared = PersistenceController()
-
+    
+    let container: NSPersistentContainer
+    
     static var preview: PersistenceController = {
         let result = PersistenceController(inMemory: true)
         let viewContext = result.container.viewContext
-        for _ in 0..<10 {
+        for _ in 0..<5 {
             let newItem = MySetting(context: viewContext)
             newItem.id = UUID()
             newItem.height = 100
@@ -30,8 +32,7 @@ struct PersistenceController {
         }
         return result
     }()
-
-    let container: NSPersistentContainer
+    
 
     init(inMemory: Bool = false) {
         container = NSPersistentContainer(name: "ios_fitness")
