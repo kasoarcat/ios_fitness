@@ -10,13 +10,13 @@ import SwiftUI
 @main
 struct ios_fitnessApp: App {
     let persistenceController = PersistenceController.shared
-
+    
     var body: some Scene {
         WindowGroup {
-            ContentView()
+//            ContentView()
+            SettingDataView()
                 .environment(\.managedObjectContext, persistenceController.container.viewContext)
-//            GymView()
-//            ReportView()
+//                .environment(\.managedObjectContext, PersistenceController.preview.container.viewContext)
         }
     }
 }

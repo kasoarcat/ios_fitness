@@ -8,36 +8,44 @@
 import SwiftUI
 import CoreData
 
-struct DataView: View {
+struct SettingDataView: View {
     @Environment(\.managedObjectContext) private var viewContext
 
     @FetchRequest(
-        sortDescriptors: [NSSortDescriptor(keyPath: \Item.timestamp, ascending: true)],
+        sortDescriptors: [NSSortDescriptor(keyPath: \MySetting.weight, ascending: true)],
         animation: .default)
-    private var items: FetchedResults<Item>
+    private var items: FetchedResults<MySetting>
 
     var body: some View {
         VStack {
             List {
                 ForEach(items) { item in
-                    Text("Item at \(item.timestamp!, formatter: itemFormatter)")
+                    Text("Height: \(item.height) Weight: \(item.weight) Sex: \(item.sex ?? "無")")
                 }
                 .onDelete(perform: deleteItems)
             }
-            Button(action: addItem) {
-                Label("Add Item", systemImage: "plus")
+            HStack {
+                Button(action: addItem) {
+                    Label("Add Item", systemImage: "plus")
+                        .foregroundColor(.green)
+                }
+                #if os(iOS)
+                EditButton()
+                #endif
             }
-            #if os(iOS)
-            EditButton()
-            #endif
         }
     }
 
     private func addItem() {
         withAnimation {
-            let newItem = Item(context: viewContext)
-            newItem.timestamp = Date()
-
+            let newItem = MySetting(context: viewContext)
+            let uuid = UUID()
+            print(uuid)
+            newItem.id = uuid
+            newItem.height = 180
+            newItem.weight = 90
+            newItem.sex = "男"
+            
             do {
                 try viewContext.save()
             } catch {
@@ -65,6 +73,7 @@ struct DataView: View {
     }
 }
 
+
 private let itemFormatter: DateFormatter = {
     let formatter = DateFormatter()
     formatter.dateStyle = .short
@@ -72,8 +81,11 @@ private let itemFormatter: DateFormatter = {
     return formatter
 }()
 
-struct DataView_Previews: PreviewProvider {
+
+struct SettingDataView_Previews: PreviewProvider {
     static var previews: some View {
-        DataView().environment(\.managedObjectContext, PersistenceController.preview.container.viewContext)
+        Group {
+            SettingDataView().environment(\.managedObjectContext, PersistenceController.preview.container.viewContext)
+        }
     }
 }

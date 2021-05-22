@@ -8,8 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		A24DA5B32657D2C000A3B10C /* ARViewContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = A24DA5B22657D2C000A3B10C /* ARViewContainer.swift */; };
+		A270900C26580FB700C017DF /* SettingDataView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A270900B26580FB700C017DF /* SettingDataView.swift */; };
 		A289B30A26577F5B0047A194 /* ios_fitnessApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = A289B30926577F5B0047A194 /* ios_fitnessApp.swift */; };
-		A289B30C26577F5B0047A194 /* DataView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A289B30B26577F5B0047A194 /* DataView.swift */; };
 		A289B30E26577F5E0047A194 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A289B30D26577F5E0047A194 /* Assets.xcassets */; };
 		A289B31126577F5E0047A194 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A289B31026577F5E0047A194 /* Preview Assets.xcassets */; };
 		A289B31326577F5E0047A194 /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = A289B31226577F5E0047A194 /* Persistence.swift */; };
@@ -32,9 +32,9 @@
 
 /* Begin PBXFileReference section */
 		A24DA5B22657D2C000A3B10C /* ARViewContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARViewContainer.swift; sourceTree = "<group>"; };
+		A270900B26580FB700C017DF /* SettingDataView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingDataView.swift; sourceTree = "<group>"; };
 		A289B30626577F5B0047A194 /* ios_fitness.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ios_fitness.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A289B30926577F5B0047A194 /* ios_fitnessApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ios_fitnessApp.swift; sourceTree = "<group>"; };
-		A289B30B26577F5B0047A194 /* DataView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataView.swift; sourceTree = "<group>"; };
 		A289B30D26577F5E0047A194 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A289B31026577F5E0047A194 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		A289B31226577F5E0047A194 /* Persistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Persistence.swift; sourceTree = "<group>"; };
@@ -67,6 +67,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		A287C547265888CB009066D3 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				A289B31426577F5E0047A194 /* ios_fitness.xcdatamodeld */,
+				A289B31226577F5E0047A194 /* Persistence.swift */,
+				A270900B26580FB700C017DF /* SettingDataView.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		A289B2FD26577F5B0047A194 = {
 			isa = PBXGroup;
 			children = (
@@ -89,15 +99,12 @@
 				A2CADF4A2657F861009DE25A /* PoseKit */,
 				A289B31E26577FBE0047A194 /* Gym */,
 				A289B32026577FBE0047A194 /* Report */,
-				A289B32226577FBE0047A194 /* Setting */,
+				A289B32226577FBE0047A194 /* MySetting */,
+				A287C547265888CB009066D3 /* Model */,
 				A289B30926577F5B0047A194 /* ios_fitnessApp.swift */,
 				A289B3542657D0670047A194 /* ContentView.swift */,
-				A289B30B26577F5B0047A194 /* DataView.swift */,
 				A289B34F2657B3E00047A194 /* character */,
-				A289B30D26577F5E0047A194 /* Assets.xcassets */,
-				A289B31226577F5E0047A194 /* Persistence.swift */,
 				A289B31726577F5E0047A194 /* Info.plist */,
-				A289B31426577F5E0047A194 /* ios_fitness.xcdatamodeld */,
 				A289B30F26577F5E0047A194 /* Preview Content */,
 			);
 			path = ios_fitness;
@@ -106,6 +113,7 @@
 		A289B30F26577F5E0047A194 /* Preview Content */ = {
 			isa = PBXGroup;
 			children = (
+				A289B30D26577F5E0047A194 /* Assets.xcassets */,
 				A289B31026577F5E0047A194 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
@@ -128,12 +136,12 @@
 			path = Report;
 			sourceTree = "<group>";
 		};
-		A289B32226577FBE0047A194 /* Setting */ = {
+		A289B32226577FBE0047A194 /* MySetting */ = {
 			isa = PBXGroup;
 			children = (
 				A289B32326577FBE0047A194 /* SettingView.swift */,
 			);
-			path = Setting;
+			path = MySetting;
 			sourceTree = "<group>";
 		};
 		A2CADF4A2657F861009DE25A /* PoseKit */ = {
@@ -226,12 +234,12 @@
 				A2CADF572657F861009DE25A /* RightArmPosition.swift in Sources */,
 				A2CADF592657F861009DE25A /* LeftArmPosition.swift in Sources */,
 				A2CADF562657F861009DE25A /* ArmsPosition.swift in Sources */,
-				A289B30C26577F5B0047A194 /* DataView.swift in Sources */,
 				A2CADF542657F861009DE25A /* PositionCases.swift in Sources */,
 				A289B3552657D0670047A194 /* ContentView.swift in Sources */,
 				A289B32526577FBE0047A194 /* ReportView.swift in Sources */,
 				A289B32626577FBE0047A194 /* SettingView.swift in Sources */,
 				A2CADF5C2657F861009DE25A /* PoseKit.swift in Sources */,
+				A270900C26580FB700C017DF /* SettingDataView.swift in Sources */,
 				A2CADF5B2657F861009DE25A /* LeftLegPosition.swift in Sources */,
 				A24DA5B32657D2C000A3B10C /* ARViewContainer.swift in Sources */,
 				A2CADF552657F861009DE25A /* LegsPosition.swift in Sources */,
