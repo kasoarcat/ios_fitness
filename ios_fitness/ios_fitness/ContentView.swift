@@ -22,7 +22,7 @@ struct ContentView: View {
                 }
             MySettingView()
                 .tabItem {
-                    Image(systemName: "music.house.fill")
+                    Image(systemName: "gear")
                     Text("我的設定")
                 }
         }
