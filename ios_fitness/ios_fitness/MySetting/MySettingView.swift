@@ -17,26 +17,46 @@ struct MySettingView: View {
     private var items: FetchedResults<MySetting>
 
     var body: some View {
-        VStack {
-            Text("我的設定")
-            List {
-                ForEach(items) { item in
-                    Text("Height: \(item.height) Weight: \(item.weight) Sex: \(item.sex ?? "無")")
+        NavigationView {
+            VStack(alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/, spacing: 0) {
+                Form {
+                    NavigationLink(destination: UserDetailView()) {
+                        SettingFormRow(icon: "person", text: "關於我")
+                    }
+                    NavigationLink(destination: NotificationView()) {
+                        SettingFormRow(icon: "clock", text: "提醒")
+                    }
+                    NavigationLink(destination: SoundEffectView()) {
+                        SettingFormRow(icon: "speaker.wave.3", text: "音效＆音樂")
+                    }
+
+
                 }
-                .onDelete(perform: deleteItems)
             }
-            HStack {
-                Button(action: addItem) {
-//                Button(action: addItem) {
-                    Label("Add Item", systemImage: "plus")
-                        .foregroundColor(.green)
-                }
-                #if os(iOS)
-                EditButton()
-                    .foregroundColor(.red)
-                #endif
-            }
+            .navigationBarTitle("個人檔案", displayMode: .inline)
         }
+//        VStack(alignment: .leading) {
+//            Text("設定")
+//                .font(/*@START_MENU_TOKEN@*/.title/*@END_MENU_TOKEN@*/)
+//            List {
+//                ForEach(items) { item in
+//                    Text("Height: \(item.height) Weight: \(item.weight) Sex: \(item.sex ?? "無")")
+//                }
+//                .onDelete(perform: deleteItems)
+//            }
+//            HStack {
+//                Button(action: addItem) {
+////                Button(action: addItem) {
+//                    Label("Add Item", systemImage: "plus")
+//                        .foregroundColor(.green)
+//                }
+//                #if os(iOS)
+//                EditButton()
+//                    .foregroundColor(.red)
+//                #endif
+//            }
+//        }
+//        .padding()
     }
     
     private func addItem() {
