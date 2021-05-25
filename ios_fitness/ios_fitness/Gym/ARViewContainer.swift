@@ -15,10 +15,11 @@ import ARKit
 import Combine
 
 // The 3D character to display.
-var theCharacter: BodyTrackedEntity?
-let characterOffset: SIMD3<Float> = [0, 0, 0] // Offset the character by one meter to the left
-let characterAnchor = AnchorEntity()
-let posekit = PoseKit()
+private var theCharacter: BodyTrackedEntity?
+private let characterOffset: SIMD3<Float> = [0, 0, 0] // Offset the character by one meter to the left
+private let characterAnchor = AnchorEntity()
+private let posekit = PoseKit()
+private let decoder = JSONDecoder()
 
 struct ARViewContainer: UIViewRepresentable {
     typealias UIViewType = ARView
@@ -98,7 +99,74 @@ extension ARView: ARSessionDelegate {
             }
             
             let str = posekit.BodyTrackingPosition(character: theCharacter, bodyAnchor: bodyAnchor)
-            print(str)
+            let json: PoseKit.json_BodyPositions = try! decoder.decode(PoseKit.json_BodyPositions.self, from: str.data(using: .utf8)!)
+            
+            var s: String = ""
+            switch json.position_leftArm.position { // 左手臂
+            case ShoulderToForearmSubcase.verticalUpDiagonalFront.rawValue:
+                s = "直上對角前"
+            case ShoulderToForearmSubcase.verticalUpParallel.rawValue:
+                s = "垂直平行"
+            case ShoulderToForearmSubcase.verticalUpTransverse.rawValue:
+                s = "直上橫"
+            case ShoulderToForearmSubcase.verticalDownDiagonalFront.rawValue:
+                s = "直下對角前"
+            case ShoulderToForearmSubcase.verticalDownDiagonalBack.rawValue:
+                s = "直下對角後"
+            case ShoulderToForearmSubcase.verticalDownParallel.rawValue:
+                s = "直下平行"
+            case ShoulderToForearmSubcase.verticalDownTransverse.rawValue:
+                s = "直下橫"
+            case ShoulderToForearmSubcase.horizontalParallel.rawValue:
+                s = "水平平行"
+            case ShoulderToForearmSubcase.horizontalDiagonalBack.rawValue:
+                s = "平橫背"
+            case ShoulderToForearmSubcase.horizontalDiagonalFront.rawValue:
+                s = "平橫前"
+            case ShoulderToForearmSubcase.horizontalTransverse.rawValue:
+                s = "水平橫"
+            default:
+                s = ""
+            }
+            print("leftArm:", s)
+            
+//            print("leftArm: \()")
+            
+//            JSON: {
+//              "position_leftForeleg" : {
+//                "name" : "leftForeleg",           // 左前腿
+//                "position" : "outstretched"       // outstretched=>伸出
+//              },
+//              "position_rightArm" : {
+//                "name" : "rightArm",              // 右手臂
+//                "position" : "horizontalParallel" // horizontalParallel=>水平平行
+//              },
+//              "position_leftLeg" : {
+//                "name" : "leftLeg",               // 左腿
+//                "position" : "straightParallel"   // straightParallel=>直立平行
+//              },
+//              "position_rightLeg" : {
+//                "name" : "rightLeg",              // 右腿
+//                "position" : "straightParallel"   // straightParallel=>直立平行
+//              },
+//              "position_leftForearm" : {
+//                "name" : "leftForearm",           // 左前臂
+//                "position" : "straightHorizontal" // straightParallel=>直立平行
+//              },
+//              "position_rightForearm" : {
+//                "name" : "rightForearm",          // 右前臂
+//                "position" : "straightHorizontal" // straightParallel=>直立平行
+//              },
+//              "position_leftArm" : {
+//                "name" : "leftArm",               // 左手臂
+//                "position" : "horizontalParallel" // horizontalParallel=>水平平行
+//              },
+//              "position_rightForeleg" : {
+//                "name" : "rightForeleg",          // 右前腿
+//                "position" : "straightParallel"   // straightParallel=>直立平行
+//              }
+//            }
+
         }
     }
 }

@@ -13,10 +13,7 @@ struct GymView: View {
         return ARViewContainer()
             .edgesIgnoringSafeArea(.all)
         #else
-            Text("運動場")
+            Text("健身房")
         #endif
     }
 }
-
-
-

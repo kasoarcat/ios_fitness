@@ -5,6 +5,7 @@
 //  Created by Vinicius Dilay, Isabela Castro, Leonardo Palinkas, Lucas Ronnau, Saulo da Silva on 01/04/19.
 //  Copyright © 2019 d1l4y. All rights reserved.
 //
+// https://github.com/d1l4y/PoseKit
 
 #if arch(arm64)
 
@@ -15,7 +16,7 @@ import RealityKit
 public class PoseKit {
     
     /// Body part and position.
-    struct bodyPosition: Codable {
+    public struct bodyPosition: Codable {
         
     /**
          Name of the body part.
@@ -33,7 +34,7 @@ public class PoseKit {
     }
     
     /// Uses **struct bodyPosition: Codable {** and contains all body parts.
-    struct json_BodyPositions: Codable {
+    public struct json_BodyPositions: Codable {
         
         /// Left upper arm's position.
         var position_leftArm: bodyPosition
@@ -95,17 +96,14 @@ public class PoseKit {
         let bodyPositions = json_BodyPositions(position_leftArm: pos_leftArm, position_leftForearm: pos_leftForearm, position_rightArm: pos_rightArm, position_rightForearm: pos_rightForearm, position_leftLeg: pos_leftLeg, position_leftForeleg: pos_leftForeleg, position_rightLeg: pos_rightLeg, position_rightForeleg: pos_rightForeleg)
         
         let encoder = JSONEncoder()
-        
         encoder.outputFormatting = .prettyPrinted
-        
         var str = String()
 
         do {
             let jsonData = try encoder.encode(bodyPositions)
 
             if let jsonString = String(data: jsonData, encoding: .utf8) {
-                print("JSON: \(jsonString)")
-
+//                print("JSON: \(jsonString)")
                 str = jsonString
             }
         } catch {
