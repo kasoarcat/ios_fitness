@@ -21,6 +21,12 @@ private let characterAnchor = AnchorEntity()
 private let posekit = PoseKit()
 private let decoder = JSONDecoder()
 
+private var amount = 0
+private var left_up = false
+private var left_down = false
+private var right_up = false
+private var right_down = false
+
 struct ARViewContainer: UIViewRepresentable {
     typealias UIViewType = ARView
 
@@ -101,36 +107,43 @@ extension ARView: ARSessionDelegate {
             let str = posekit.BodyTrackingPosition(character: theCharacter, bodyAnchor: bodyAnchor)
             let json: PoseKit.json_BodyPositions = try! decoder.decode(PoseKit.json_BodyPositions.self, from: str.data(using: .utf8)!)
             
-            var s: String = ""
+//            var s: String = ""
             switch json.position_leftArm.position { // 左手臂
-            case ShoulderToForearmSubcase.verticalUpDiagonalFront.rawValue:
-                s = "直上對角前"
-            case ShoulderToForearmSubcase.verticalUpParallel.rawValue:
-                s = "垂直平行"
-            case ShoulderToForearmSubcase.verticalUpTransverse.rawValue:
-                s = "直上橫"
-            case ShoulderToForearmSubcase.verticalDownDiagonalFront.rawValue:
-                s = "直下對角前"
-            case ShoulderToForearmSubcase.verticalDownDiagonalBack.rawValue:
-                s = "直下對角後"
-            case ShoulderToForearmSubcase.verticalDownParallel.rawValue:
-                s = "直下平行"
-            case ShoulderToForearmSubcase.verticalDownTransverse.rawValue:
-                s = "直下橫"
-            case ShoulderToForearmSubcase.horizontalParallel.rawValue:
-                s = "水平平行"
-            case ShoulderToForearmSubcase.horizontalDiagonalBack.rawValue:
-                s = "平橫背"
-            case ShoulderToForearmSubcase.horizontalDiagonalFront.rawValue:
-                s = "平橫前"
-            case ShoulderToForearmSubcase.horizontalTransverse.rawValue:
-                s = "水平橫"
+                case ShoulderToForearmSubcase.verticalUpDiagonalFront.rawValue, ShoulderToForearmSubcase.verticalUpTransverse.rawValue:
+//                    s = "上"
+                    left_up = true
+                case ShoulderToForearmSubcase.verticalDownDiagonalFront.rawValue, ShoulderToForearmSubcase.verticalDownDiagonalBack.rawValue, ShoulderToForearmSubcase.verticalDownParallel.rawValue, ShoulderToForearmSubcase.verticalDownTransverse.rawValue, ShoulderToForearmSubcase.verticalUpParallel.rawValue:
+//                    s = "下"
+                    left_down = true
             default:
-                s = ""
+                break
             }
-            print("leftArm:", s)
             
-//            print("leftArm: \()")
+            switch json.position_rightArm.position { // 右手臂
+                case ShoulderToForearmSubcase.verticalUpDiagonalFront.rawValue, ShoulderToForearmSubcase.verticalUpTransverse.rawValue:
+//                    s = "上"
+                    right_up = true
+                case ShoulderToForearmSubcase.verticalDownDiagonalFront.rawValue, ShoulderToForearmSubcase.verticalDownDiagonalBack.rawValue, ShoulderToForearmSubcase.verticalDownParallel.rawValue, ShoulderToForearmSubcase.verticalDownTransverse.rawValue, ShoulderToForearmSubcase.verticalUpParallel.rawValue:
+//                    s = "下"
+                    right_down = true
+            default:
+                break
+            }
+            
+            if left_up && left_down && right_up && right_down {
+                left_up = false
+                left_down = false
+                right_up = false
+                right_down = false
+                amount = amount + 1
+                print("amount: \(amount)")
+            }
+            
+//            print("Arm:", s)
+//            print("left_up:\(left_up) left_down:\(left_down)")
+            
+//            垂直平行verticalUpParallel, horizontalParallel水平平行, verticalUpDiagonalFront直上對角前, horizontalParallel水平平行, horizontalDiagonalBack平橫背, verticalDownDiagonalBack直下對角後, verticalUpParallel垂直平行, verticalDownDiagonalBack直下對角後, horizontalDiagonalBack平橫背, horizontalParallel水平平行, horizontalDiagonalBack平橫背, horizontalParallel水平平行, verticalUpParallel垂直平行, verticalUpDiagonalFront直上對角前, verticalUpParallel垂直平行, horizontalDiagonalBack平橫背, verticalDownDiagonalBack直下對角後, verticalUpParallel垂直平行, verticalDownDiagonalBack直下對角後, verticalUpParallel垂直平行
+            
             
 //            JSON: {
 //              "position_leftForeleg" : {
