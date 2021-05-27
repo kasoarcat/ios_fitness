@@ -65,15 +65,15 @@ public enum LegToKneeCase {
 
 /// Upper leg's position subcases.
 /// 腿到膝蓋 Subcase
-public enum LegToKneeSubcase {
+public enum LegToKneeSubcase: String {
     case straightParallel           // 直立平行
-    case straightBack
-    case halfOpenDiagonal
-    case halfOpenParallel
-    case halfOpenTransversal
-    case openParallel
-    case openDiagonal
-    case openTransversal
+    case straightBack               // 直立後
+    case halfOpenDiagonal           // 半開對角
+    case halfOpenParallel           // 半開平
+    case halfOpenTransversal        // 半開橫向
+    case openParallel               // 開平
+    case openDiagonal               // 開對角
+    case openTransversal            // 開橫向
 }
 
 /// Lower leg's position cases.
