@@ -14,8 +14,12 @@ import RealityKit
 import ARKit
 import Combine
 
+public protocol HandDelegate : NSObjectProtocol {
+    func handCount(count: Int)
+}
+
 struct ARViewContainer: UIViewRepresentable {
-    typealias UIViewType = MyARView
+    @Binding var handCount: Int
     
     class MyARView : ARView, ARSessionDelegate {
         // The 3D character to display.
@@ -24,12 +28,29 @@ struct ARViewContainer: UIViewRepresentable {
         let theCharacterAnchor = AnchorEntity()
         private let posekit = PoseKit()
         private let decoder = JSONDecoder()
-
+        
         private var count: Int = 0
         private var left_up = false
         private var left_down = false
         private var right_up = false
         private var right_down = false
+        
+        var handDelegate: HandDelegate?
+        
+//        var handCountClosure: (Int)->Void
+        
+//        init(frame: CGRect, closure: ((Int)->Void)) {
+//            super.init(frame: frame)
+//            handCountClosure = closure
+//        }
+        
+//        @objc required dynamic init?(coder decoder: NSCoder) {
+//            fatalError("init(coder:) has not been implemented")
+//        }
+//
+//        @objc override required dynamic init(frame frameRect: CGRect) {
+//            super.init(frame: frameRect)
+//        }
         
         // NOTE: Don't forget to call this method in ARViewContainer
         func setupForBodyTracking() {
@@ -61,13 +82,11 @@ struct ARViewContainer: UIViewRepresentable {
                 let str = posekit.BodyTrackingPosition(character: theCharacter, bodyAnchor: bodyAnchor)
                 let json: PoseKit.json_BodyPositions = try! decoder.decode(PoseKit.json_BodyPositions.self, from: str.data(using: .utf8)!)
                 
-                countHand(json: json) { c in
-                    print(c)
-                }
+                countHand(json: json, delegate: handDelegate)
             }
         }
 
-        func countHand(json: PoseKit.json_BodyPositions, closure: (Int)->Void) {
+        func countHand(json: PoseKit.json_BodyPositions, delegate: HandDelegate?) {
         //    var s: String = ""
             switch json.position_leftArm.position { // 左手臂
                 case ShoulderToForearmSubcase.verticalUpDiagonalFront.rawValue, ShoulderToForearmSubcase.verticalUpTransverse.rawValue:
@@ -98,7 +117,10 @@ struct ARViewContainer: UIViewRepresentable {
                 right_down = false
                 count += 1
         //        print("count: \(count)")
-                closure(count)
+                
+                if let delegate = delegate {
+                    delegate.handCount(count: count)
+                }
             }
 
         //    switch json.position_leftLeg.position {
@@ -112,10 +134,23 @@ struct ARViewContainer: UIViewRepresentable {
         //        print("Error!")
         //    }
         }
+    } // end class MyARView
+    
+    class Coordinator: NSObject, HandDelegate {
+        var count: Binding<Int>
+        
+        init(_ count: Binding<Int>) {
+            self.count = count
+        }
+        
+        func handCount(count: Int) {
+            self.count.wrappedValue = count
+        }
     }
     
     func makeUIView(context: Context) -> MyARView {
         let arView = MyARView(frame: .zero)
+        arView.handDelegate = context.coordinator
         arView.setupForBodyTracking()
         
         // If the iOS device doesn't support body tracking, raise a developer error for
@@ -147,14 +182,17 @@ struct ARViewContainer: UIViewRepresentable {
                 print("Error: Unable to load model as BodyTrackedEntity")
             }
         })
-
+        
         return arView
     }
 
     func updateUIView(_ uiView: MyARView, context: Context) {
-        print("updateUIView")
+//        print("updateUIView")
     }
     
+    func makeCoordinator() -> Coordinator {
+        Coordinator($handCount)
+    }
 }
 
 #endif
