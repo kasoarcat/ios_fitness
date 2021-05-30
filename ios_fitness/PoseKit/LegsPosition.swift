@@ -39,11 +39,11 @@ internal class LegsPosition  {
         
         if legToKneeCase == .straight {
             if vectorLegToKnee.z < -0.1 { return .straightBack }
-            else {return .straightParallel }
+            else { return .straightParallel }
         } else if legToKneeCase == .halfOpen{
             if vectorLegToKnee.z < 0.05 { return .halfOpenParallel}
             else if vectorLegToKnee.z < 0.15 { return .halfOpenDiagonal}
-            else {return .halfOpenTransversal}
+            else { return .halfOpenTransversal}
         } else {
             if vectorLegToKnee.z < 0.05 { return .openParallel}
             else if vectorLegToKnee.z < 0.15 { return .openDiagonal}

@@ -11,28 +11,31 @@
 import Foundation
 
 /// Upper arm's position cases
+/// 肩膀到前臂 Case
 public enum ShoulderToForearmCase {
-    case verticalUp
-    case verticalDown
-    case horizontal
+    case verticalUp         // 上
+    case verticalDown       // 下
+    case horizontal         // 水平
 }
 
 /// Upper arm's position subcases.
-public enum ShoulderToForearmSubcase {
-    case verticalUpDiagonalFront
-    case verticalUpParallel
-    case verticalUpTransverse
-    case verticalDownDiagonalFront
-    case verticalDownDiagonalBack
-    case verticalDownParallel
-    case verticalDownTransverse
-    case horizontalParallel
-    case horizontalDiagonalBack
-    case horizontalDiagonalFront
-    case horizontalTransverse
+/// 肩膀到前臂 Subcase
+public enum ShoulderToForearmSubcase: String {
+    case verticalUpDiagonalFront        // 直上對角前
+    case verticalUpParallel             // 垂直平行
+    case verticalUpTransverse           // 直上橫
+    case verticalDownDiagonalFront      // 直下對角前
+    case verticalDownDiagonalBack       // 直下對角後
+    case verticalDownParallel           // 直下平行
+    case verticalDownTransverse         // 直下橫
+    case horizontalParallel             // 水平平行
+    case horizontalDiagonalBack         // 平橫背
+    case horizontalDiagonalFront        // 平橫前
+    case horizontalTransverse           // 水平橫
 }
 
 /// Forearm's position cases.
+/// 前臂到手臂 Case
 public enum ForearmToHandForearmCase {
     case straightHorizontal
     case bentUp
@@ -40,6 +43,7 @@ public enum ForearmToHandForearmCase {
 }
 
 /// Forearm's position subcases.
+/// 前臂到手臂 Subcase
 public enum ForearmToHandSubcase {
     case straightHorizontal
     case horizontalBentIn
@@ -52,6 +56,7 @@ public enum ForearmToHandSubcase {
 }
 
 /// Upper leg's position cases.
+/// 腿到膝蓋 Case
 public enum LegToKneeCase {
     case straight
     case halfOpen
@@ -59,23 +64,25 @@ public enum LegToKneeCase {
 }
 
 /// Upper leg's position subcases.
-public enum LegToKneeSubcase {
-    case straightParallel
-    case straightBack
-    case halfOpenDiagonal
-    case halfOpenParallel
-    case halfOpenTransversal
-    case openParallel
-    case openDiagonal
-    case openTransversal
+/// 腿到膝蓋 Subcase
+public enum LegToKneeSubcase: String {
+    case straightParallel           // 直立平行
+    case straightBack               // 直立後
+    case halfOpenDiagonal           // 半開對角
+    case halfOpenParallel           // 半開平
+    case halfOpenTransversal        // 半開橫向
+    case openParallel               // 開平
+    case openDiagonal               // 開對角
+    case openTransversal            // 開橫向
 }
 
 /// Lower leg's position cases.
+/// 膝蓋到腳 Case
 public enum KneeToFootCase {
-    case outstretched
+    case outstretched               // 伸出
     case bentOut
-    case bent
-    case bentIn
+    case bent                       // 彎曲
+    case bentIn                     // 彎腰
 }
 
 /// Both leg's position cases.
