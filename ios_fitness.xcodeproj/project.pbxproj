@@ -31,6 +31,8 @@
 		A2CBFEA52663B34D0091176A /* Action.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2CBFEA42663B34D0091176A /* Action.swift */; };
 		A2CBFEA82663B36F0091176A /* JumpAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2CBFEA72663B36F0091176A /* JumpAction.swift */; };
 		A2CBFEAD2663B3A00091176A /* CrouchAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2CBFEAC2663B3A00091176A /* CrouchAction.swift */; };
+		A2CBFEB32663C1830091176A /* SkipRopeAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2CBFEB22663C1830091176A /* SkipRopeAction.swift */; };
+		A2CBFEB72663D8370091176A /* SquattingUpAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2CBFEB62663D8370091176A /* SquattingUpAction.swift */; };
 		C3B13E922663563A0079EDF9 /* .gitattributes in Resources */ = {isa = PBXBuildFile; fileRef = C3B13E912663563A0079EDF9 /* .gitattributes */; };
 		C3B13E94266371A90079EDF9 /* Charts.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3B13E93266371A90079EDF9 /* Charts.swift */; };
 		C3B13E97266372880079EDF9 /* SwiftUICharts in Frameworks */ = {isa = PBXBuildFile; productRef = C3B13E96266372880079EDF9 /* SwiftUICharts */; };
@@ -63,6 +65,8 @@
 		A2CBFEA42663B34D0091176A /* Action.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Action.swift; sourceTree = "<group>"; };
 		A2CBFEA72663B36F0091176A /* JumpAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JumpAction.swift; sourceTree = "<group>"; };
 		A2CBFEAC2663B3A00091176A /* CrouchAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CrouchAction.swift; sourceTree = "<group>"; };
+		A2CBFEB22663C1830091176A /* SkipRopeAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SkipRopeAction.swift; sourceTree = "<group>"; };
+		A2CBFEB62663D8370091176A /* SquattingUpAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SquattingUpAction.swift; sourceTree = "<group>"; };
 		C3B13E912663563A0079EDF9 /* .gitattributes */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitattributes; sourceTree = "<group>"; };
 		C3B13E93266371A90079EDF9 /* Charts.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Charts.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -134,7 +138,7 @@
 		A289B31E26577FBE0047A194 /* Gym */ = {
 			isa = PBXGroup;
 			children = (
-				A2CBFEAB2663B3870091176A /* Action */,
+				A2CBFEAB2663B3870091176A /* Actions */,
 				A24DA5B22657D2C000A3B10C /* ARViewContainer.swift */,
 				A289B31F26577FBE0047A194 /* GymView.swift */,
 				A28F014E26636939005A171B /* GymDataView.swift */,
@@ -175,14 +179,16 @@
 			path = PoseKit;
 			sourceTree = "<group>";
 		};
-		A2CBFEAB2663B3870091176A /* Action */ = {
+		A2CBFEAB2663B3870091176A /* Actions */ = {
 			isa = PBXGroup;
 			children = (
 				A2CBFEA42663B34D0091176A /* Action.swift */,
 				A2CBFEA72663B36F0091176A /* JumpAction.swift */,
 				A2CBFEAC2663B3A00091176A /* CrouchAction.swift */,
+				A2CBFEB22663C1830091176A /* SkipRopeAction.swift */,
+				A2CBFEB62663D8370091176A /* SquattingUpAction.swift */,
 			);
-			path = Action;
+			path = Actions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -275,6 +281,7 @@
 				A2CBFEA82663B36F0091176A /* JumpAction.swift in Sources */,
 				A270900C26580FB700C017DF /* MySettingView.swift in Sources */,
 				A2CADF5B2657F861009DE25A /* LeftLegPosition.swift in Sources */,
+				A2CBFEB72663D8370091176A /* SquattingUpAction.swift in Sources */,
 				A24DA5B32657D2C000A3B10C /* ARViewContainer.swift in Sources */,
 				A2CADF552657F861009DE25A /* LegsPosition.swift in Sources */,
 				A2CBFEA52663B34D0091176A /* Action.swift in Sources */,
@@ -282,6 +289,7 @@
 				A289B32426577FBE0047A194 /* GymView.swift in Sources */,
 				C3B13E94266371A90079EDF9 /* Charts.swift in Sources */,
 				A289B31626577F5E0047A194 /* ios_fitness.xcdatamodeld in Sources */,
+				A2CBFEB32663C1830091176A /* SkipRopeAction.swift in Sources */,
 				A2CADF5A2657F861009DE25A /* Bodypart.swift in Sources */,
 				A289B30A26577F5B0047A194 /* ios_fitnessApp.swift in Sources */,
 			);

@@ -74,8 +74,8 @@ class MyARView : ARView, ARSessionDelegate {
             action.counting(json: json)
             
             // 手
-//            print("position_leftArm: \(json.position_leftArm)")
-//            print("json.position_rightArm: \(json.position_rightArm)")
+            print("position_leftArm: \(json.position_leftArm)")
+            print("json.position_rightArm: \(json.position_rightArm)")
 //            print("json.position_leftForearm: \(json.position_leftForearm)")
 //            print("json.position_rightForearm: \(json.position_rightForearm)")
             // 腳
@@ -83,7 +83,7 @@ class MyARView : ARView, ARSessionDelegate {
 //            print("json.position_rightLeg: \(json.position_rightLeg)")
 //            print("json.position_leftForeleg: \(json.position_leftForeleg)")
 //            print("json.position_rightForeleg: \(json.position_rightForeleg)")
-//            print()
+            print()
         }
     }
     
@@ -98,6 +98,12 @@ class MyARView : ARView, ARSessionDelegate {
             case .蹲伏:
                 print("蹲伏")
                 self.action = CrouchAction(delegate: handDelegate)
+//            case .無線跳繩:
+//                print("無線跳繩")
+//                self.action = SkipRopeAction(delegate: handDelegate)
+            case .蹲姿上伸:
+                print("蹲姿上伸")
+                
             }
         }
         

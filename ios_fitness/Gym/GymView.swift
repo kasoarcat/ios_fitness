@@ -20,31 +20,28 @@ struct GymView: View {
                 .edgesIgnoringSafeArea(.all)
             VStack {
                 Text("count: \(count)")
+                    .font(.largeTitle)
+                    .bold()
                     .foregroundColor(.red)
+                Picker(selection: $selectedIndex, label: Text("選擇動作")) {
+                    ForEach(0..<actionNames.count) { index in
+                        let i = Int(index)
+                        Text(actionNames[i].rawValue)
+                            .font(.largeTitle)
+                            .bold()
+                            .foregroundColor(.red)
+                            .tag(i)
+                    }
+                }
                 Button {
                     count = 0
                     actionEnum = actionNames[selectedIndex]
                 } label: {
                     Text("設定")
                         .bold()
-//                        .border(Color.black, width: 1)
                         .font(.largeTitle)
-                    
-//                    Image(systemName: "textformat")
-//                        .imageScale(.large)
-//                        .frame(width: 100, height: 100)
-//                        .foregroundColor(.white)
-//                        .background(Color.yellow)
-//                        .clipShape(Circle())
+                        .foregroundColor(.red)
                 }
-                
-                Picker(selection: $selectedIndex, label: Text("選擇動作")) {
-                    ForEach(0..<actionNames.count) { index in
-                        let i = Int(index)
-                        Text(actionNames[i].rawValue).tag(i)
-                    }
-                }
-                Text("我要選\(actionNames[selectedIndex].rawValue)")
             }
         }
         #else
