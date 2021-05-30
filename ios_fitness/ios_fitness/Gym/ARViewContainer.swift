@@ -29,7 +29,7 @@ struct ARViewContainer: UIViewRepresentable {
         private let posekit = PoseKit()
         private let decoder = JSONDecoder()
         
-        private var count: Int = 0
+        var count: Int = 0
         private var left_up = false
         private var left_down = false
         private var right_up = false
@@ -187,7 +187,7 @@ struct ARViewContainer: UIViewRepresentable {
     }
 
     func updateUIView(_ uiView: MyARView, context: Context) {
-//        print("updateUIView")
+        uiView.count = handCount
     }
     
     func makeCoordinator() -> Coordinator {

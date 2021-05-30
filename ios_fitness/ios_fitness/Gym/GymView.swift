@@ -7,56 +7,23 @@
 
 import SwiftUI
 
-// https://www.appcoda.com.tw/swiftui-textview-uiviewrepresentable/
-//struct TextView: UIViewRepresentable {
-//    @Binding var text: String
-//    @Binding var textStyle: UIFont.TextStyle
-//
-//    class Coordinator: NSObject, UITextViewDelegate {
-//        var text: Binding<String>
-//
-//        init(_ text: Binding<String>) {
-//            self.text = text
-//        }
-//
-//        func textViewDidChange(_ textView: UITextView) {
-//            self.text.wrappedValue = textView.text
-//        }
-//    }
-//
-//    func makeUIView(context: Context) -> UITextView {
-//        let textView = UITextView()
-//        textView.font = UIFont.preferredFont(forTextStyle: textStyle)
-//        textView.autocapitalizationType = .sentences
-//        textView.isSelectable = true
-//        textView.isUserInteractionEnabled = true
-//        textView.delegate = context.coordinator
-//
-//        return textView
-//    }
-//
-//    func updateUIView(_ uiView: UITextView, context: Context) {
-//        uiView.text = text
-//        uiView.font = UIFont.preferredFont(forTextStyle: textStyle)
-//    }
-//
-//    func makeCoordinator() -> Coordinator {
-//        Coordinator($text)
-//    }
-//}
-
-
 struct GymView: View {
     @State var count: Int = 0
-//    @State private var message = ""
-//    @State private var textStyle = UIFont.TextStyle.body
     
     var body: some View {
         #if arch(arm64)
         ZStack {
             ARViewContainer(handCount: $count)
                 .edgesIgnoringSafeArea(.all)
-            Text("count: \(count)")
+            VStack {
+                Text("count: \(count)")
+                Button {
+                    count = 0
+                } label: {
+                    Text("清除")
+                }
+
+            }
         }
         #else
         VStack {
