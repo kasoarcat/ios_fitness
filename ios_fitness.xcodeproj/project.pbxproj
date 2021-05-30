@@ -89,7 +89,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C9C65D81265A581B00874523 /* SwiftUICharts in Frameworks */,
 				C3B13E97266372880079EDF9 /* SwiftUICharts in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -164,7 +163,6 @@
 			children = (
 				C3B13E93266371A90079EDF9 /* Charts.swift */,
 				A289B32126577FBE0047A194 /* ReportView.swift */,
-				C9C65D7D265A554D00874523 /* Charts.swift */,
 			);
 			path = Report;
 			sourceTree = "<group>";
@@ -210,7 +208,6 @@
 			);
 			name = ios_fitness;
 			packageProductDependencies = (
-				C9C65D80265A581B00874523 /* SwiftUICharts */,
 				C3B13E96266372880079EDF9 /* SwiftUICharts */,
 			);
 			productName = ios_fitness;
@@ -241,7 +238,6 @@
 			);
 			mainGroup = A289B2FD26577F5B0047A194;
 			packageReferences = (
-				C9C65D7F265A581B00874523 /* XCRemoteSwiftPackageReference "ChartView" */,
 				C3B13E95266372880079EDF9 /* XCRemoteSwiftPackageReference "ChartView" */,
 			);
 			productRefGroup = A289B30726577F5B0047A194 /* Products */;
@@ -285,7 +281,6 @@
 				A2CADF5B2657F861009DE25A /* LeftLegPosition.swift in Sources */,
 				A24DA5B32657D2C000A3B10C /* ARViewContainer.swift in Sources */,
 				A2CADF552657F861009DE25A /* LegsPosition.swift in Sources */,
-				C9C65D7E265A554D00874523 /* Charts.swift in Sources */,
 				A2CADF582657F861009DE25A /* RightLegPosition.swift in Sources */,
 				A289B32426577FBE0047A194 /* GymView.swift in Sources */,
 				C3B13E94266371A90079EDF9 /* Charts.swift in Sources */,
@@ -482,7 +477,6 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		C9C65D7F265A581B00874523 /* XCRemoteSwiftPackageReference "ChartView" */ = {
 		C3B13E95266372880079EDF9 /* XCRemoteSwiftPackageReference "ChartView" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/AppPear/ChartView";
@@ -494,9 +488,6 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		C9C65D80265A581B00874523 /* SwiftUICharts */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = C9C65D7F265A581B00874523 /* XCRemoteSwiftPackageReference "ChartView" */;
 		C3B13E96266372880079EDF9 /* SwiftUICharts */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = C3B13E95266372880079EDF9 /* XCRemoteSwiftPackageReference "ChartView" */;
