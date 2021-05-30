@@ -40,7 +40,6 @@
 		C3692A8C265D1C5200D8B253 /* TimePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3692A8B265D1C5200D8B253 /* TimePicker.swift */; };
 		C3B13E94266371A90079EDF9 /* Charts.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3B13E93266371A90079EDF9 /* Charts.swift */; };
 		C9643C6A26637A3A00722A00 /* SwiftUICharts in Frameworks */ = {isa = PBXBuildFile; productRef = C9643C6926637A3A00722A00 /* SwiftUICharts */; };
-		C9643C6C26637B0100722A00 /* new.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9643C6B26637B0100722A00 /* new.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -78,7 +77,6 @@
 		C3692A87265D18AB00D8B253 /* AlertOption.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertOption.swift; sourceTree = "<group>"; };
 		C3692A8B265D1C5200D8B253 /* TimePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimePicker.swift; sourceTree = "<group>"; };
 		C3B13E93266371A90079EDF9 /* Charts.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Charts.swift; sourceTree = "<group>"; };
-		C9643C6B26637B0100722A00 /* new.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = new.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -164,7 +162,6 @@
 			children = (
 				C3B13E93266371A90079EDF9 /* Charts.swift */,
 				A289B32126577FBE0047A194 /* ReportView.swift */,
-				C9643C6B26637B0100722A00 /* new.swift */,
 			);
 			path = Report;
 			sourceTree = "<group>";
@@ -338,7 +335,6 @@
 				A289B32426577FBE0047A194 /* GymView.swift in Sources */,
 				C3B13E94266371A90079EDF9 /* Charts.swift in Sources */,
 				A289B31626577F5E0047A194 /* ios_fitness.xcdatamodeld in Sources */,
-				C9643C6C26637B0100722A00 /* new.swift in Sources */,
 				C3671FE1265C13E20060126A /* UserDefaultManager.swift in Sources */,
 				A2CADF5A2657F861009DE25A /* Bodypart.swift in Sources */,
 				A289B30A26577F5B0047A194 /* ios_fitnessApp.swift in Sources */,
