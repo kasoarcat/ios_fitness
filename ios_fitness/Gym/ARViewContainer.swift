@@ -15,7 +15,8 @@ import ARKit
 import Combine
 
 public protocol HandDelegate : NSObjectProtocol {
-    func handCount(count: Int)
+    func handCount(jumpCount: Int)
+    func crouchCount(jumpCount: Int)
 }
 
 class MyARView : ARView, ARSessionDelegate {
@@ -26,28 +27,19 @@ class MyARView : ARView, ARSessionDelegate {
     private let posekit = PoseKit()
     private let decoder = JSONDecoder()
     
-    var count: Int = 0
+    // 開合跳
+    var jumpCount: Int = 0
     private var left_up = false
     private var left_down = false
     private var right_up = false
     private var right_down = false
     
+    // 蹲伏
+    var crouchCount: Int = 0
+    private var crouchUp = false
+    private var crouchDown = false
+    
     var handDelegate: HandDelegate?
-    
-//        var handCountClosure: (Int)->Void
-    
-//        init(frame: CGRect, closure: ((Int)->Void)) {
-//            super.init(frame: frame)
-//            handCountClosure = closure
-//        }
-    
-//        @objc required dynamic init?(coder decoder: NSCoder) {
-//            fatalError("init(coder:) has not been implemented")
-//        }
-//
-//        @objc override required dynamic init(frame frameRect: CGRect) {
-//            super.init(frame: frameRect)
-//        }
     
     // NOTE: Don't forget to call this method in ARViewContainer
     func setupForBodyTracking() {
@@ -79,12 +71,8 @@ class MyARView : ARView, ARSessionDelegate {
             let str = posekit.BodyTrackingPosition(character: theCharacter, bodyAnchor: bodyAnchor)
             let json: PoseKit.json_BodyPositions = try! decoder.decode(PoseKit.json_BodyPositions.self, from: str.data(using: .utf8)!)
             
-            countHand(json: json, delegate: handDelegate)
-            
-//            json.position_leftArm == ShoulderToForearmSubcase.horizontalTransverse.rawValue
-//            json.position_rightArm == ShoulderToForearmSubcase.horizontalTransverse.rawValue
-//            json.position_leftLeg == LegToKneeSubcase.straightParallel.rawValue
-//            json.position_rightLeg == LegToKneeSubcase.straightParallel.rawValue
+            countJump(json: json)
+            countCrouch(json: json)
             
             // 手
 //            print("position_leftArm: \(json.position_leftArm)")
@@ -92,22 +80,21 @@ class MyARView : ARView, ARSessionDelegate {
 //            print("json.position_leftForearm: \(json.position_leftForearm)")
 //            print("json.position_rightForearm: \(json.position_rightForearm)")
             // 腳
-            print("json.position_leftLeg: \(json.position_leftLeg)")
-            print("json.position_rightLeg: \(json.position_rightLeg)")
+//            print("json.position_leftLeg: \(json.position_leftLeg)")
+//            print("json.position_rightLeg: \(json.position_rightLeg)")
 //            print("json.position_leftForeleg: \(json.position_leftForeleg)")
 //            print("json.position_rightForeleg: \(json.position_rightForeleg)")
-            print()
+//            print()
         }
     }
 
-    func countHand(json: PoseKit.json_BodyPositions, delegate: HandDelegate?) {
+    // 開合跳
+    func countJump(json: PoseKit.json_BodyPositions) {
     //    var s: String = ""
         switch json.position_leftArm.position { // 左手臂
             case ShoulderToForearmSubcase.verticalUpDiagonalFront.rawValue, ShoulderToForearmSubcase.verticalUpTransverse.rawValue:
-    //                    s = "上"
                 left_up = true
             case ShoulderToForearmSubcase.verticalDownDiagonalFront.rawValue, ShoulderToForearmSubcase.verticalDownDiagonalBack.rawValue, ShoulderToForearmSubcase.verticalDownParallel.rawValue, ShoulderToForearmSubcase.verticalDownTransverse.rawValue, ShoulderToForearmSubcase.verticalUpParallel.rawValue:
-    //                    s = "下"
                 left_down = true
         default:
             break
@@ -115,10 +102,8 @@ class MyARView : ARView, ARSessionDelegate {
 
         switch json.position_rightArm.position { // 右手臂
             case ShoulderToForearmSubcase.verticalUpDiagonalFront.rawValue, ShoulderToForearmSubcase.verticalUpTransverse.rawValue:
-    //                    s = "上"
                 right_up = true
             case ShoulderToForearmSubcase.verticalDownDiagonalFront.rawValue, ShoulderToForearmSubcase.verticalDownDiagonalBack.rawValue, ShoulderToForearmSubcase.verticalDownParallel.rawValue, ShoulderToForearmSubcase.verticalDownTransverse.rawValue, ShoulderToForearmSubcase.verticalUpParallel.rawValue:
-    //                    s = "下"
                 right_down = true
         default:
             break
@@ -129,39 +114,58 @@ class MyARView : ARView, ARSessionDelegate {
             left_down = false
             right_up = false
             right_down = false
-            count += 1
-    //        print("count: \(count)")
+            jumpCount += 1
+    //        print("jumpCount: \(jumpCount)")
             
-            if let delegate = delegate {
-                delegate.handCount(count: count)
+            if let delegate = handDelegate {
+                delegate.handCount(jumpCount: jumpCount)
             }
         }
-
-    //    switch json.position_leftLeg.position {
-    //    case LegToKneeSubcase.straightParallel.rawValue, LegToKneeSubcase.straightBack.rawValue:
-    //        print("straight")
-    //    case LegToKneeSubcase.halfOpenDiagonal.rawValue, LegToKneeSubcase.halfOpenParallel.rawValue, LegToKneeSubcase.halfOpenTransversal.rawValue:
-    //        print("half")
-    //    case LegToKneeSubcase.openParallel.rawValue, LegToKneeSubcase.openDiagonal.rawValue, LegToKneeSubcase.openTransversal.rawValue:
-    //        print("open")
-    //    default:
-    //        print("Error!")
-    //    }
+    }
+    
+    // 蹲伏
+    func countCrouch(json: PoseKit.json_BodyPositions) {
+        if json.position_leftArm.position == ShoulderToForearmSubcase.horizontalTransverse.rawValue && json.position_rightArm.position == ShoulderToForearmSubcase.horizontalTransverse.rawValue {
+            
+            if json.position_leftLeg.position == LegToKneeSubcase.straightParallel.rawValue && json.position_rightLeg.position == LegToKneeSubcase.straightParallel.rawValue {
+                crouchUp = true
+            }
+            else if json.position_leftLeg.position == LegToKneeSubcase.openTransversal.rawValue && json.position_rightLeg.position == LegToKneeSubcase.openTransversal.rawValue {
+                crouchDown = true
+            }
+            
+            if crouchUp && crouchDown {
+                crouchUp = false
+                crouchDown = false
+                crouchCount += 1
+                
+                if let delegate = handDelegate {
+                    delegate.crouchCount(jumpCount: crouchCount)
+                }
+            }
+        }
     }
 }
 
 struct ARViewContainer: UIViewRepresentable {
     @Binding var handCount: Int
+    @Binding var crouchCount: Int
     
     class Coordinator: NSObject, HandDelegate {
-        var count: Binding<Int>
+        var handCount: Binding<Int>
+        var crouchCount: Binding<Int>
         
-        init(_ count: Binding<Int>) {
-            self.count = count
+        init(_ handCount: Binding<Int>, _ crouchCount: Binding<Int>) {
+            self.handCount = handCount
+            self.crouchCount = crouchCount
         }
         
-        func handCount(count: Int) {
-            self.count.wrappedValue = count
+        func handCount(jumpCount: Int) {
+            self.handCount.wrappedValue = jumpCount
+        }
+        
+        func crouchCount(jumpCount: Int) {
+            self.crouchCount.wrappedValue = jumpCount
         }
     }
     
@@ -204,11 +208,11 @@ struct ARViewContainer: UIViewRepresentable {
     }
 
     func updateUIView(_ uiView: MyARView, context: Context) {
-        uiView.count = handCount
+        uiView.jumpCount = handCount
     }
     
     func makeCoordinator() -> Coordinator {
-        Coordinator($handCount)
+        Coordinator($handCount, $crouchCount)
     }
 }
 

@@ -8,21 +8,26 @@
 import SwiftUI
 
 struct GymView: View {
-    @State var count: Int = 0
+    @State var jumpCount: Int = 0
+    @State var crouchCount: Int = 0
     
     var body: some View {
         #if arch(arm64)
         ZStack {
-            ARViewContainer(handCount: $count)
+            ARViewContainer(handCount: $jumpCount, crouchCount: $crouchCount)
                 .edgesIgnoringSafeArea(.all)
             VStack {
-                Text("count: \(count)")
+                Text("jumpCount: \(jumpCount)")
+                    .foregroundColor(.yellow)
+                Text("crouchCount: \(crouchCount)")
+                    .foregroundColor(.yellow)
                 Button {
-                    count = 0
+                    jumpCount = 0
+                    crouchCount = 0
                 } label: {
                     Text("清除")
                 }
-
+                
             }
         }
         #else

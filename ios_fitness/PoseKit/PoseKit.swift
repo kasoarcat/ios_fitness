@@ -118,7 +118,6 @@ public class PoseKit {
 
 
 extension BodyTrackedEntity {
-    
     /// Returns a joint name from ARSkeleton - created by @valengo
     func jointName(forPath path: String) -> ARSkeleton.JointName {
         let splitPath = path.split(separator: "/")
