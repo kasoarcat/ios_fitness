@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -38,6 +38,8 @@
 		C3692A86265D0FE200D8B253 /* AlarmTime.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3692A85265D0FE200D8B253 /* AlarmTime.swift */; };
 		C3692A88265D18AB00D8B253 /* AlertOption.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3692A87265D18AB00D8B253 /* AlertOption.swift */; };
 		C3692A8C265D1C5200D8B253 /* TimePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3692A8B265D1C5200D8B253 /* TimePicker.swift */; };
+		C3B13E94266371A90079EDF9 /* Charts.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3B13E93266371A90079EDF9 /* Charts.swift */; };
+		C3B13E97266372880079EDF9 /* SwiftUICharts in Frameworks */ = {isa = PBXBuildFile; productRef = C3B13E96266372880079EDF9 /* SwiftUICharts */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -74,6 +76,7 @@
 		C3692A85265D0FE200D8B253 /* AlarmTime.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlarmTime.swift; sourceTree = "<group>"; };
 		C3692A87265D18AB00D8B253 /* AlertOption.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertOption.swift; sourceTree = "<group>"; };
 		C3692A8B265D1C5200D8B253 /* TimePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimePicker.swift; sourceTree = "<group>"; };
+		C3B13E93266371A90079EDF9 /* Charts.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Charts.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -81,6 +84,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C3B13E97266372880079EDF9 /* SwiftUICharts in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -156,6 +160,7 @@
 		A289B32026577FBE0047A194 /* Report */ = {
 			isa = PBXGroup;
 			children = (
+				C3B13E93266371A90079EDF9 /* Charts.swift */,
 				A289B32126577FBE0047A194 /* ReportView.swift */,
 			);
 			path = Report;
@@ -246,6 +251,9 @@
 			dependencies = (
 			);
 			name = ios_fitness;
+			packageProductDependencies = (
+				C3B13E96266372880079EDF9 /* SwiftUICharts */,
+			);
 			productName = ios_fitness;
 			productReference = A289B30626577F5B0047A194 /* ios_fitness.app */;
 			productType = "com.apple.product-type.application";
@@ -273,6 +281,9 @@
 				Base,
 			);
 			mainGroup = A289B2FD26577F5B0047A194;
+			packageReferences = (
+				C3B13E95266372880079EDF9 /* XCRemoteSwiftPackageReference "ChartView" */,
+			);
 			productRefGroup = A289B30726577F5B0047A194 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -322,6 +333,7 @@
 				A2CADF552657F861009DE25A /* LegsPosition.swift in Sources */,
 				A2CADF582657F861009DE25A /* RightLegPosition.swift in Sources */,
 				A289B32426577FBE0047A194 /* GymView.swift in Sources */,
+				C3B13E94266371A90079EDF9 /* Charts.swift in Sources */,
 				A289B31626577F5E0047A194 /* ios_fitness.xcdatamodeld in Sources */,
 				C3671FE1265C13E20060126A /* UserDefaultManager.swift in Sources */,
 				A2CADF5A2657F861009DE25A /* Bodypart.swift in Sources */,
@@ -516,6 +528,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		C3B13E95266372880079EDF9 /* XCRemoteSwiftPackageReference "ChartView" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/AppPear/ChartView";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.5.5;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		C3B13E96266372880079EDF9 /* SwiftUICharts */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = C3B13E95266372880079EDF9 /* XCRemoteSwiftPackageReference "ChartView" */;
+			productName = SwiftUICharts;
+		};
+/* End XCSwiftPackageProductDependency section */
 
 /* Begin XCVersionGroup section */
 		A289B31426577F5E0047A194 /* ios_fitness.xcdatamodeld */ = {
