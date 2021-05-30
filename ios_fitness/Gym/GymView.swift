@@ -8,9 +8,11 @@
 import SwiftUI
 
 struct GymView: View {
-    @State var actionEnum: ActionEnum = .JumpAction
+    var actionNames = ActionEnum.allCases
+    @State var actionEnum: ActionEnum = .開合跳
     @State var count: Int = 0
-    
+    @State var selectedIndex = 0
+        
     var body: some View {
         #if arch(arm64)
         ZStack {
@@ -21,9 +23,9 @@ struct GymView: View {
                     .foregroundColor(.red)
                 Button {
                     count = 0
-                    actionEnum = .CrouchAction
+                    actionEnum = actionNames[selectedIndex]
                 } label: {
-                    Text("清除")
+                    Text("設定")
                         .bold()
 //                        .border(Color.black, width: 1)
                         .font(.largeTitle)
@@ -36,6 +38,13 @@ struct GymView: View {
 //                        .clipShape(Circle())
                 }
                 
+                Picker(selection: $selectedIndex, label: Text("選擇動作")) {
+                    ForEach(0..<actionNames.count) { index in
+                        let i = Int(index)
+                        Text(actionNames[i].rawValue).tag(i)
+                    }
+                }
+                Text("我要選\(actionNames[selectedIndex].rawValue)")
             }
         }
         #else

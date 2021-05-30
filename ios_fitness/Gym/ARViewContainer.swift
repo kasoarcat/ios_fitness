@@ -14,106 +14,6 @@ import RealityKit
 import ARKit
 import Combine
 
-public protocol PoseDelegate : NSObjectProtocol {
-    func counting(count: Int)
-}
-
-protocol Action {
-    var count: Int { get }
-    
-    func cleanCount()
-    func counting(json: PoseKit.json_BodyPositions)
-}
-
-enum ActionEnum {
-    case JumpAction
-    case CrouchAction
-}
-
-// 開合跳
-class JumpAction: Action {
-    let delegate: PoseDelegate
-    var count: Int = 0
-    var leftUp = false
-    var leftDown = false
-    var rightUp = false
-    var rightDown = false
-    
-    init(delegate: PoseDelegate) {
-        self.delegate = delegate
-    }
-    
-    func cleanCount() {
-        count = 0
-    }
-    
-    func counting(json: PoseKit.json_BodyPositions) {
-        switch json.position_leftArm.position { // 左手臂
-            case ShoulderToForearmSubcase.verticalUpDiagonalFront.rawValue, ShoulderToForearmSubcase.verticalUpTransverse.rawValue:
-                leftUp = true
-            case ShoulderToForearmSubcase.verticalDownDiagonalFront.rawValue, ShoulderToForearmSubcase.verticalDownDiagonalBack.rawValue, ShoulderToForearmSubcase.verticalDownParallel.rawValue, ShoulderToForearmSubcase.verticalDownTransverse.rawValue, ShoulderToForearmSubcase.verticalUpParallel.rawValue:
-                leftDown = true
-        default:
-            break
-        }
-
-        switch json.position_rightArm.position { // 右手臂
-            case ShoulderToForearmSubcase.verticalUpDiagonalFront.rawValue, ShoulderToForearmSubcase.verticalUpTransverse.rawValue:
-                rightUp = true
-            case ShoulderToForearmSubcase.verticalDownDiagonalFront.rawValue, ShoulderToForearmSubcase.verticalDownDiagonalBack.rawValue, ShoulderToForearmSubcase.verticalDownParallel.rawValue, ShoulderToForearmSubcase.verticalDownTransverse.rawValue, ShoulderToForearmSubcase.verticalUpParallel.rawValue:
-                rightDown = true
-        default:
-            break
-        }
-
-        if leftUp && leftDown && rightUp && rightDown {
-            leftUp = false
-            leftDown = false
-            rightUp = false
-            rightDown = false
-            count += 1
-            
-            delegate.counting(count: count)
-        }
-    }
-}
-
-// 蹲伏
-class CrouchAction: Action {
-    let delegate: PoseDelegate
-    var count: Int = 0
-    var up = false
-    var down = false
-    
-    init(delegate: PoseDelegate) {
-        self.delegate = delegate
-    }
-    
-    func cleanCount() {
-        count = 0
-    }
-    
-    func counting(json: PoseKit.json_BodyPositions) {
-        if json.position_leftArm.position == ShoulderToForearmSubcase.horizontalTransverse.rawValue && json.position_rightArm.position == ShoulderToForearmSubcase.horizontalTransverse.rawValue {
-            
-            if json.position_leftLeg.position == LegToKneeSubcase.straightParallel.rawValue && json.position_rightLeg.position == LegToKneeSubcase.straightParallel.rawValue {
-                up = true
-            }
-            else if json.position_leftLeg.position == LegToKneeSubcase.openTransversal.rawValue && json.position_rightLeg.position == LegToKneeSubcase.openTransversal.rawValue {
-                down = true
-            }
-            
-            if up && down {
-                up = false
-                down = false
-                count += 1
-                delegate.counting(count: count)
-            }
-        }
-    }
-    
-}
-
 class MyARView : ARView, ARSessionDelegate {
     // The 3D character to display.
     var theCharacter: BodyTrackedEntity?
@@ -128,7 +28,7 @@ class MyARView : ARView, ARSessionDelegate {
     
     init(frame: CGRect, handDelegate: PoseDelegate, actionEnum: ActionEnum) {
         self.handDelegate = handDelegate
-        self.actionEnum = .JumpAction
+        self.actionEnum = .開合跳
         self.action = JumpAction(delegate: handDelegate)
         super.init(frame: frame)
         changeAction(actionEnum: actionEnum)
@@ -192,11 +92,11 @@ class MyARView : ARView, ARSessionDelegate {
             self.actionEnum = actionEnum
             
             switch actionEnum {
-            case .JumpAction:
-                print("JumpAction")
+            case .開合跳:
+                print("開合跳")
                 self.action = JumpAction(delegate: handDelegate)
-            case .CrouchAction:
-                print("CrouchAction")
+            case .蹲伏:
+                print("蹲伏")
                 self.action = CrouchAction(delegate: handDelegate)
             }
         }
