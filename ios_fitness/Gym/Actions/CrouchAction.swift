@@ -5,6 +5,8 @@
 //  Created by jakey on 2021/5/30.
 //
 
+#if arch(arm64)
+
 import Foundation
 
 // 蹲伏
@@ -43,3 +45,4 @@ public class CrouchAction: Action {
     
 }
 
+#endif

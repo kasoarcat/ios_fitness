@@ -5,6 +5,8 @@
 //  Created by jakey on 2021/5/30.
 //
 
+#if arch(arm64)
+
 import Foundation
 
 // 開合跳
@@ -55,3 +57,4 @@ public class JumpAction: Action {
     }
 }
 
+#endif

@@ -5,10 +5,9 @@
 //  Created by jakey on 2021/5/21.
 //
 
-import Foundation
-
 #if arch(arm64)
 
+import Foundation
 import SwiftUI
 import RealityKit
 import ARKit

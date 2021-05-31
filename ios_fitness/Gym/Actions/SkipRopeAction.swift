@@ -5,6 +5,8 @@
 //  Created by jakey on 2021/5/30.
 //
 
+#if arch(arm64)
+
 import Foundation
 
 // 無線跳繩
@@ -42,3 +44,5 @@ public class SkipRopeAction: Action {
     }
     
 }
+
+#endif

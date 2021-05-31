@@ -5,6 +5,8 @@
 //  Created by jakey on 2021/5/30.
 //
 
+#if arch(arm64)
+
 import Foundation
 
 public protocol PoseDelegate : NSObjectProtocol {
@@ -25,3 +27,4 @@ enum ActionEnum: String, CaseIterable {
     case 蹲姿上伸  // SquattingUpAction
 }
 
+#endif

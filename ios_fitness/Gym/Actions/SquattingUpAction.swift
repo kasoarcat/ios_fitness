@@ -5,6 +5,8 @@
 //  Created by jakey on 2021/5/30.
 //
 
+#if arch(arm64)
+
 import Foundation
 
 // 蹲姿上伸
@@ -55,3 +57,5 @@ public class SquattingUpAction: Action {
     }
     
 }
+
+#endif
