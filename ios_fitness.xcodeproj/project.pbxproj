@@ -19,6 +19,16 @@
 		A289B3502657B3E00047A194 /* character in Resources */ = {isa = PBXBuildFile; fileRef = A289B34F2657B3E00047A194 /* character */; };
 		A289B3552657D0670047A194 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A289B3542657D0670047A194 /* ContentView.swift */; };
 		A28F014F26636939005A171B /* GymDataView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A28F014E26636939005A171B /* GymDataView.swift */; };
+		A28F93932664F2DE00CAB107 /* NotificationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A28F938D2664F2DE00CAB107 /* NotificationView.swift */; };
+		A28F93942664F2DE00CAB107 /* SoundEffectView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A28F938F2664F2DE00CAB107 /* SoundEffectView.swift */; };
+		A28F93952664F2DE00CAB107 /* UserDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A28F93912664F2DE00CAB107 /* UserDetailView.swift */; };
+		A28F93A32664F32200CAB107 /* Weekday.swift in Sources */ = {isa = PBXBuildFile; fileRef = A28F939A2664F32200CAB107 /* Weekday.swift */; };
+		A28F93A42664F32200CAB107 /* AlarmTime.swift in Sources */ = {isa = PBXBuildFile; fileRef = A28F939B2664F32200CAB107 /* AlarmTime.swift */; };
+		A28F93A52664F32200CAB107 /* AlertOption.swift in Sources */ = {isa = PBXBuildFile; fileRef = A28F939C2664F32200CAB107 /* AlertOption.swift */; };
+		A28F93A62664F32200CAB107 /* UserDefaultManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A28F939E2664F32200CAB107 /* UserDefaultManager.swift */; };
+		A28F93A72664F32200CAB107 /* NotificationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A28F939F2664F32200CAB107 /* NotificationViewModel.swift */; };
+		A28F93A82664F32200CAB107 /* TimePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = A28F93A12664F32200CAB107 /* TimePicker.swift */; };
+		A28F93A92664F32200CAB107 /* SettingFormRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = A28F93A22664F32200CAB107 /* SettingFormRow.swift */; };
 		A2CADF542657F861009DE25A /* PositionCases.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2CADF4B2657F861009DE25A /* PositionCases.swift */; };
 		A2CADF552657F861009DE25A /* LegsPosition.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2CADF4C2657F861009DE25A /* LegsPosition.swift */; };
 		A2CADF562657F861009DE25A /* ArmsPosition.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2CADF4D2657F861009DE25A /* ArmsPosition.swift */; };
@@ -53,6 +63,16 @@
 		A289B34F2657B3E00047A194 /* character */ = {isa = PBXFileReference; lastKnownFileType = folder; path = character; sourceTree = "<group>"; };
 		A289B3542657D0670047A194 /* ContentView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		A28F014E26636939005A171B /* GymDataView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GymDataView.swift; sourceTree = "<group>"; };
+		A28F938D2664F2DE00CAB107 /* NotificationView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotificationView.swift; sourceTree = "<group>"; };
+		A28F938F2664F2DE00CAB107 /* SoundEffectView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SoundEffectView.swift; sourceTree = "<group>"; };
+		A28F93912664F2DE00CAB107 /* UserDetailView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserDetailView.swift; sourceTree = "<group>"; };
+		A28F939A2664F32200CAB107 /* Weekday.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Weekday.swift; sourceTree = "<group>"; };
+		A28F939B2664F32200CAB107 /* AlarmTime.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlarmTime.swift; sourceTree = "<group>"; };
+		A28F939C2664F32200CAB107 /* AlertOption.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlertOption.swift; sourceTree = "<group>"; };
+		A28F939E2664F32200CAB107 /* UserDefaultManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserDefaultManager.swift; sourceTree = "<group>"; };
+		A28F939F2664F32200CAB107 /* NotificationViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotificationViewModel.swift; sourceTree = "<group>"; };
+		A28F93A12664F32200CAB107 /* TimePicker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimePicker.swift; sourceTree = "<group>"; };
+		A28F93A22664F32200CAB107 /* SettingFormRow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingFormRow.swift; sourceTree = "<group>"; };
 		A2CADF4B2657F861009DE25A /* PositionCases.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PositionCases.swift; sourceTree = "<group>"; };
 		A2CADF4C2657F861009DE25A /* LegsPosition.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LegsPosition.swift; sourceTree = "<group>"; };
 		A2CADF4D2657F861009DE25A /* ArmsPosition.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArmsPosition.swift; sourceTree = "<group>"; };
@@ -158,9 +178,67 @@
 		A289B32226577FBE0047A194 /* MySetting */ = {
 			isa = PBXGroup;
 			children = (
+				A28F93A02664F32200CAB107 /* Component */,
+				A28F93992664F32200CAB107 /* Model */,
+				A28F939D2664F32200CAB107 /* ViewModel */,
+				A28F938C2664F2DE00CAB107 /* Notification */,
+				A28F938E2664F2DE00CAB107 /* SoundEffect */,
+				A28F93902664F2DE00CAB107 /* UserDetail */,
 				A270900B26580FB700C017DF /* MySettingView.swift */,
 			);
 			path = MySetting;
+			sourceTree = "<group>";
+		};
+		A28F938C2664F2DE00CAB107 /* Notification */ = {
+			isa = PBXGroup;
+			children = (
+				A28F938D2664F2DE00CAB107 /* NotificationView.swift */,
+			);
+			path = Notification;
+			sourceTree = "<group>";
+		};
+		A28F938E2664F2DE00CAB107 /* SoundEffect */ = {
+			isa = PBXGroup;
+			children = (
+				A28F938F2664F2DE00CAB107 /* SoundEffectView.swift */,
+			);
+			path = SoundEffect;
+			sourceTree = "<group>";
+		};
+		A28F93902664F2DE00CAB107 /* UserDetail */ = {
+			isa = PBXGroup;
+			children = (
+				A28F93912664F2DE00CAB107 /* UserDetailView.swift */,
+			);
+			path = UserDetail;
+			sourceTree = "<group>";
+		};
+		A28F93992664F32200CAB107 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				A28F939A2664F32200CAB107 /* Weekday.swift */,
+				A28F939B2664F32200CAB107 /* AlarmTime.swift */,
+				A28F939C2664F32200CAB107 /* AlertOption.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		A28F939D2664F32200CAB107 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				A28F939E2664F32200CAB107 /* UserDefaultManager.swift */,
+				A28F939F2664F32200CAB107 /* NotificationViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		A28F93A02664F32200CAB107 /* Component */ = {
+			isa = PBXGroup;
+			children = (
+				A28F93A12664F32200CAB107 /* TimePicker.swift */,
+				A28F93A22664F32200CAB107 /* SettingFormRow.swift */,
+			);
+			path = Component;
 			sourceTree = "<group>";
 		};
 		A2CADF4A2657F861009DE25A /* PoseKit */ = {
@@ -271,14 +349,22 @@
 				A289B31326577F5E0047A194 /* Persistence.swift in Sources */,
 				A2CADF572657F861009DE25A /* RightArmPosition.swift in Sources */,
 				A2CADF592657F861009DE25A /* LeftArmPosition.swift in Sources */,
+				A28F93A62664F32200CAB107 /* UserDefaultManager.swift in Sources */,
 				A28F014F26636939005A171B /* GymDataView.swift in Sources */,
 				A2CADF562657F861009DE25A /* ArmsPosition.swift in Sources */,
 				A2CADF542657F861009DE25A /* PositionCases.swift in Sources */,
 				A289B3552657D0670047A194 /* ContentView.swift in Sources */,
+				A28F93942664F2DE00CAB107 /* SoundEffectView.swift in Sources */,
+				A28F93A82664F32200CAB107 /* TimePicker.swift in Sources */,
+				A28F93A72664F32200CAB107 /* NotificationViewModel.swift in Sources */,
 				A2CBFEAD2663B3A00091176A /* CrouchAction.swift in Sources */,
 				A289B32526577FBE0047A194 /* ReportView.swift in Sources */,
+				A28F93A92664F32200CAB107 /* SettingFormRow.swift in Sources */,
+				A28F93932664F2DE00CAB107 /* NotificationView.swift in Sources */,
 				A2CADF5C2657F861009DE25A /* PoseKit.swift in Sources */,
 				A2CBFEA82663B36F0091176A /* JumpAction.swift in Sources */,
+				A28F93952664F2DE00CAB107 /* UserDetailView.swift in Sources */,
+				A28F93A42664F32200CAB107 /* AlarmTime.swift in Sources */,
 				A270900C26580FB700C017DF /* MySettingView.swift in Sources */,
 				A2CADF5B2657F861009DE25A /* LeftLegPosition.swift in Sources */,
 				A2CBFEB72663D8370091176A /* SquattingUpAction.swift in Sources */,
@@ -287,7 +373,9 @@
 				A2CBFEA52663B34D0091176A /* Action.swift in Sources */,
 				A2CADF582657F861009DE25A /* RightLegPosition.swift in Sources */,
 				A289B32426577FBE0047A194 /* GymView.swift in Sources */,
+				A28F93A32664F32200CAB107 /* Weekday.swift in Sources */,
 				C3B13E94266371A90079EDF9 /* Charts.swift in Sources */,
+				A28F93A52664F32200CAB107 /* AlertOption.swift in Sources */,
 				A289B31626577F5E0047A194 /* ios_fitness.xcdatamodeld in Sources */,
 				A2CBFEB32663C1830091176A /* SkipRopeAction.swift in Sources */,
 				A2CADF5A2657F861009DE25A /* Bodypart.swift in Sources */,
