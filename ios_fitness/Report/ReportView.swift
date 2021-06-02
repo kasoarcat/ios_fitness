@@ -48,9 +48,11 @@ struct ReportView: View {
                 DatePicker("", selection: $date.date, displayedComponents: [.date])
                     .datePickerStyle(GraphicalDatePickerStyle())
                     .padding()
-                    .border(Color.black, width: 10)
-                    .background(Color.gray)
-                    .accentColor(.orange)
+                    .cornerRadius(30)
+                    .border(Color.gray, width: 5)
+                    .background(Color.white)
+                    
+                    .accentColor(.red)
                 Text(date.formatter.string(from: date.date))
                 
                 Text("消耗卡路里: ")
