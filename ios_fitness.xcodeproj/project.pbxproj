@@ -76,6 +76,7 @@
 		A28F93A22664F32200CAB107 /* SettingFormRow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingFormRow.swift; sourceTree = "<group>"; };
 		A29F44232667826700B0E029 /* ActionsDataView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActionsDataView.swift; sourceTree = "<group>"; };
 		A29F44262667830800B0E029 /* ios_fitness2.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = ios_fitness2.xcdatamodel; sourceTree = "<group>"; };
+		A29F442826678A1400B0E029 /* ios_fitness3.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = ios_fitness3.xcdatamodel; sourceTree = "<group>"; };
 		A2CADF4B2657F861009DE25A /* PositionCases.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PositionCases.swift; sourceTree = "<group>"; };
 		A2CADF4C2657F861009DE25A /* LegsPosition.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LegsPosition.swift; sourceTree = "<group>"; };
 		A2CADF4D2657F861009DE25A /* ArmsPosition.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArmsPosition.swift; sourceTree = "<group>"; };
@@ -597,10 +598,11 @@
 		A289B31426577F5E0047A194 /* ios_fitness.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
+				A29F442826678A1400B0E029 /* ios_fitness3.xcdatamodel */,
 				A29F44262667830800B0E029 /* ios_fitness2.xcdatamodel */,
 				A289B31526577F5E0047A194 /* ios_fitness.xcdatamodel */,
 			);
-			currentVersion = A29F44262667830800B0E029 /* ios_fitness2.xcdatamodel */;
+			currentVersion = A29F442826678A1400B0E029 /* ios_fitness3.xcdatamodel */;
 			path = ios_fitness.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;

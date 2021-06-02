@@ -43,7 +43,7 @@ struct ActionsDataView: View {
             let action = Actions(context: viewContext)
             action.id = UUID()
             action.count = 5
-
+            
             do {
                 try viewContext.save()
             } catch {
