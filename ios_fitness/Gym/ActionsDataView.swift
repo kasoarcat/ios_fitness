@@ -8,20 +8,20 @@
 import SwiftUI
 import CoreData
 
-struct GymDataView: View {
+struct ActionsDataView: View {
     @Environment(\.managedObjectContext) private var viewContext
     
     @FetchRequest(
-        sortDescriptors: [NSSortDescriptor(keyPath: \MySetting.weight, ascending: true)],
+        sortDescriptors: [NSSortDescriptor(keyPath: \Actions.count, ascending: true)],
         animation: .default)
-    private var items: FetchedResults<MySetting>
+    private var items: FetchedResults<Actions>
     
     var body: some View {
         VStack {
             Text("我的設定")
             List {
                 ForEach(items) { item in
-                    Text("Height: \(item.height) Weight: \(item.weight) Sex: \(item.sex ?? "無")")
+                    Text("count: \(item.count)")
                 }
                 .onDelete(perform: deleteItems)
             }
@@ -40,14 +40,10 @@ struct GymDataView: View {
     
     private func addItem() {
         withAnimation {
-            let newItem = MySetting(context: viewContext)
-            let uuid = UUID()
-            print(uuid)
-            newItem.id = uuid
-            newItem.height = 180
-            newItem.weight = 90
-            newItem.sex = "男"
-            
+            let action = Actions(context: viewContext)
+            action.id = UUID()
+            action.count = 5
+
             do {
                 try viewContext.save()
             } catch {
@@ -84,10 +80,10 @@ private let itemFormatter: DateFormatter = {
 }()
 
 
-struct GymDataView_Previews: PreviewProvider {
+struct ActionsDataView_Previews: PreviewProvider {
     static var previews: some View {
         Group {
-            GymDataView().environment(\.managedObjectContext, PersistenceController.preview.container.viewContext)
+            ActionsDataView().environment(\.managedObjectContext, PersistenceController.preview.container.viewContext)
         }
     }
 }

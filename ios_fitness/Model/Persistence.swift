@@ -21,6 +21,10 @@ struct PersistenceController {
             newItem.height = 100
             newItem.weight = 50
             newItem.sex = "女"
+            
+            let action = Actions(context: viewContext)
+            action.id = UUID()
+            action.count = 10
         }
         do {
             try viewContext.save()
