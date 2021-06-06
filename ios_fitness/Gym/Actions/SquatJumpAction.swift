@@ -1,16 +1,16 @@
 //
-//  SquattingUpAction.swift
+//  SquatJumpAction.swift
 //  ios_fitness
 //
-//  Created by jakey on 2021/5/30.
+//  Created by jakey on 2021/6/6.
 //
 
 #if arch(arm64)
 
 import Foundation
 
-// 蹲姿上伸
-public class SquattingUpAction: Action {
+// 蹲跳運動
+public class SquatJumpAction: Action {
     let delegate: PoseDelegate
     var count: Int = 0
     var leftUp = false
@@ -44,26 +44,8 @@ public class SquattingUpAction: Action {
         default:
             break
         }
-        
-//        switch json.position_leftForeleg.position { // 左腳
-//        case KneeToFootCase.bent.rawValue, KneeToFootCase.bentIn.rawValue, KneeToFootCase.bentOut.rawValue:
-//            leftUp = true
-//        case KneeToFootCase.outstretched.rawValue:
-//            leftDown = true
-//        default:
-//            break
-//        }
-//
-//        switch json.position_rightForeleg.position { // 右腳
-//        case KneeToFootCase.bent.rawValue, KneeToFootCase.bentIn.rawValue, KneeToFootCase.bentOut.rawValue:
-//            rightUp = true
-//        case KneeToFootCase.outstretched.rawValue:
-//            rightDown = true
-//        default:
-//            break
-//        }
-        
-        if (leftUp && leftDown) || (rightUp && rightDown) {
+
+        if leftUp && leftDown && rightUp && rightDown {
             leftUp = false
             leftDown = false
             rightUp = false

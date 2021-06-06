@@ -24,14 +24,14 @@ struct GymView: View {
                 Text("count: \(count)")
                     .font(.largeTitle)
                     .bold()
-                    .foregroundColor(.red)
+                    .foregroundColor(.yellow)
                 Picker(selection: $selectedIndex, label: Text("選擇動作")) {
                     ForEach(0..<actionNames.count) { index in
                         let i = Int(index)
                         Text(actionNames[i].rawValue)
                             .font(.largeTitle)
                             .bold()
-                            .foregroundColor(.red)
+                            .foregroundColor(.yellow)
                             .tag(i)
                     }
                 }
@@ -42,7 +42,7 @@ struct GymView: View {
                     Text("設定")
                         .bold()
                         .font(.largeTitle)
-                        .foregroundColor(.red)
+                        .foregroundColor(.yellow)
                 }
             }
         }
