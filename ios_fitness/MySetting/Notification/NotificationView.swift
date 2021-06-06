@@ -17,47 +17,50 @@ struct NotificationView: View {
     ]
     
     var body: some View {
-        VStack {
-            TimePicker(data: data, selection: $notificationViewModel.selection)
-            HStack {
-                Text("重複")
-                Spacer()
-            }
-            .padding()
-            
-            HStack {
-                ForEach(Weekday.allCases.indices, id: \.self) { index in
-                    Button(action: {
-                        notificationViewModel.setWeek(index)
-                    }, label: {
-                        Text("\(Weekday.allCases[index].rawValue)")
-                            .frame(width: 45, height: 45)
-                            .overlay(RoundedRectangle(cornerRadius: /*@START_MENU_TOKEN@*/25.0/*@END_MENU_TOKEN@*/)
-                                        .stroke($notificationViewModel.time.wrappedValue.weeks[index] == true ? Color.blue : Color.white, lineWidth: 2))
-                            
-                    })
-                    
+        NavigationView {
+            VStack {
+                TimePicker(data: data, selection: $notificationViewModel.selection)
+                HStack {
+                    Text("重複")
+                    Spacer()
                 }
+                .padding()
+                
+                HStack {
+                    ForEach(Weekday.allCases.indices, id: \.self) { index in
+                        Button(action: {
+                            notificationViewModel.setWeek(index)
+                        }, label: {
+                            Text("\(Weekday.allCases[index].rawValue)")
+                                .frame(width: 45, height: 45)
+                                .overlay(RoundedRectangle(cornerRadius: /*@START_MENU_TOKEN@*/25.0/*@END_MENU_TOKEN@*/)
+                                            .stroke($notificationViewModel.time.wrappedValue.weeks[index] == true ? Color.blue : Color.white, lineWidth: 2))
+                                
+                        })
+                        
+                    }
+                }
+                .padding()
+                
+                Spacer()
+                Button(action: {
+                    notificationViewModel.setNotification()
+                }, label: {
+                    Text("完成")
+                        .padding()
+                        .frame(maxWidth: .infinity)
+                        .overlay(RoundedRectangle(cornerRadius: 15)
+                                    .stroke(Color.blue, lineWidth: 2))
+                        .padding()
+                        .alert(isPresented: $notificationViewModel.showAlert, content: {
+                            Alert(title: Text($notificationViewModel.alert.type.wrappedValue.rawValue), message: Text($notificationViewModel.alert.message.wrappedValue), dismissButton: .default(Text("Ok")))
+                        })
+                })
             }
-            .padding()
-            
-            Spacer()
-            Button(action: {
-                notificationViewModel.setNotification()
-            }, label: {
-                Text("完成")
-                    .padding()
-                    .frame(maxWidth: .infinity)
-                    .overlay(RoundedRectangle(cornerRadius: 15)
-                                .stroke(Color.blue, lineWidth: 2))
-                    .padding()
-                    .alert(isPresented: $notificationViewModel.showAlert, content: {
-                        Alert(title: Text($notificationViewModel.alert.type.wrappedValue.rawValue), message: Text($notificationViewModel.alert.message.wrappedValue), dismissButton: .default(Text("Ok")))
-                    })
-            })
-            
+            .navigationBarTitle("")
+            .navigationBarHidden(true)
         }
-        
+        .navigationBarTitle("提醒", displayMode: .inline)
     }
 }
 

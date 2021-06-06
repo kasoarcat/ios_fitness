@@ -31,9 +31,10 @@ struct SoundEffectView: View {
                     }
                 }
             }
-            .navigationBarTitle("聲音&音樂", displayMode: .inline)
+            .navigationBarTitle("")
+            .navigationBarHidden(true)
         }
-        
+        .navigationBarTitle("聲音&音樂", displayMode: .inline)
     }
 }
 
