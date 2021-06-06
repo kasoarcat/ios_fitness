@@ -20,6 +20,8 @@ protocol Action {
     func counting(json: PoseKit.json_BodyPositions)
 }
 
+#endif
+
 enum ActionEnum: String, CaseIterable {
     case 開合跳         // JumpAction
     case 蹲伏           // CrouchAction
@@ -33,5 +35,3 @@ enum ActionEnum: String, CaseIterable {
     case 弓步           // LungeAction
     case 交叉勾拳        // CrossUppercutAction
 }
-
-#endif
