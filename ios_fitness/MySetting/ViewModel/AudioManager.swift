@@ -10,18 +10,72 @@ import AVFoundation
 
 class AudioManager: ObservableObject {
     var audioPlayer: AVAudioPlayer?
-//    private var isPlaying: Bool = false
+    let speaker: AVSpeechSynthesizer = AVSpeechSynthesizer()
     
-    @Published var musicEnable: Bool = true
-    @Published var soundEffectEnable: Bool = true
-    @Published var musicVolume: Float = 1.0
-    @Published var soundEffectVolume: Float = 1.0
+//    @Published var selectedMusic = 0
+    @Published var music: Music = Music(enable: true, volume: 1.0, selection: 0)
+    @Published var textToSpeech: TextToSpeech = TextToSpeech(enable: true, volume: 1.0)
+    @Published var soundEffect: SoundEffect = SoundEffect(enable: true, volume: 1.0)
     
-    @Published var selectedMusic = 0
-    
-    func play() {
-        
+    func onMusicToggleChange() {
+        if music.enable {
+            music.volume = music.tempVolume
+        } else {
+            music.tempVolume = music.volume
+            music.volume = 0.0
+        }
     }
     
+    func onTTSToggleChange() {
+        if textToSpeech.enable {
+            textToSpeech.volume = textToSpeech.tempVolume
+        } else {
+            textToSpeech.tempVolume = textToSpeech.volume
+            textToSpeech.volume = 0.0
+        }
+    }
     
+    func onSoundToggleChange() {
+        if soundEffect.enable {
+            soundEffect.volume = soundEffect.tempVolume
+        } else {
+            soundEffect.tempVolume = soundEffect.volume
+            soundEffect.volume = 0.0
+        }
+    }
+    
+    func playTTS(text: String) {
+        if speaker.isSpeaking {
+            speaker.stopSpeaking(at: .immediate)
+        } else {
+            let utterance = AVSpeechUtterance(string: text)
+            utterance.voice = AVSpeechSynthesisVoice(language: "en-GB")
+            utterance.volume = textToSpeech.volume
+            DispatchQueue.main.async {
+                self.speaker.speak(utterance)
+            }
+        }
+    }
+    
+    func playSoundEffect() {
+        guard let url = Bundle.main.url(forResource: "SoundEffect", withExtension: "mp3") else {
+            return
+        }
+        
+        do {
+            try AVAudioSession.sharedInstance().setCategory(.playback, mode: .default)
+            try AVAudioSession.sharedInstance().setActive(true)
+            audioPlayer = try AVAudioPlayer(contentsOf: url, fileTypeHint: AVFileType.mp3.rawValue)
+            
+            guard let audioPlayer = audioPlayer else {
+                return
+            }
+            
+            audioPlayer.volume = soundEffect.volume
+            audioPlayer.play()
+            
+        } catch let error {
+            print(error.localizedDescription)
+        }
+    }
 }

@@ -6,3 +6,17 @@
 //
 
 import Foundation
+
+struct Music {
+    var enable: Bool
+    var volume: Float
+    var tempVolume: Float
+    var selection: Int
+    
+    init(enable: Bool, volume: Float, selection: Int) {
+        self.enable = enable
+        self.volume = volume
+        self.tempVolume = volume
+        self.selection = selection
+    }
+}
