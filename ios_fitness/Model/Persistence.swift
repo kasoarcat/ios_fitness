@@ -22,14 +22,15 @@ struct PersistenceController {
             newItem.weight = 50
             newItem.sex = "女"
             
-            let action = Actions(context: viewContext)
-            action.id = UUID()
-            action.calories = 100
-            action.startDate = Date()
-            action.endDate = Date()
-            action.name = "開合跳"
-            action.count = 10
+            
         }
+        let action = Actions(context: viewContext)
+        action.id = UUID()
+        action.calories = 100
+        action.startDate = Date()
+        action.endDate = Date()
+        action.name = "開合跳"
+        action.count = 10
         do {
             try viewContext.save()
         } catch {

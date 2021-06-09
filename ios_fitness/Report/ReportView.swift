@@ -11,6 +11,9 @@ import CoreData
 struct ReportView: View {
     @Environment(\.managedObjectContext) private var viewContext
     
+    @FetchRequest(entity: Actions.entity(), sortDescriptors: [])
+   
+    private var items: FetchedResults<Actions>
     
     @StateObject var date = DatePick()
     
@@ -34,6 +37,17 @@ struct ReportView: View {
             }
         }
     }
+    
+    func matchingCal(date: Date) -> Int{
+        var oneDayCal = 0
+        for i in items{
+            if i.startDate == date{
+                oneDayCal += Int(i.calories)
+            }
+            
+        }
+        return oneDayCal
+    }
     var body: some View {
         NavigationView {
             VStack(alignment: .leading, spacing: 20) {
@@ -55,7 +69,7 @@ struct ReportView: View {
                     .accentColor(.red)
                 Text(date.formatter.string(from: date.date))
                 
-                Text("消耗卡路里: ")
+                Text("消耗卡路里: \(matchingCal(date: date.date))")
                     .font(.system(size: 25))
                 HStack {
                     
