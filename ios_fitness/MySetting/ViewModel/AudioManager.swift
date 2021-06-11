@@ -9,13 +9,25 @@ import Foundation
 import AVFoundation
 
 class AudioManager: ObservableObject {
+    
     var audioPlayer: AVAudioPlayer?
+    var userSetting: UserDefaultManager = UserDefaultManager()
     let speaker: AVSpeechSynthesizer = AVSpeechSynthesizer()
     
 //    @Published var selectedMusic = 0
     @Published var music: Music = Music(enable: true, volume: 1.0, selection: 0)
     @Published var textToSpeech: TextToSpeech = TextToSpeech(enable: true, volume: 1.0)
     @Published var soundEffect: SoundEffect = SoundEffect(enable: true, volume: 1.0)
+    
+    init() {
+        self.music.enable = userSetting.musicEnable
+        self.music.volume = userSetting.musicVolume
+        self.music.selection = userSetting.musicSelection
+        self.textToSpeech.enable = userSetting.ttsEnable
+        self.textToSpeech.volume = userSetting.ttsVolume
+        self.soundEffect.enable = userSetting.soundEffectEnable
+        self.soundEffect.volume = userSetting.soundEffectVolume
+    }
     
     func onMusicToggleChange() {
         if music.enable {
@@ -24,6 +36,12 @@ class AudioManager: ObservableObject {
             music.tempVolume = music.volume
             music.volume = 0.0
         }
+        userSetting.musicEnable = music.enable
+        userSetting.musicVolume = music.volume
+    }
+    
+    func onMusicSliderChange() {
+        userSetting.musicVolume = music.volume
     }
     
     func onTTSToggleChange() {
@@ -33,6 +51,12 @@ class AudioManager: ObservableObject {
             textToSpeech.tempVolume = textToSpeech.volume
             textToSpeech.volume = 0.0
         }
+        userSetting.ttsEnable = textToSpeech.enable
+        userSetting.ttsVolume = textToSpeech.volume
+    }
+    
+    func onTTSSliderChange() {
+        userSetting.ttsVolume = textToSpeech.volume
     }
     
     func onSoundToggleChange() {
@@ -42,14 +66,22 @@ class AudioManager: ObservableObject {
             soundEffect.tempVolume = soundEffect.volume
             soundEffect.volume = 0.0
         }
+        userSetting.soundEffectEnable = soundEffect.enable
+        userSetting.soundEffectVolume = soundEffect.volume
     }
     
-    func playTTS(text: String) {
+    func onSoundSliderChange() {
+        userSetting.soundEffectVolume = soundEffect.volume
+    }
+    
+    // 講中文：zh-TW, 講英文：en-US
+    func playTTS(text: String, language: String) {
         if speaker.isSpeaking {
             speaker.stopSpeaking(at: .immediate)
         } else {
             let utterance = AVSpeechUtterance(string: text)
-            utterance.voice = AVSpeechSynthesisVoice(language: "en-GB")
+            utterance.voice = AVSpeechSynthesisVoice(language: language)
+            utterance.rate = AVSpeechUtteranceDefaultSpeechRate
             utterance.volume = textToSpeech.volume
             DispatchQueue.main.async {
                 self.speaker.speak(utterance)

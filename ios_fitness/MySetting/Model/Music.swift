@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct Music {
+struct Music: Codable {
     var enable: Bool
     var volume: Float
     var tempVolume: Float

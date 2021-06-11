@@ -49,5 +49,47 @@ class UserDefaultManager: ObservableObject {
             UserDefaults.standard.set(self.notificationWeek, forKey: "notificationWeek")
         }
     }
+    
+    @Published var musicEnable: Bool = UserDefaults.standard.bool(forKey: "musicEnable") {
+        didSet {
+            UserDefaults.standard.set(self.musicEnable, forKey: "musicEnable")
+        }
+    }
+    
+    @Published var musicVolume: Float = UserDefaults.standard.float(forKey: "musicVolume") {
+        didSet {
+            UserDefaults.standard.set(self.musicVolume, forKey: "musicVolume")
+        }
+    }
+    
+    @Published var musicSelection: Int = UserDefaults.standard.integer(forKey: "musicSelection") {
+        didSet {
+            UserDefaults.standard.set(self.musicSelection, forKey: "musicSelection")
+        }
+    }
+    
+    @Published var ttsEnable: Bool = UserDefaults.standard.bool(forKey: "ttsEnable") {
+        didSet {
+            UserDefaults.standard.set(self.ttsEnable, forKey: "ttsEnable")
+        }
+    }
+    
+    @Published var ttsVolume: Float = UserDefaults.standard.float(forKey: "ttsVolume") {
+        didSet {
+            UserDefaults.standard.set(self.ttsVolume, forKey: "ttsVolume")
+        }
+    }
+    
+    @Published var soundEffectEnable: Bool = UserDefaults.standard.bool(forKey: "soundEffectEnable") {
+        didSet {
+            UserDefaults.standard.set(self.soundEffectEnable, forKey: "soundEffectEnable")
+        }
+    }
+    
+    @Published var soundEffectVolume: Float = UserDefaults.standard.float(forKey: "soundEffectVolume") {
+        didSet {
+            UserDefaults.standard.set(self.soundEffectVolume, forKey: "soundEffectVolume")
+        }
+    }
 }
 
