@@ -56,6 +56,11 @@
 		C3F2382F2673439B0057542B /* &Z.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = C3F2382E2673439B0057542B /* &Z.mp3 */; };
 		C3F23831267344CD0057542B /* UNICORN.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = C3F23830267344CD0057542B /* UNICORN.mp3 */; };
 		C3F23835267349380057542B /* FileManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3F23834267349380057542B /* FileManager.swift */; };
+		C3B13E922663563A0079EDF9 /* .gitattributes in Resources */ = {isa = PBXBuildFile; fileRef = C3B13E912663563A0079EDF9 /* .gitattributes */; };
+		C3B13E94266371A90079EDF9 /* Charts.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3B13E93266371A90079EDF9 /* Charts.swift */; };
+		C3B13E97266372880079EDF9 /* SwiftUICharts in Frameworks */ = {isa = PBXBuildFile; productRef = C3B13E96266372880079EDF9 /* SwiftUICharts */; };
+		C9DC20B926679D3200CEEC1A /* ReportModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9DC20B826679D3200CEEC1A /* ReportModel.swift */; };
+		C9DC20BD2667A81F00CEEC1A /* DataList.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9DC20BC2667A81F00CEEC1A /* DataList.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -111,6 +116,10 @@
 		C3F2382E2673439B0057542B /* &Z.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "&Z.mp3"; sourceTree = "<group>"; };
 		C3F23830267344CD0057542B /* UNICORN.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = UNICORN.mp3; sourceTree = "<group>"; };
 		C3F23834267349380057542B /* FileManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileManager.swift; sourceTree = "<group>"; };
+		C3B13E912663563A0079EDF9 /* .gitattributes */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitattributes; sourceTree = "<group>"; };
+		C3B13E93266371A90079EDF9 /* Charts.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Charts.swift; sourceTree = "<group>"; };
+		C9DC20B826679D3200CEEC1A /* ReportModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportModel.swift; sourceTree = "<group>"; };
+		C9DC20BC2667A81F00CEEC1A /* DataList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataList.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -195,6 +204,8 @@
 			children = (
 				C3B13E93266371A90079EDF9 /* Charts.swift */,
 				A289B32126577FBE0047A194 /* ReportView.swift */,
+				C9DC20BC2667A81F00CEEC1A /* DataList.swift */,
+				C9DC20B826679D3200CEEC1A /* ReportModel.swift */,
 			);
 			path = Report;
 			sourceTree = "<group>";
@@ -413,6 +424,9 @@
 				C309718C266BAD0200FDC536 /* SoundSlider.swift in Sources */,
 				A28F014F26636939005A171B /* GymDataView.swift in Sources */,
 				C3097199266CFFB400FDC536 /* Music.swift in Sources */,
+				A2CADF592657F861009DE25A /* LeftArmPosition.swift in Sources */,
+				A28F93A62664F32200CAB107 /* UserDefaultManager.swift in Sources */,
+				A28F014F26636939005A171B /* GymDataView.swift in Sources */,
 				A2CADF562657F861009DE25A /* ArmsPosition.swift in Sources */,
 				A2CADF542657F861009DE25A /* PositionCases.swift in Sources */,
 				A289B3552657D0670047A194 /* ContentView.swift in Sources */,
@@ -437,6 +451,8 @@
 				A2CBFEA52663B34D0091176A /* Action.swift in Sources */,
 				A2CADF582657F861009DE25A /* RightLegPosition.swift in Sources */,
 				C3F23835267349380057542B /* FileManager.swift in Sources */,
+				C9DC20BD2667A81F00CEEC1A /* DataList.swift in Sources */,
+				A2CADF582657F861009DE25A /* RightLegPosition.swift in Sources */,
 				A289B32426577FBE0047A194 /* GymView.swift in Sources */,
 				A28F93A32664F32200CAB107 /* Weekday.swift in Sources */,
 				C3B13E94266371A90079EDF9 /* Charts.swift in Sources */,
@@ -445,6 +461,8 @@
 				A2CBFEB32663C1830091176A /* SkipRopeAction.swift in Sources */,
 				A2CADF5A2657F861009DE25A /* Bodypart.swift in Sources */,
 				C3097197266CF9A800FDC536 /* TextToSpeech.swift in Sources */,
+				C9DC20B926679D3200CEEC1A /* ReportModel.swift in Sources */,
+				A2CADF5A2657F861009DE25A /* Bodypart.swift in Sources */,
 				A289B30A26577F5B0047A194 /* ios_fitnessApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
