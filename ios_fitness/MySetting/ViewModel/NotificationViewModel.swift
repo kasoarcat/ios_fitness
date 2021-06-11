@@ -65,6 +65,7 @@ class NotificationViewModel: ObservableObject {
                         content.sound = .default
                         
                         var dateComponents = DateComponents()
+                        dateComponents.weekday = index + 1
                         dateComponents.hour = (self.time.meridium == "上午") ? Int(self.time.hour) : (Int(self.time.hour) ?? 0) + 12
                         dateComponents.minute = Int(self.time.minute)
                         let trigger = UNCalendarNotificationTrigger(dateMatching: dateComponents, repeats: true)
