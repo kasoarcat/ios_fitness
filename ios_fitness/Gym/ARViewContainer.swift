@@ -25,6 +25,9 @@ class MyARView : ARView, ARSessionDelegate {
     var actionEnum: ActionEnum
     var action: Action
     
+    var left: String = ""
+    var right: String = ""
+    
     init(frame: CGRect, handDelegate: PoseDelegate, actionEnum: ActionEnum) {
         self.handDelegate = handDelegate
         self.actionEnum = .開合跳
@@ -73,16 +76,41 @@ class MyARView : ARView, ARSessionDelegate {
             action.counting(json: json)
             
             // 手
-            print("position_leftArm: \(json.position_leftArm)")
-            print("json.position_rightArm: \(json.position_rightArm)")
-//            print("json.position_leftForearm: \(json.position_leftForearm)")
-//            print("json.position_rightForearm: \(json.position_rightForearm)")
+//            if left != json.position_leftArm.position {
+//                left = json.position_leftArm.position
+//                print("left: \(left)")
+//            }
+//            if right != json.position_rightArm.position {
+//                right = json.position_rightArm.position
+//                print("right: \(right)")
+//            }
+//            if left != json.position_leftForearm.position {
+//                left = json.position_leftForearm.position
+//                print("left: \(left)")
+//            }
+//            if right != json.position_rightForearm.position {
+//                right = json.position_rightForearm.position
+//                print("right: \(right)")
+//            }
+            
             // 腳
-//            print("json.position_leftLeg: \(json.position_leftLeg)")
-//            print("json.position_rightLeg: \(json.position_rightLeg)")
-//            print("json.position_leftForeleg: \(json.position_leftForeleg)")
-//            print("json.position_rightForeleg: \(json.position_rightForeleg)")
-            print()
+//            if left != json.position_leftLeg.position {
+//                left = json.position_leftLeg.position
+//                print("left: \(left)")
+//            }
+//            if right != json.position_rightLeg.position {
+//                right = json.position_rightLeg.position
+//                print("right: \(right)")
+//            }
+//            if left != json.position_leftForeleg.position {
+//                left = json.position_leftForeleg.position
+//                print("left: \(left)")
+//            }
+//            if right != json.position_rightForeleg.position {
+//                right = json.position_rightForeleg.position
+//                print("right: \(right)")
+//            }
+            
         }
     }
     
@@ -102,11 +130,32 @@ class MyARView : ARView, ARSessionDelegate {
 //                self.action = SkipRopeAction(delegate: handDelegate)
             case .蹲姿上伸:
                 print("蹲姿上伸")
-                
+                self.action = SquattingUpAction(delegate: handDelegate)
+            case .原地提膝踏步:
+                print("原地提膝踏步")
+                self.action = HighKneesRunningInPlaceAction(delegate: handDelegate)
+//            case .原地跑:
+//                print("原地跑")
+//                self.action = RunAction(delegate: handDelegate)
+            case .蹲跳運動:
+                print("蹲跳運動")
+                self.action = SquatJumpAction(delegate: handDelegate)
+//            case .踢臀跑:
+//                print("踢臀跑")
+//                self.action = KickRunningAction(delegate: handDelegate)
+            case .深蹲:
+                print("深蹲")
+                self.action = SquatAction(delegate: handDelegate)
+            case .弓步:
+                print("弓步")
+                self.action = LungeAction(delegate: handDelegate)
+            case .交叉勾拳:
+                print("交叉勾拳")
+                self.action = CrossUppercutAction(delegate: handDelegate)
             }
         }
-        
     }
+    
 }
 
 var myArView: MyARView?

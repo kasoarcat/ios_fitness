@@ -18,7 +18,6 @@
 		A289B32526577FBE0047A194 /* ReportView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A289B32126577FBE0047A194 /* ReportView.swift */; };
 		A289B3502657B3E00047A194 /* character in Resources */ = {isa = PBXBuildFile; fileRef = A289B34F2657B3E00047A194 /* character */; };
 		A289B3552657D0670047A194 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A289B3542657D0670047A194 /* ContentView.swift */; };
-		A28F014F26636939005A171B /* GymDataView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A28F014E26636939005A171B /* GymDataView.swift */; };
 		A28F93932664F2DE00CAB107 /* NotificationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A28F938D2664F2DE00CAB107 /* NotificationView.swift */; };
 		A28F93942664F2DE00CAB107 /* SoundEffectView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A28F938F2664F2DE00CAB107 /* SoundEffectView.swift */; };
 		A28F93952664F2DE00CAB107 /* UserDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A28F93912664F2DE00CAB107 /* UserDetailView.swift */; };
@@ -30,6 +29,14 @@
 		A28F93A82664F32200CAB107 /* TimePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = A28F93A12664F32200CAB107 /* TimePicker.swift */; };
 		A28F93A92664F32200CAB107 /* SettingFormRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = A28F93A22664F32200CAB107 /* SettingFormRow.swift */; };
 		A29F44242667826700B0E029 /* ActionsDataView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A29F44232667826700B0E029 /* ActionsDataView.swift */; };
+		A2AC685D266C84BC0065BA6F /* HighKneesRunningInPlaceAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2AC685C266C84BC0065BA6F /* HighKneesRunningInPlaceAction.swift */; };
+		A2AC6860266C8FDE0065BA6F /* RunAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2AC685F266C8FDE0065BA6F /* RunAction.swift */; };
+		A2AC6863266C91CF0065BA6F /* SquatJumpAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2AC6862266C91CF0065BA6F /* SquatJumpAction.swift */; };
+		A2AC6866266C92E60065BA6F /* KickRunningAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2AC6865266C92E60065BA6F /* KickRunningAction.swift */; };
+		A2AC6869266C945B0065BA6F /* SquatAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2AC6868266C945B0065BA6F /* SquatAction.swift */; };
+		A2AC686C266C959B0065BA6F /* LungeAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2AC686B266C959B0065BA6F /* LungeAction.swift */; };
+		A2AC6870266C96A40065BA6F /* CrossUppercutAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2AC686F266C96A40065BA6F /* CrossUppercutAction.swift */; };
+		A2AC6874266CE0430065BA6F /* GymListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2AC6873266CE0430065BA6F /* GymListView.swift */; };
 		A2CADF542657F861009DE25A /* PositionCases.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2CADF4B2657F861009DE25A /* PositionCases.swift */; };
 		A2CADF552657F861009DE25A /* LegsPosition.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2CADF4C2657F861009DE25A /* LegsPosition.swift */; };
 		A2CADF562657F861009DE25A /* ArmsPosition.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2CADF4D2657F861009DE25A /* ArmsPosition.swift */; };
@@ -77,7 +84,6 @@
 		A289B32126577FBE0047A194 /* ReportView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReportView.swift; sourceTree = "<group>"; };
 		A289B34F2657B3E00047A194 /* character */ = {isa = PBXFileReference; lastKnownFileType = folder; path = character; sourceTree = "<group>"; };
 		A289B3542657D0670047A194 /* ContentView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
-		A28F014E26636939005A171B /* GymDataView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GymDataView.swift; sourceTree = "<group>"; };
 		A28F938D2664F2DE00CAB107 /* NotificationView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotificationView.swift; sourceTree = "<group>"; };
 		A28F938F2664F2DE00CAB107 /* SoundEffectView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SoundEffectView.swift; sourceTree = "<group>"; };
 		A28F93912664F2DE00CAB107 /* UserDetailView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserDetailView.swift; sourceTree = "<group>"; };
@@ -91,6 +97,14 @@
 		A29F44232667826700B0E029 /* ActionsDataView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActionsDataView.swift; sourceTree = "<group>"; };
 		A29F44262667830800B0E029 /* ios_fitness2.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = ios_fitness2.xcdatamodel; sourceTree = "<group>"; };
 		A29F442826678A1400B0E029 /* ios_fitness3.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = ios_fitness3.xcdatamodel; sourceTree = "<group>"; };
+		A2AC685C266C84BC0065BA6F /* HighKneesRunningInPlaceAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HighKneesRunningInPlaceAction.swift; sourceTree = "<group>"; };
+		A2AC685F266C8FDE0065BA6F /* RunAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RunAction.swift; sourceTree = "<group>"; };
+		A2AC6862266C91CF0065BA6F /* SquatJumpAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SquatJumpAction.swift; sourceTree = "<group>"; };
+		A2AC6865266C92E60065BA6F /* KickRunningAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KickRunningAction.swift; sourceTree = "<group>"; };
+		A2AC6868266C945B0065BA6F /* SquatAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SquatAction.swift; sourceTree = "<group>"; };
+		A2AC686B266C959B0065BA6F /* LungeAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LungeAction.swift; sourceTree = "<group>"; };
+		A2AC686F266C96A40065BA6F /* CrossUppercutAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CrossUppercutAction.swift; sourceTree = "<group>"; };
+		A2AC6873266CE0430065BA6F /* GymListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GymListView.swift; sourceTree = "<group>"; };
 		A2CADF4B2657F861009DE25A /* PositionCases.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PositionCases.swift; sourceTree = "<group>"; };
 		A2CADF4C2657F861009DE25A /* LegsPosition.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LegsPosition.swift; sourceTree = "<group>"; };
 		A2CADF4D2657F861009DE25A /* ArmsPosition.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArmsPosition.swift; sourceTree = "<group>"; };
@@ -193,7 +207,7 @@
 				A2CBFEAB2663B3870091176A /* Actions */,
 				A24DA5B22657D2C000A3B10C /* ARViewContainer.swift */,
 				A289B31F26577FBE0047A194 /* GymView.swift */,
-				A28F014E26636939005A171B /* GymDataView.swift */,
+				A2AC6873266CE0430065BA6F /* GymListView.swift */,
 				A29F44232667826700B0E029 /* ActionsDataView.swift */,
 			);
 			path = Gym;
@@ -306,6 +320,13 @@
 				A2CBFEAC2663B3A00091176A /* CrouchAction.swift */,
 				A2CBFEB22663C1830091176A /* SkipRopeAction.swift */,
 				A2CBFEB62663D8370091176A /* SquattingUpAction.swift */,
+				A2AC685C266C84BC0065BA6F /* HighKneesRunningInPlaceAction.swift */,
+				A2AC685F266C8FDE0065BA6F /* RunAction.swift */,
+				A2AC6862266C91CF0065BA6F /* SquatJumpAction.swift */,
+				A2AC6865266C92E60065BA6F /* KickRunningAction.swift */,
+				A2AC6868266C945B0065BA6F /* SquatAction.swift */,
+				A2AC686B266C959B0065BA6F /* LungeAction.swift */,
+				A2AC686F266C96A40065BA6F /* CrossUppercutAction.swift */,
 			);
 			path = Actions;
 			sourceTree = "<group>";
@@ -426,7 +447,7 @@
 				C3097199266CFFB400FDC536 /* Music.swift in Sources */,
 				A2CADF592657F861009DE25A /* LeftArmPosition.swift in Sources */,
 				A28F93A62664F32200CAB107 /* UserDefaultManager.swift in Sources */,
-				A28F014F26636939005A171B /* GymDataView.swift in Sources */,
+				A2AC6860266C8FDE0065BA6F /* RunAction.swift in Sources */,
 				A2CADF562657F861009DE25A /* ArmsPosition.swift in Sources */,
 				A2CADF542657F861009DE25A /* PositionCases.swift in Sources */,
 				A289B3552657D0670047A194 /* ContentView.swift in Sources */,
@@ -438,9 +459,11 @@
 				A28F93A92664F32200CAB107 /* SettingFormRow.swift in Sources */,
 				A28F93932664F2DE00CAB107 /* NotificationView.swift in Sources */,
 				A2CADF5C2657F861009DE25A /* PoseKit.swift in Sources */,
+				A2AC686C266C959B0065BA6F /* LungeAction.swift in Sources */,
 				A29F44242667826700B0E029 /* ActionsDataView.swift in Sources */,
 				A2CBFEA82663B36F0091176A /* JumpAction.swift in Sources */,
 				A28F93952664F2DE00CAB107 /* UserDetailView.swift in Sources */,
+				A2AC685D266C84BC0065BA6F /* HighKneesRunningInPlaceAction.swift in Sources */,
 				A28F93A42664F32200CAB107 /* AlarmTime.swift in Sources */,
 				C3097195266CD39800FDC536 /* SoundEffect.swift in Sources */,
 				A270900C26580FB700C017DF /* MySettingView.swift in Sources */,
@@ -449,12 +472,16 @@
 				A24DA5B32657D2C000A3B10C /* ARViewContainer.swift in Sources */,
 				A2CADF552657F861009DE25A /* LegsPosition.swift in Sources */,
 				A2CBFEA52663B34D0091176A /* Action.swift in Sources */,
+				A2AC6866266C92E60065BA6F /* KickRunningAction.swift in Sources */,
 				A2CADF582657F861009DE25A /* RightLegPosition.swift in Sources */,
 				C3F23835267349380057542B /* FileManager.swift in Sources */,
 				C9DC20BD2667A81F00CEEC1A /* DataList.swift in Sources */,
 				A2CADF582657F861009DE25A /* RightLegPosition.swift in Sources */,
 				A289B32426577FBE0047A194 /* GymView.swift in Sources */,
 				A28F93A32664F32200CAB107 /* Weekday.swift in Sources */,
+				A2AC6869266C945B0065BA6F /* SquatAction.swift in Sources */,
+				A2AC6870266C96A40065BA6F /* CrossUppercutAction.swift in Sources */,
+				A2AC6874266CE0430065BA6F /* GymListView.swift in Sources */,
 				C3B13E94266371A90079EDF9 /* Charts.swift in Sources */,
 				A28F93A52664F32200CAB107 /* AlertOption.swift in Sources */,
 				A289B31626577F5E0047A194 /* ios_fitness.xcdatamodeld in Sources */,
@@ -463,6 +490,7 @@
 				C3097197266CF9A800FDC536 /* TextToSpeech.swift in Sources */,
 				C9DC20B926679D3200CEEC1A /* ReportModel.swift in Sources */,
 				A2CADF5A2657F861009DE25A /* Bodypart.swift in Sources */,
+				A2AC6863266C91CF0065BA6F /* SquatJumpAction.swift in Sources */,
 				A289B30A26577F5B0047A194 /* ios_fitnessApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
