@@ -62,7 +62,6 @@
 		C3B13E97266372880079EDF9 /* SwiftUICharts in Frameworks */ = {isa = PBXBuildFile; productRef = C3B13E96266372880079EDF9 /* SwiftUICharts */; };
 		C3F2382F2673439B0057542B /* &Z.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = C3F2382E2673439B0057542B /* &Z.mp3 */; };
 		C3F23831267344CD0057542B /* UNICORN.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = C3F23830267344CD0057542B /* UNICORN.mp3 */; };
-		C3F23835267349380057542B /* FileManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3F23834267349380057542B /* FileManager.swift */; };
 		C3F2F3242673BB0800D4AE74 /* ActionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3F2F3232673BB0800D4AE74 /* ActionView.swift */; };
 		C3F2F3272673BE0000D4AE74 /* ActionModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3F2F3262673BE0000D4AE74 /* ActionModel.swift */; };
 		C3F2F3292673CA3D00D4AE74 /* GymListRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3F2F3282673CA3D00D4AE74 /* GymListRowView.swift */; };
@@ -129,7 +128,6 @@
 		C3B13E93266371A90079EDF9 /* Charts.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Charts.swift; sourceTree = "<group>"; };
 		C3F2382E2673439B0057542B /* &Z.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "&Z.mp3"; sourceTree = "<group>"; };
 		C3F23830267344CD0057542B /* UNICORN.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = UNICORN.mp3; sourceTree = "<group>"; };
-		C3F23834267349380057542B /* FileManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileManager.swift; sourceTree = "<group>"; };
 		C3F2F3232673BB0800D4AE74 /* ActionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActionView.swift; sourceTree = "<group>"; };
 		C3F2F3262673BE0000D4AE74 /* ActionModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActionModel.swift; sourceTree = "<group>"; };
 		C3F2F3282673CA3D00D4AE74 /* GymListRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GymListRowView.swift; sourceTree = "<group>"; };
@@ -187,7 +185,6 @@
 				A287C547265888CB009066D3 /* Models */,
 				C3F2F32A2673D1F500D4AE74 /* Views */,
 				C309718F266CC50200FDC536 /* Resources */,
-				C3F23833267349230057542B /* Extension */,
 				A289B30926577F5B0047A194 /* ios_fitnessApp.swift */,
 				A289B3542657D0670047A194 /* ContentView.swift */,
 				A289B34F2657B3E00047A194 /* character */,
@@ -295,14 +292,6 @@
 				C3F2382E2673439B0057542B /* &Z.mp3 */,
 			);
 			path = Songs;
-			sourceTree = "<group>";
-		};
-		C3F23833267349230057542B /* Extension */ = {
-			isa = PBXGroup;
-			children = (
-				C3F23834267349380057542B /* FileManager.swift */,
-			);
-			path = Extension;
 			sourceTree = "<group>";
 		};
 		C3F2F32A2673D1F500D4AE74 /* Views */ = {
@@ -536,7 +525,6 @@
 				A2CBFEA52663B34D0091176A /* Action.swift in Sources */,
 				A2AC6866266C92E60065BA6F /* KickRunningAction.swift in Sources */,
 				A2CADF582657F861009DE25A /* RightLegPosition.swift in Sources */,
-				C3F23835267349380057542B /* FileManager.swift in Sources */,
 				C9DC20BD2667A81F00CEEC1A /* DataList.swift in Sources */,
 				A2CADF582657F861009DE25A /* RightLegPosition.swift in Sources */,
 				A289B32426577FBE0047A194 /* GymView.swift in Sources */,
