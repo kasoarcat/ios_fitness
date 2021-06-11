@@ -10,7 +10,7 @@ import UIKit
 import UserNotifications
 
 class NotificationViewModel: ObservableObject {
-    var userDefaultManager: UserDefaultManager = UserDefaultManager()
+    var userDefaults: UserDefaultManager = UserDefaultManager()
     @Published var time =  AlarmTime(hour: "12", minute: "0", meridium: "上午")
     @Published var alert = AlertOption(type: .none, message: "")
     @Published var showAlert: Bool = false
@@ -20,8 +20,8 @@ class NotificationViewModel: ObservableObject {
     private let center = UNUserNotificationCenter.current()
     
     init() {
-        selection = [userDefaultManager.notificationMeridium, userDefaultManager.notificationHour, userDefaultManager.notificationMinute]
-        time.weeks = userDefaultManager.notificationWeek
+        selection = [userDefaults.notificationMeridium, userDefaults.notificationHour, userDefaults.notificationMinute]
+        time.weeks = userDefaults.notificationWeek
         print(selection)
         center.requestAuthorization(options: [.alert, .sound, .badge]) { permissionGranted, error in
             DispatchQueue.main.async {
@@ -42,12 +42,12 @@ class NotificationViewModel: ObservableObject {
     
     private func setTimeBySelection() {
         time.meridium = selection[0]
-        userDefaultManager.notificationMeridium = selection[0]
+        userDefaults.notificationMeridium = selection[0]
         time.hour = selection[1]
-        userDefaultManager.notificationHour = selection[1]
+        userDefaults.notificationHour = selection[1]
         time.minute = selection[2]
-        userDefaultManager.notificationMinute = selection[2]
-        userDefaultManager.notificationWeek = time.weeks
+        userDefaults.notificationMinute = selection[2]
+        userDefaults.notificationWeek = time.weeks
         print(time.weeks)
         print(selection)
     }
@@ -65,6 +65,7 @@ class NotificationViewModel: ObservableObject {
                         content.sound = .default
                         
                         var dateComponents = DateComponents()
+                        dateComponents.weekday = index + 1
                         dateComponents.hour = (self.time.meridium == "上午") ? Int(self.time.hour) : (Int(self.time.hour) ?? 0) + 12
                         dateComponents.minute = Int(self.time.minute)
                         let trigger = UNCalendarNotificationTrigger(dateMatching: dateComponents, repeats: true)

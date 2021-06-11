@@ -9,7 +9,7 @@ import SwiftUI
 import UserNotifications
 
 struct NotificationView: View {
-    @ObservedObject private var notificationViewModel = NotificationViewModel()
+    @StateObject private var notificationViewModel = NotificationViewModel()
     @State var data: [(String, [String])] = [
         ("meridium", ["上午", "下午"]),
         ("hour", Array(1...12).map { "\($0)" }),
@@ -34,7 +34,7 @@ struct NotificationView: View {
                             .frame(width: 45, height: 45)
                             .overlay(RoundedRectangle(cornerRadius: /*@START_MENU_TOKEN@*/25.0/*@END_MENU_TOKEN@*/)
                                         .stroke($notificationViewModel.time.wrappedValue.weeks[index] == true ? Color.blue : Color.white, lineWidth: 2))
-                            
+                        
                     })
                     
                 }
@@ -55,8 +55,8 @@ struct NotificationView: View {
                         Alert(title: Text($notificationViewModel.alert.type.wrappedValue.rawValue), message: Text($notificationViewModel.alert.message.wrappedValue), dismissButton: .default(Text("Ok")))
                     })
             })
-            
         }
+        .navigationBarTitle("提醒", displayMode: .inline)
         
     }
 }

@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct ContentView: View {
+    @StateObject var audioManager = AudioManager()
     var body: some View {
         TabView {
             GymListView()
@@ -15,16 +16,19 @@ struct ContentView: View {
                     Image(systemName: "music.house.fill")
                     Text("運動場")
                 }
+                .environmentObject(audioManager)
             ReportView()
                 .tabItem {
                     Image(systemName: "music.house.fill")
                     Text("報告")
                 }
+                .environmentObject(audioManager)
             MySettingView()
                 .tabItem {
                     Image(systemName: "music.house.fill")
                     Text("我的設定")
                 }
+                .environmentObject(audioManager)
         }
     }
 }

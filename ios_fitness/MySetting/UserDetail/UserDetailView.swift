@@ -48,6 +48,7 @@ struct UserDetailView: View {
                 }
             }
         }
+        .navigationBarTitle("關於我", displayMode: .inline)
     }
 }
 
