@@ -21,8 +21,8 @@ struct SoundEffectView: View {
                     HStack {
                         Text("選擇音樂")
                         Picker("", selection: $audioManager.music.selection) {
-                            ForEach(0..<250, id: \.self) { number in
-                                Text(String(number))
+                            ForEach(audioManager.songs.indices) { index in
+                                Text(audioManager.songs[index])
                             }
                         }
                         .navigationViewStyle(StackNavigationViewStyle())

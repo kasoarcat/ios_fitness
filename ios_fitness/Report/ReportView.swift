@@ -34,11 +34,11 @@ struct ReportView: View {
                 
                 Text("消耗卡路里: \(calories)")
                     .font(.system(size: 25))
-                Button("test") {
-                    print(userSetting.weight)
+                Button("play") {
+                    audioManager.playMusic()
                 }
-                Button("test") {
-                    audioManager.playSoundEffect()
+                Button("stop") {
+                    audioManager.stopMusic()
                 }
             }
             .padding()

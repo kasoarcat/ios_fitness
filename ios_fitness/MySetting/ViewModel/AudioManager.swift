@@ -14,7 +14,8 @@ class AudioManager: ObservableObject {
     var userSetting: UserDefaultManager = UserDefaultManager()
     let speaker: AVSpeechSynthesizer = AVSpeechSynthesizer()
     
-//    @Published var selectedMusic = 0
+    var songs: [String] = ["UNICORN", "&Z"]
+    
     @Published var music: Music = Music(enable: true, volume: 1.0, selection: 0)
     @Published var textToSpeech: TextToSpeech = TextToSpeech(enable: true, volume: 1.0)
     @Published var soundEffect: SoundEffect = SoundEffect(enable: true, volume: 1.0)
@@ -72,6 +73,34 @@ class AudioManager: ObservableObject {
     
     func onSoundSliderChange() {
         userSetting.soundEffectVolume = soundEffect.volume
+    }
+    
+    func playMusic() {
+        guard let url = Bundle.main.url(forResource: self.songs[self.music.selection], withExtension: "mp3") else {
+            return
+        }
+        
+        do {
+            try AVAudioSession.sharedInstance().setCategory(.playback, mode: .default)
+            try AVAudioSession.sharedInstance().setActive(true)
+            audioPlayer = try AVAudioPlayer(contentsOf: url, fileTypeHint: AVFileType.mp3.rawValue)
+            
+            guard let audioPlayer = audioPlayer else {
+                return
+            }
+            
+            audioPlayer.volume = music.volume
+            audioPlayer.play()
+            
+        } catch let error {
+            print(error.localizedDescription)
+        }
+    }
+    
+    func stopMusic() {
+        if let audioPlayer = audioPlayer {
+            audioPlayer.stop()
+        }
     }
     
     // 講中文：zh-TW, 講英文：en-US
