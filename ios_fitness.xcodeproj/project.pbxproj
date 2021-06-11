@@ -63,9 +63,6 @@
 		C3F2382F2673439B0057542B /* &Z.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = C3F2382E2673439B0057542B /* &Z.mp3 */; };
 		C3F23831267344CD0057542B /* UNICORN.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = C3F23830267344CD0057542B /* UNICORN.mp3 */; };
 		C3F23835267349380057542B /* FileManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3F23834267349380057542B /* FileManager.swift */; };
-		C3B13E922663563A0079EDF9 /* .gitattributes in Resources */ = {isa = PBXBuildFile; fileRef = C3B13E912663563A0079EDF9 /* .gitattributes */; };
-		C3B13E94266371A90079EDF9 /* Charts.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3B13E93266371A90079EDF9 /* Charts.swift */; };
-		C3B13E97266372880079EDF9 /* SwiftUICharts in Frameworks */ = {isa = PBXBuildFile; productRef = C3B13E96266372880079EDF9 /* SwiftUICharts */; };
 		C9DC20B926679D3200CEEC1A /* ReportModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9DC20B826679D3200CEEC1A /* ReportModel.swift */; };
 		C9DC20BD2667A81F00CEEC1A /* DataList.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9DC20BC2667A81F00CEEC1A /* DataList.swift */; };
 /* End PBXBuildFile section */
@@ -130,8 +127,6 @@
 		C3F2382E2673439B0057542B /* &Z.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "&Z.mp3"; sourceTree = "<group>"; };
 		C3F23830267344CD0057542B /* UNICORN.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = UNICORN.mp3; sourceTree = "<group>"; };
 		C3F23834267349380057542B /* FileManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileManager.swift; sourceTree = "<group>"; };
-		C3B13E912663563A0079EDF9 /* .gitattributes */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitattributes; sourceTree = "<group>"; };
-		C3B13E93266371A90079EDF9 /* Charts.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Charts.swift; sourceTree = "<group>"; };
 		C9DC20B826679D3200CEEC1A /* ReportModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportModel.swift; sourceTree = "<group>"; };
 		C9DC20BC2667A81F00CEEC1A /* DataList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataList.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -443,7 +438,6 @@
 				A2CADF592657F861009DE25A /* LeftArmPosition.swift in Sources */,
 				A28F93A62664F32200CAB107 /* UserDefaultManager.swift in Sources */,
 				C309718C266BAD0200FDC536 /* SoundSlider.swift in Sources */,
-				A28F014F26636939005A171B /* GymDataView.swift in Sources */,
 				C3097199266CFFB400FDC536 /* Music.swift in Sources */,
 				A2CADF592657F861009DE25A /* LeftArmPosition.swift in Sources */,
 				A28F93A62664F32200CAB107 /* UserDefaultManager.swift in Sources */,
@@ -621,7 +615,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"ios_fitness/Preview Content\"";
-				DEVELOPMENT_TEAM = 4DQ2P92QE7;
+				DEVELOPMENT_TEAM = 4L7C3QD67C;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = ios_fitness/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
@@ -643,7 +637,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"ios_fitness/Preview Content\"";
-				DEVELOPMENT_TEAM = 4DQ2P92QE7;
+				DEVELOPMENT_TEAM = 4L7C3QD67C;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = ios_fitness/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
