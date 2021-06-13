@@ -9,9 +9,11 @@ import SwiftUI
 
 struct ContentView: View {
     @StateObject var audioManager = AudioManager()
+    
     var body: some View {
         TabView {
             GymListView()
+//            ActionsDataView()
                 .tabItem {
                     Image(systemName: "music.house.fill")
                     Text("運動場")

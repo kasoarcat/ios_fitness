@@ -74,7 +74,7 @@
 		A270900B26580FB700C017DF /* MySettingView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MySettingView.swift; sourceTree = "<group>"; };
 		A289B30626577F5B0047A194 /* ios_fitness.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ios_fitness.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A289B30926577F5B0047A194 /* ios_fitnessApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ios_fitnessApp.swift; sourceTree = "<group>"; };
-		A289B30D26577F5E0047A194 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = Assets.xcassets; sourceTree = "<group>"; };
+		A289B30D26577F5E0047A194 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A289B31026577F5E0047A194 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		A289B31226577F5E0047A194 /* Persistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Persistence.swift; sourceTree = "<group>"; };
 		A289B31526577F5E0047A194 /* ios_fitness.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = ios_fitness.xcdatamodel; sourceTree = "<group>"; };
@@ -671,7 +671,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"ios_fitness/Preview Content\"";
-				DEVELOPMENT_TEAM = 4L7C3QD67C;
+				DEVELOPMENT_TEAM = 4DQ2P92QE7;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = ios_fitness/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
@@ -679,7 +679,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.jakey.lee.fitness;
+				PRODUCT_BUNDLE_IDENTIFIER = com.jakey2.fitness;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -693,7 +693,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"ios_fitness/Preview Content\"";
-				DEVELOPMENT_TEAM = 4L7C3QD67C;
+				DEVELOPMENT_TEAM = 4DQ2P92QE7;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = ios_fitness/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
@@ -701,7 +701,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.jakey.lee.fitness;
+				PRODUCT_BUNDLE_IDENTIFIER = com.jakey2.fitness;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
