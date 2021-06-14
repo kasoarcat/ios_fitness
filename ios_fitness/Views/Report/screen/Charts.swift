@@ -13,20 +13,21 @@ struct Charts: View {
     @Environment(\.managedObjectContext) private var viewContext
     
     @StateObject var date = DatePick()
+    
 //    var selectedDateRange = [("5/20",154),("5/21",45),("5/22",42),("5/23",563),("5/24",342),("5/25",245),("5/26",123)]
     
     @FetchRequest(entity: Actions.entity(), sortDescriptors: [])
-   
+    
     private var items: FetchedResults<Actions>
     
     var selectedDate: String{
-                    date.formatter.string(from: date.date)
-                }
-  
+        date.formatter.string(from: date.date)
+            }
+     
     func matchingCal(date: Date) -> Int{
         var oneDayCal = 0
         for i in items{
-            if i.startDate == date{
+            if DatePick().formatter.string(from: i.startDate!) == DatePick().formatter.string(from: date){
                 oneDayCal += Int(i.calories)
             }
             
@@ -35,13 +36,16 @@ struct Charts: View {
     }
         
     
+//   var selectedDateRange: [(String,Int)]{
+    
+        
     var selectedDateRange: [(String,Int)]{
         let firstDate = Calendar.current.date(byAdding: .day, value: -3, to: date.date)!
-        guard let secondDate = Calendar.current.date(byAdding: .day, value: -2, to: date.date) else { return [("date",0)] }
-        guard let thirdDate = Calendar.current.date(byAdding: .day, value: -1, to: date.date) else { return [("date",0)] }
-        guard let fifthDate = Calendar.current.date(byAdding: .day, value: 1, to: date.date) else { return [("date",0)] }
-        guard let sixthDate = Calendar.current.date(byAdding: .day, value: 2, to: date.date) else { return [("date",0)] }
-        guard let seventhDate = Calendar.current.date(byAdding: .day, value: 3, to: date.date) else { return [("date",0)] }
+        let secondDate = Calendar.current.date(byAdding: .day, value: -2, to: date.date)!
+        let thirdDate = Calendar.current.date(byAdding: .day, value: -1, to: date.date)!
+        let fifthDate = Calendar.current.date(byAdding: .day, value: 1, to: date.date)!
+        let sixthDate = Calendar.current.date(byAdding: .day, value: 2, to: date.date)!
+        let seventhDate = Calendar.current.date(byAdding: .day, value: 3, to: date.date)!
         let first = date.formatter.string(from:firstDate)
         let second = date.formatter.string(from:secondDate)
         let third = date.formatter.string(from:thirdDate)
@@ -51,7 +55,11 @@ struct Charts: View {
         return [(first,matchingCal(date: firstDate)),(second,matchingCal(date: secondDate)),(third,matchingCal(date: thirdDate)),(selectedDate,matchingCal(date: date.date)),(fifth,matchingCal(date: fifthDate)),(sixth,matchingCal(date: sixthDate)),(seventh,matchingCal(date: seventhDate))]
             
         }
+    
+    
+    
     var sevenDaysCal: Int{
+//
         let firstDate = Calendar.current.date(byAdding: .day, value: -3, to: date.date)!
         let secondDate = Calendar.current.date(byAdding: .day, value: -2, to: date.date)!
         let thirdDate = Calendar.current.date(byAdding: .day, value: -1, to: date.date)!
@@ -84,6 +92,10 @@ struct Charts: View {
                 
                 Text("總消耗卡路里: \(totalCal)")
                     .font(.title)
+                
+//                let sum =  list[0].1 + list[1].1 +  list[2].1 +  list[3].1 +  list[4].1 +  list[5].1 +
+//                    list[6].1
+                    
                 Text("7日內消耗卡路里: \(sevenDaysCal)")
                     .font(.title)
                 let onlyDate = date.formatter.string(from: date.date)

@@ -41,7 +41,7 @@ struct ReportView: View {
     func matchingCal(date: Date) -> Int{
         var oneDayCal = 0
         for i in items{
-            if i.startDate == date{
+            if DatePick().formatter.string(from: i.startDate!) == DatePick().formatter.string(from: date){
                 oneDayCal += Int(i.calories)
             }
             

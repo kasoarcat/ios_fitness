@@ -53,7 +53,7 @@ struct PersistenceController {
                     action.calories = Int32.random(in: 50...200) * Int32(action.count)
                     action.startDate = formatter.date(from: "2021/\(m)/\(d)")
                     action.endDate = formatter.date(from: "2021/\(m)/\(d)")
-                    
+
                     let c = Int.random(in: 0..<ActionEnum.allCases.count)
                     action.name = ActionEnum.allCases[c].rawValue
                 }

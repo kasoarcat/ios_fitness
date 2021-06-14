@@ -11,14 +11,16 @@ struct DataList: View {
     
     @Environment(\.managedObjectContext) private var viewContext
     
-//    @FetchRequest(
-//        sortDescriptors: [NSSortDescriptor(keyPath: \Actions.calories, ascending: true)],
-//        animation: .default)
-    @FetchRequest(entity: Actions.entity(), sortDescriptors: [])
+    @FetchRequest(
+        sortDescriptors: [NSSortDescriptor(keyPath: \Actions.startDate, ascending: true)],
+        animation: .default)
+//    @FetchRequest(entity: Actions.entity(), sortDescriptors: [])
    
     private var items: FetchedResults<Actions>
     
     @StateObject var date = DatePick()
+    
+    
     
     var body: some View {
         List{
