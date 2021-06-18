@@ -57,6 +57,7 @@
 		C3097195266CD39800FDC536 /* SoundEffect.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3097194266CD39800FDC536 /* SoundEffect.swift */; };
 		C3097197266CF9A800FDC536 /* TextToSpeech.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3097196266CF9A800FDC536 /* TextToSpeech.swift */; };
 		C3097199266CFFB400FDC536 /* Music.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3097198266CFFB400FDC536 /* Music.swift */; };
+		C3240B36267C726300EC732B /* beep.wav in Resources */ = {isa = PBXBuildFile; fileRef = C3240B35267C726300EC732B /* beep.wav */; };
 		C3B13E922663563A0079EDF9 /* .gitattributes in Resources */ = {isa = PBXBuildFile; fileRef = C3B13E912663563A0079EDF9 /* .gitattributes */; };
 		C3B13E94266371A90079EDF9 /* Charts.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3B13E93266371A90079EDF9 /* Charts.swift */; };
 		C3B13E97266372880079EDF9 /* SwiftUICharts in Frameworks */ = {isa = PBXBuildFile; productRef = C3B13E96266372880079EDF9 /* SwiftUICharts */; };
@@ -124,6 +125,7 @@
 		C3097194266CD39800FDC536 /* SoundEffect.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoundEffect.swift; sourceTree = "<group>"; };
 		C3097196266CF9A800FDC536 /* TextToSpeech.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextToSpeech.swift; sourceTree = "<group>"; };
 		C3097198266CFFB400FDC536 /* Music.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Music.swift; sourceTree = "<group>"; };
+		C3240B35267C726300EC732B /* beep.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = beep.wav; sourceTree = "<group>"; };
 		C3B13E912663563A0079EDF9 /* .gitattributes */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitattributes; sourceTree = "<group>"; };
 		C3B13E93266371A90079EDF9 /* Charts.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Charts.swift; sourceTree = "<group>"; };
 		C3F2382E2673439B0057542B /* &Z.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "&Z.mp3"; sourceTree = "<group>"; };
@@ -223,9 +225,7 @@
 		A28F939D2664F32200CAB107 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
-				A28F939E2664F32200CAB107 /* UserDefaultManager.swift */,
 				A28F939F2664F32200CAB107 /* NotificationViewModel.swift */,
-				C309718D266BB58900FDC536 /* AudioManager.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -280,6 +280,7 @@
 			children = (
 				C3F23832267344E60057542B /* Songs */,
 				C3097190266CC51400FDC536 /* SoundEffect.mp3 */,
+				C3240B35267C726300EC732B /* beep.wav */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -347,6 +348,8 @@
 		C3F2F32F2673D4A600D4AE74 /* screen */ = {
 			isa = PBXGroup;
 			children = (
+				A28F93912664F2DE00CAB107 /* UserDetailView.swift */,
+				A28F938F2664F2DE00CAB107 /* SoundEffectView.swift */,
 				A28F938D2664F2DE00CAB107 /* NotificationView.swift */,
 			);
 			path = screen;
@@ -392,8 +395,8 @@
 		C3F2F3342673D62300D4AE74 /* Stores */ = {
 			isa = PBXGroup;
 			children = (
-				A28F938F2664F2DE00CAB107 /* SoundEffectView.swift */,
-				A28F93912664F2DE00CAB107 /* UserDetailView.swift */,
+				A28F939E2664F32200CAB107 /* UserDefaultManager.swift */,
+				C309718D266BB58900FDC536 /* AudioManager.swift */,
 			);
 			path = Stores;
 			sourceTree = "<group>";
@@ -469,6 +472,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C3240B36267C726300EC732B /* beep.wav in Resources */,
 				A289B3502657B3E00047A194 /* character in Resources */,
 				A289B31126577F5E0047A194 /* Preview Assets.xcassets in Resources */,
 				C3097191266CC51400FDC536 /* SoundEffect.mp3 in Resources */,
@@ -671,7 +675,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"ios_fitness/Preview Content\"";
-				DEVELOPMENT_TEAM = 4DQ2P92QE7;
+				DEVELOPMENT_TEAM = 4L7C3QD67C;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = ios_fitness/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
@@ -679,7 +683,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.jakey2.fitness;
+				PRODUCT_BUNDLE_IDENTIFIER = com.jakey.fitness;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -693,7 +697,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"ios_fitness/Preview Content\"";
-				DEVELOPMENT_TEAM = 4DQ2P92QE7;
+				DEVELOPMENT_TEAM = 4L7C3QD67C;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = ios_fitness/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
@@ -701,7 +705,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.jakey2.fitness;
+				PRODUCT_BUNDLE_IDENTIFIER = com.jakey.fitness;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
