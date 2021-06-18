@@ -15,22 +15,51 @@ struct PersistenceController {
     static var preview: PersistenceController = {
         let result = PersistenceController(inMemory: true)
         let viewContext = result.container.viewContext
-        for _ in 0..<5 {
-            let newItem = MySetting(context: viewContext)
-            newItem.id = UUID()
-            newItem.height = 100
-            newItem.weight = 50
-            newItem.sex = "女"
-            
-            
+        
+        let newItem = MySetting(context: viewContext)
+        newItem.id = UUID()
+        newItem.height = 100
+        newItem.weight = 50
+        newItem.sex = "女"
+        
+        let formatter: DateFormatter = {
+            let formatter = DateFormatter()
+            formatter.dateFormat = "yyyy/MM/dd" //  HH:mm:ss
+            return formatter
+        }()
+        
+        for m in 1...12 { // 月
+            for d in 1...28 { // 日
+                for _ in 0..<Int.random(in: 0...2) { // 每天運動次數
+                    let action = Actions(context: viewContext)
+                    action.id = UUID()
+                    action.count = Int16.random(in: 1...10)
+                    action.calories = Int32.random(in: 50...200) * Int32(action.count)
+                    action.startDate = formatter.date(from: "2020/\(m)/\(d)")
+                    action.endDate = formatter.date(from: "2020/\(m)/\(d)")
+
+                    let c = Int.random(in: 0..<ActionEnum.allCases.count)
+                    action.name = ActionEnum.allCases[c].rawValue
+                }
+            }
         }
-        let action = Actions(context: viewContext)
-        action.id = UUID()
-        action.calories = 100
-        action.startDate = Date()
-        action.endDate = Date()
-        action.name = "開合跳"
-        action.count = 10
+        
+        for m in 1...6 { // 月
+            for d in 1...28 { // 日
+                for _ in 0..<Int.random(in: 0...5) { // 每天運動次數
+                    let action = Actions(context: viewContext)
+                    action.id = UUID()
+                    action.count = Int16.random(in: 1...10)
+                    action.calories = Int32.random(in: 50...200) * Int32(action.count)
+                    action.startDate = formatter.date(from: "2021/\(m)/\(d)")
+                    action.endDate = formatter.date(from: "2021/\(m)/\(d)")
+
+                    let c = Int.random(in: 0..<ActionEnum.allCases.count)
+                    action.name = ActionEnum.allCases[c].rawValue
+                }
+            }
+        }
+        
         do {
             try viewContext.save()
         } catch {
@@ -41,7 +70,6 @@ struct PersistenceController {
         }
         return result
     }()
-    
 
     init(inMemory: Bool = false) {
         container = NSPersistentContainer(name: "ios_fitness")

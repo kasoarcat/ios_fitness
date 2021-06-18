@@ -57,12 +57,12 @@
 		C3097195266CD39800FDC536 /* SoundEffect.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3097194266CD39800FDC536 /* SoundEffect.swift */; };
 		C3097197266CF9A800FDC536 /* TextToSpeech.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3097196266CF9A800FDC536 /* TextToSpeech.swift */; };
 		C3097199266CFFB400FDC536 /* Music.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3097198266CFFB400FDC536 /* Music.swift */; };
+		C3240B36267C726300EC732B /* beep.wav in Resources */ = {isa = PBXBuildFile; fileRef = C3240B35267C726300EC732B /* beep.wav */; };
 		C3B13E922663563A0079EDF9 /* .gitattributes in Resources */ = {isa = PBXBuildFile; fileRef = C3B13E912663563A0079EDF9 /* .gitattributes */; };
 		C3B13E94266371A90079EDF9 /* Charts.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3B13E93266371A90079EDF9 /* Charts.swift */; };
 		C3B13E97266372880079EDF9 /* SwiftUICharts in Frameworks */ = {isa = PBXBuildFile; productRef = C3B13E96266372880079EDF9 /* SwiftUICharts */; };
 		C3F2382F2673439B0057542B /* &Z.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = C3F2382E2673439B0057542B /* &Z.mp3 */; };
 		C3F23831267344CD0057542B /* UNICORN.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = C3F23830267344CD0057542B /* UNICORN.mp3 */; };
-		C3F23835267349380057542B /* FileManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3F23834267349380057542B /* FileManager.swift */; };
 		C3F2F3242673BB0800D4AE74 /* ActionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3F2F3232673BB0800D4AE74 /* ActionView.swift */; };
 		C3F2F3272673BE0000D4AE74 /* ActionModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3F2F3262673BE0000D4AE74 /* ActionModel.swift */; };
 		C3F2F3292673CA3D00D4AE74 /* GymListRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3F2F3282673CA3D00D4AE74 /* GymListRowView.swift */; };
@@ -75,7 +75,7 @@
 		A270900B26580FB700C017DF /* MySettingView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MySettingView.swift; sourceTree = "<group>"; };
 		A289B30626577F5B0047A194 /* ios_fitness.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ios_fitness.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A289B30926577F5B0047A194 /* ios_fitnessApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ios_fitnessApp.swift; sourceTree = "<group>"; };
-		A289B30D26577F5E0047A194 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = "Preview Content/Assets.xcassets"; sourceTree = "<group>"; };
+		A289B30D26577F5E0047A194 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A289B31026577F5E0047A194 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		A289B31226577F5E0047A194 /* Persistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Persistence.swift; sourceTree = "<group>"; };
 		A289B31526577F5E0047A194 /* ios_fitness.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = ios_fitness.xcdatamodel; sourceTree = "<group>"; };
@@ -125,11 +125,11 @@
 		C3097194266CD39800FDC536 /* SoundEffect.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoundEffect.swift; sourceTree = "<group>"; };
 		C3097196266CF9A800FDC536 /* TextToSpeech.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextToSpeech.swift; sourceTree = "<group>"; };
 		C3097198266CFFB400FDC536 /* Music.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Music.swift; sourceTree = "<group>"; };
+		C3240B35267C726300EC732B /* beep.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = beep.wav; sourceTree = "<group>"; };
 		C3B13E912663563A0079EDF9 /* .gitattributes */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitattributes; sourceTree = "<group>"; };
 		C3B13E93266371A90079EDF9 /* Charts.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Charts.swift; sourceTree = "<group>"; };
 		C3F2382E2673439B0057542B /* &Z.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "&Z.mp3"; sourceTree = "<group>"; };
 		C3F23830267344CD0057542B /* UNICORN.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = UNICORN.mp3; sourceTree = "<group>"; };
-		C3F23834267349380057542B /* FileManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileManager.swift; sourceTree = "<group>"; };
 		C3F2F3232673BB0800D4AE74 /* ActionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActionView.swift; sourceTree = "<group>"; };
 		C3F2F3262673BE0000D4AE74 /* ActionModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActionModel.swift; sourceTree = "<group>"; };
 		C3F2F3282673CA3D00D4AE74 /* GymListRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GymListRowView.swift; sourceTree = "<group>"; };
@@ -187,7 +187,6 @@
 				A287C547265888CB009066D3 /* Models */,
 				C3F2F32A2673D1F500D4AE74 /* Views */,
 				C309718F266CC50200FDC536 /* Resources */,
-				C3F23833267349230057542B /* Extension */,
 				A289B30926577F5B0047A194 /* ios_fitnessApp.swift */,
 				A289B3542657D0670047A194 /* ContentView.swift */,
 				A289B34F2657B3E00047A194 /* character */,
@@ -219,7 +218,6 @@
 			children = (
 				C3F2F3312673D57700D4AE74 /* screen */,
 				C3F2F3302673D55700D4AE74 /* shared */,
-				C9DC20B826679D3200CEEC1A /* ReportModel.swift */,
 			);
 			path = Report;
 			sourceTree = "<group>";
@@ -227,9 +225,7 @@
 		A28F939D2664F32200CAB107 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
-				A28F939E2664F32200CAB107 /* UserDefaultManager.swift */,
 				A28F939F2664F32200CAB107 /* NotificationViewModel.swift */,
-				C309718D266BB58900FDC536 /* AudioManager.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -284,6 +280,7 @@
 			children = (
 				C3F23832267344E60057542B /* Songs */,
 				C3097190266CC51400FDC536 /* SoundEffect.mp3 */,
+				C3240B35267C726300EC732B /* beep.wav */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -297,19 +294,11 @@
 			path = Songs;
 			sourceTree = "<group>";
 		};
-		C3F23833267349230057542B /* Extension */ = {
-			isa = PBXGroup;
-			children = (
-				C3F23834267349380057542B /* FileManager.swift */,
-			);
-			path = Extension;
-			sourceTree = "<group>";
-		};
 		C3F2F32A2673D1F500D4AE74 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				A289B31E26577FBE0047A194 /* Gym */,
 				A289B32026577FBE0047A194 /* Report */,
+				A289B31E26577FBE0047A194 /* Gym */,
 				C3F2F32E2673D2A400D4AE74 /* MySettings */,
 			);
 			path = Views;
@@ -340,6 +329,7 @@
 		C3F2F32D2673D28F00D4AE74 /* Report */ = {
 			isa = PBXGroup;
 			children = (
+				C9DC20B826679D3200CEEC1A /* ReportModel.swift */,
 			);
 			path = Report;
 			sourceTree = "<group>";
@@ -358,6 +348,8 @@
 		C3F2F32F2673D4A600D4AE74 /* screen */ = {
 			isa = PBXGroup;
 			children = (
+				A28F93912664F2DE00CAB107 /* UserDetailView.swift */,
+				A28F938F2664F2DE00CAB107 /* SoundEffectView.swift */,
 				A28F938D2664F2DE00CAB107 /* NotificationView.swift */,
 			);
 			path = screen;
@@ -403,8 +395,8 @@
 		C3F2F3342673D62300D4AE74 /* Stores */ = {
 			isa = PBXGroup;
 			children = (
-				A28F938F2664F2DE00CAB107 /* SoundEffectView.swift */,
-				A28F93912664F2DE00CAB107 /* UserDetailView.swift */,
+				A28F939E2664F32200CAB107 /* UserDefaultManager.swift */,
+				C309718D266BB58900FDC536 /* AudioManager.swift */,
 			);
 			path = Stores;
 			sourceTree = "<group>";
@@ -480,6 +472,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C3240B36267C726300EC732B /* beep.wav in Resources */,
 				A289B3502657B3E00047A194 /* character in Resources */,
 				A289B31126577F5E0047A194 /* Preview Assets.xcassets in Resources */,
 				C3097191266CC51400FDC536 /* SoundEffect.mp3 in Resources */,
@@ -536,7 +529,6 @@
 				A2CBFEA52663B34D0091176A /* Action.swift in Sources */,
 				A2AC6866266C92E60065BA6F /* KickRunningAction.swift in Sources */,
 				A2CADF582657F861009DE25A /* RightLegPosition.swift in Sources */,
-				C3F23835267349380057542B /* FileManager.swift in Sources */,
 				C9DC20BD2667A81F00CEEC1A /* DataList.swift in Sources */,
 				A2CADF582657F861009DE25A /* RightLegPosition.swift in Sources */,
 				A289B32426577FBE0047A194 /* GymView.swift in Sources */,
@@ -691,7 +683,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.jakey.lee.fitness;
+				PRODUCT_BUNDLE_IDENTIFIER = com.jakey.fitness;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -713,7 +705,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.jakey.lee.fitness;
+				PRODUCT_BUNDLE_IDENTIFIER = com.jakey.fitness;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";

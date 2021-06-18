@@ -7,12 +7,13 @@
 
 import Foundation
 
+
 class DatePick:ObservableObject{
     @Published var date = Date()
     
     var formatter: DateFormatter{
         let formatter = DateFormatter()
-        formatter.dateFormat = "MM/dd"
+        formatter.dateFormat = "YYYY/MM/dd"
         return formatter
     }
     

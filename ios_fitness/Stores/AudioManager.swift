@@ -119,7 +119,7 @@ class AudioManager: ObservableObject {
     }
     
     func playSoundEffect() {
-        guard let url = Bundle.main.url(forResource: "SoundEffect", withExtension: "mp3") else {
+        guard let url = Bundle.main.url(forResource: "beep", withExtension: "wav") else {
             return
         }
         
