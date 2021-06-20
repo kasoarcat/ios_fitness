@@ -71,24 +71,24 @@ struct ReportView: View {
                 
                 Text("消耗卡路里: \(matchingCal(date: date.date))")
                     .font(.system(size: 25))
-                HStack {
-                    
-                    TextField("enter numbers: ", text: $inputCalories)
-                        .textFieldStyle(RoundedBorderTextFieldStyle())
-                    Button(action: {
-                        addItem()
-                        
-                    }
-                    , label: {
-                        Text("add data")
-                        
-                    })
-                }
-                NavigationLink(destination: DataList(),
-                               label: {
-                                Text("Data List")
-                                
-                               })
+//                HStack {
+//
+//                    TextField("enter numbers: ", text: $inputCalories)
+//                        .textFieldStyle(RoundedBorderTextFieldStyle())
+//                    Button(action: {
+//                        addItem()
+//
+//                    }
+//                    , label: {
+//                        Text("add data")
+//
+//                    })
+//                }
+//                NavigationLink(destination: DataList(),
+//                               label: {
+//                                Text("Data List")
+//                                
+//                               })
                 
             }
             .navigationTitle("訓練日期")
