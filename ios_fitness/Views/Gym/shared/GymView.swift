@@ -19,10 +19,10 @@ struct GymView: View {
     @State var actionEnum: ActionEnum
     @State var count: Int = 0
     
-    @FetchRequest(
-        sortDescriptors: [NSSortDescriptor(keyPath: \Actions.endDate, ascending: true)],
-        animation: .default)
-    private var items: FetchedResults<Actions>
+//    @FetchRequest(
+//        sortDescriptors: [NSSortDescriptor(keyPath: \Actions.endDate, ascending: true)],
+//        animation: .default)
+//    private var items: FetchedResults<Actions>
     
     private func addAction(_ count: Int) {
         withAnimation {
@@ -32,7 +32,25 @@ struct GymView: View {
             action.startDate = startDate
             action.endDate = Date()
             action.count = Int16(count)
-            action.calories = 50
+            
+            switch actionEnum {
+            case .開合跳:
+                action.calories = 50 * Int32(count)
+            case .蹲伏:
+                action.calories = 10 * Int32(count)
+            case .蹲姿上伸:
+                action.calories = 25 * Int32(count)
+            case .原地提膝踏步:
+                action.calories = 10 * Int32(count)
+            case .蹲跳運動:
+                action.calories = 50 * Int32(count)
+            case .深蹲:
+                action.calories = 10 * Int32(count)
+            case .弓步:
+                action.calories = 10 * Int32(count)
+            case .交叉勾拳:
+                action.calories = 10 * Int32(count)
+            }
 
             do {
                 try viewContext.save()
@@ -44,22 +62,22 @@ struct GymView: View {
     }
     
     var body: some View {
-        let formatter: DateFormatter = {
-            let formatter = DateFormatter()
-            formatter.dateFormat = "yyyy/MM/dd HH:mm:ss"
-            return formatter
-        }()
+//        let formatter: DateFormatter = {
+//            let formatter = DateFormatter()
+//            formatter.dateFormat = "yyyy/MM/dd HH:mm:ss"
+//            return formatter
+//        }()
         
         ZStack {
             ARViewContainer(actionEnum: $actionEnum, count: $count)
                 .edgesIgnoringSafeArea(.all)
             
             VStack {
-                List {
-                    ForEach(items) { item in
-                        Text("date: \(formatter.string(from: item.endDate!)) c: \(item.count) \(item.name!) ca: \(item.calories)")
-                    }
-                }
+//                List {
+//                    ForEach(items) { item in
+//                        Text("date: \(formatter.string(from: item.endDate!)) c: \(item.count) \(item.name!) ca: \(item.calories)")
+//                    }
+//                }
                 
                 Spacer()
                 Text("計數: \(count)")
