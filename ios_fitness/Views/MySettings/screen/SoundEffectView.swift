@@ -31,6 +31,16 @@ struct SoundEffectView: View {
                         .onChange(of: audioManager.music.volume, perform: { value in
                             audioManager.onMusicSliderChange()
                         })
+                    if audioManager.musicIsPlaying {
+                        Button("Stop") {
+                            audioManager.stopMusic()
+                        }
+                    }
+                    else {
+                        Button("Test") {
+                            audioManager.playMusic()
+                        }
+                    }
                 }
                 Section {
                     Toggle("語音", isOn: $audioManager.textToSpeech.enable)

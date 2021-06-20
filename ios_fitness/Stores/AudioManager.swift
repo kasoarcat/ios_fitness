@@ -16,7 +16,7 @@ class AudioManager: ObservableObject {
     let speaker: AVSpeechSynthesizer = AVSpeechSynthesizer()
     
     var songs: [String] = ["UNICORN", "&Z"]
-    
+    @Published var musicIsPlaying: Bool = false
     @Published var music: Music = Music(enable: true, volume: 1.0, selection: 0)
     @Published var textToSpeech: TextToSpeech = TextToSpeech(enable: true, volume: 1.0)
     @Published var soundEffect: SoundEffect = SoundEffect(enable: true, volume: 1.0)
@@ -92,6 +92,7 @@ class AudioManager: ObservableObject {
             
             audioPlayer.volume = music.volume
             audioPlayer.play()
+            musicIsPlaying = true
             
         } catch let error {
             print(error.localizedDescription)
@@ -101,6 +102,7 @@ class AudioManager: ObservableObject {
     func stopMusic() {
         if let audioPlayer = audioMusicPlayer {
             audioPlayer.stop()
+            musicIsPlaying = false
         }
     }
     
