@@ -91,10 +91,15 @@ class AudioManager: ObservableObject {
                 return
             }
             
+            audioPlayer.numberOfLoops = 999
             audioPlayer.volume = music.volume
             audioPlayer.play()
             musicIsPlaying = true
             
+            self.music.selection += 1
+            if self.music.selection >= songs.count {
+                self.music.selection = 0
+            }
         } catch let error {
             print(error.localizedDescription)
         }
