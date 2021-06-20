@@ -13,7 +13,6 @@ struct ContentView: View {
     var body: some View {
         TabView {
             GymListView()
-//            ActionsDataView()
                 .tabItem {
                     Image(systemName: "music.house.fill")
                     Text("運動場")
@@ -32,6 +31,7 @@ struct ContentView: View {
                 }
                 .environmentObject(audioManager)
         }
+        
     }
 }
 

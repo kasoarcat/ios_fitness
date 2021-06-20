@@ -10,11 +10,13 @@ import SwiftUI
 #if arch(arm64)
 
 struct GymView: View {
-    @State var actionEnum: ActionEnum
+    @EnvironmentObject var audioManager: AudioManager
     
+    @State var actionEnum: ActionEnum
     var actionNames = ActionEnum.allCases
     @State var count: Int = 0
 //    @State var selectedIndex = 0
+    @State var isActive: Bool = false
     
     var body: some View {
         ZStack {
@@ -29,8 +31,16 @@ struct GymView: View {
         }
         .navigationTitle(actionEnum.rawValue)
         .navigationBarTitleDisplayMode(.inline)
-//        .foregroundColor(.yellow)
-        
+        .onAppear {
+            // 播放音樂
+            print("播放音樂")
+            audioManager.playMusic()
+        }
+        .onDisappear {
+            // 播放音樂
+            print("停止音樂")
+            audioManager.stopMusic()
+        }
     }
 }
 
@@ -38,6 +48,7 @@ struct GymView: View {
 
 struct GymView: View {
     @State var actionEnum: ActionEnum
+    @State var isActive: Bool = false
     
     var body: some View {
         VStack {
@@ -53,7 +64,7 @@ struct GymView: View {
 struct GymView_Previews: PreviewProvider {
     static var previews: some View {
         Group {
-            GymView(actionEnum: ActionEnum.開合跳)
+            GymView(actionEnum: ActionEnum.開合跳, isActive: true)
         }
     }
 }
