@@ -72,7 +72,7 @@ struct SoundEffectView: View {
         }
         .navigationBarTitle("聲音&音樂", displayMode: .inline)
         .onDisappear {
-            print("停止音樂")
+//            print("停止音樂")
             audioManager.stopMusic()
         }
     }

@@ -16,27 +16,28 @@ struct GymView: View {
     var actionNames = ActionEnum.allCases
     @State var count: Int = 0
 //    @State var selectedIndex = 0
-    @State var isActive: Bool = false
     
     var body: some View {
         ZStack {
             ARViewContainer(actionEnum: $actionEnum, count: $count)
                 .edgesIgnoringSafeArea(.all)
             VStack {
-                Text("count: \(count)")
+                Spacer()
+                Text("計數: \(count)")
                     .font(.largeTitle)
                     .bold()
                     .foregroundColor(.yellow)
+                    
             }
         }
         .navigationTitle(actionEnum.rawValue)
         .navigationBarTitleDisplayMode(.inline)
         .onAppear {
-            print("播放音樂")
+//            print("播放音樂")
             audioManager.playMusic()
         }
         .onDisappear {
-            print("停止音樂")
+//            print("停止音樂")
             audioManager.stopMusic()
         }
     }
@@ -46,7 +47,6 @@ struct GymView: View {
 
 struct GymView: View {
     @State var actionEnum: ActionEnum
-    @State var isActive: Bool = false
     
     var body: some View {
         VStack {
@@ -62,7 +62,7 @@ struct GymView: View {
 struct GymView_Previews: PreviewProvider {
     static var previews: some View {
         Group {
-            GymView(actionEnum: ActionEnum.開合跳, isActive: true)
+            GymView(actionEnum: ActionEnum.開合跳)
         }
     }
 }

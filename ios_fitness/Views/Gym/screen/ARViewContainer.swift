@@ -166,27 +166,39 @@ struct ARViewContainer: UIViewRepresentable {
     @Binding var count: Int
     
     class Coordinator: NSObject, PoseDelegate {
+        var audioManager: AudioManager
         var count: Binding<Int>
         
-        init(_ count: Binding<Int>) {
+        init(_ count: Binding<Int>, _ audioManager: AudioManager) {
             self.count = count
+            self.audioManager = audioManager
         }
         
         func counting(count: Int) {
             self.count.wrappedValue = count
+            
+            // 播放音效
+            if count > 0 && count % 2 == 0 {
+                audioManager.playSoundEffect()
+            }
+            
+            // 播放完成次數
+            if count % 10 == 0 {
+                audioManager.playTTS(text: "已完成\(count)次", language: "zh-TW")
+            }
         }
     }
     
     func makeUIView(context: Context) -> MyARView {
         var arView: MyARView?
         
-        if let ar = myArView {
-            arView = ar
-            arView?.changeAction(actionEnum: actionEnum)
-        } else {
-            arView = MyARView(frame: .zero, handDelegate: context.coordinator, actionEnum: actionEnum)
-            myArView = arView
-        }
+//        if let ar = myArView {
+//            arView = ar
+//            arView?.changeAction(actionEnum: actionEnum)
+//        } else {
+        arView = MyARView(frame: .zero, handDelegate: context.coordinator, actionEnum: actionEnum)
+        myArView = arView
+//        }
         
         arView!.handDelegate = context.coordinator
         arView!.setupForBodyTracking()
@@ -229,16 +241,11 @@ struct ARViewContainer: UIViewRepresentable {
             uiView.action.cleanCount()
         }
         
-        uiView.changeAction(actionEnum: actionEnum)
-        
-        // 播放音效
-        if count > 0 && count % 2 == 0 {
-            audioManager.playSoundEffect()
-        }
+//        uiView.changeAction(actionEnum: actionEnum)
     }
     
     func makeCoordinator() -> Coordinator {
-        Coordinator($count)
+        Coordinator($count, audioManager)
     }
 }
 
