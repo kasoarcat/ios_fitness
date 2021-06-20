@@ -10,7 +10,8 @@ import AVFoundation
 
 class AudioManager: ObservableObject {
     
-    var audioPlayer: AVAudioPlayer?
+    var audioEffectPlayer: AVAudioPlayer?
+    var audioMusicPlayer: AVAudioPlayer?
     var userSetting: UserDefaultManager = UserDefaultManager()
     let speaker: AVSpeechSynthesizer = AVSpeechSynthesizer()
     
@@ -83,9 +84,9 @@ class AudioManager: ObservableObject {
         do {
             try AVAudioSession.sharedInstance().setCategory(.playback, mode: .default)
             try AVAudioSession.sharedInstance().setActive(true)
-            audioPlayer = try AVAudioPlayer(contentsOf: url, fileTypeHint: AVFileType.mp3.rawValue)
+            audioMusicPlayer = try AVAudioPlayer(contentsOf: url, fileTypeHint: AVFileType.mp3.rawValue)
             
-            guard let audioPlayer = audioPlayer else {
+            guard let audioPlayer = audioMusicPlayer else {
                 return
             }
             
@@ -98,7 +99,7 @@ class AudioManager: ObservableObject {
     }
     
     func stopMusic() {
-        if let audioPlayer = audioPlayer {
+        if let audioPlayer = audioMusicPlayer {
             audioPlayer.stop()
         }
     }
@@ -126,9 +127,9 @@ class AudioManager: ObservableObject {
         do {
             try AVAudioSession.sharedInstance().setCategory(.playback, mode: .default)
             try AVAudioSession.sharedInstance().setActive(true)
-            audioPlayer = try AVAudioPlayer(contentsOf: url, fileTypeHint: AVFileType.mp3.rawValue)
+            audioEffectPlayer = try AVAudioPlayer(contentsOf: url, fileTypeHint: AVFileType.mp3.rawValue)
             
-            guard let audioPlayer = audioPlayer else {
+            guard let audioPlayer = audioEffectPlayer else {
                 return
             }
             
