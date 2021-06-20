@@ -28,37 +28,46 @@ struct PersistenceController {
             return formatter
         }()
         
-        for m in 1...12 { // 月
-            for d in 1...28 { // 日
-                for _ in 0..<Int.random(in: 0...2) { // 每天運動次數
-                    let action = Actions(context: viewContext)
-                    action.id = UUID()
-                    action.count = Int16.random(in: 1...10)
-                    action.calories = Int32.random(in: 50...200) * Int32(action.count)
-                    action.startDate = formatter.date(from: "2020/\(m)/\(d)")
-                    action.endDate = formatter.date(from: "2020/\(m)/\(d)")
-
-                    let c = Int.random(in: 0..<ActionEnum.allCases.count)
-                    action.name = ActionEnum.allCases[c].rawValue
-                }
-            }
-        }
+        let action = Actions(context: viewContext)
+        action.id = UUID()
+        action.count = Int16.random(in: 1...10)
+        action.calories = 10
+        action.startDate = Date()
+        action.endDate = Date()
+        let c = Int.random(in: 0..<ActionEnum.allCases.count)
+        action.name = ActionEnum.allCases[c].rawValue
         
-        for m in 1...6 { // 月
-            for d in 1...28 { // 日
-                for _ in 0..<Int.random(in: 0...5) { // 每天運動次數
-                    let action = Actions(context: viewContext)
-                    action.id = UUID()
-                    action.count = Int16.random(in: 1...10)
-                    action.calories = Int32.random(in: 50...200) * Int32(action.count)
-                    action.startDate = formatter.date(from: "2021/\(m)/\(d)")
-                    action.endDate = formatter.date(from: "2021/\(m)/\(d)")
-
-                    let c = Int.random(in: 0..<ActionEnum.allCases.count)
-                    action.name = ActionEnum.allCases[c].rawValue
-                }
-            }
-        }
+//        for m in 1...12 { // 月
+//            for d in 1...28 { // 日
+//                for _ in 0..<Int.random(in: 0...2) { // 每天運動次數
+//                    let action = Actions(context: viewContext)
+//                    action.id = UUID()
+//                    action.count = Int16.random(in: 1...10)
+//                    action.calories = Int32.random(in: 50...200) * Int32(action.count)
+//                    action.startDate = formatter.date(from: "2020/\(m)/\(d)")
+//                    action.endDate = formatter.date(from: "2020/\(m)/\(d)")
+//
+//                    let c = Int.random(in: 0..<ActionEnum.allCases.count)
+//                    action.name = ActionEnum.allCases[c].rawValue
+//                }
+//            }
+//        }
+//        
+//        for m in 1...6 { // 月
+//            for d in 1...28 { // 日
+//                for _ in 0..<Int.random(in: 0...5) { // 每天運動次數
+//                    let action = Actions(context: viewContext)
+//                    action.id = UUID()
+//                    action.count = Int16.random(in: 1...10)
+//                    action.calories = Int32.random(in: 50...200) * Int32(action.count)
+//                    action.startDate = formatter.date(from: "2021/\(m)/\(d)")
+//                    action.endDate = formatter.date(from: "2021/\(m)/\(d)")
+//
+//                    let c = Int.random(in: 0..<ActionEnum.allCases.count)
+//                    action.name = ActionEnum.allCases[c].rawValue
+//                }
+//            }
+//        }
         
         do {
             try viewContext.save()

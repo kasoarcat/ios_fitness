@@ -158,7 +158,7 @@ class MyARView : ARView, ARSessionDelegate {
     
 }
 
-var myArView: MyARView?
+//var myArView: MyARView?
 
 struct ARViewContainer: UIViewRepresentable {
     @EnvironmentObject var audioManager: AudioManager
@@ -197,7 +197,7 @@ struct ARViewContainer: UIViewRepresentable {
 //            arView?.changeAction(actionEnum: actionEnum)
 //        } else {
         arView = MyARView(frame: .zero, handDelegate: context.coordinator, actionEnum: actionEnum)
-        myArView = arView
+//        myArView = arView
 //        }
         
         arView!.handDelegate = context.coordinator

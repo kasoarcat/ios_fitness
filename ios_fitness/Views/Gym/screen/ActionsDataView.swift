@@ -115,7 +115,7 @@ struct ActionsDataView: View {
         VStack {
             Text("我的設定")
             List {
-                Text("a")
+//                Text("a")
 //                ForEach(keys.indices) { index in
 //                    HStack {
 //                        Text(keys[index])
@@ -126,52 +126,53 @@ struct ActionsDataView: View {
                 ForEach(items) { item in
                     Text("date: \(formatter.string(from: item.endDate!)) c: \(item.count) \(item.name!)")
                 }
-//                .onDelete(perform: deleteItems)
+                .onDelete(perform: deleteItems)
             }
-//            HStack {
-//                Button(action: addItem) {
-//                    Label("Add Item", systemImage: "plus")
-//                        .foregroundColor(.green)
-//                }
-//                #if os(iOS)
-//                EditButton()
-//                    .foregroundColor(.red)
-//                #endif
-//            }
+            HStack {
+                Button(action: addItem) {
+                    Label("Add Item", systemImage: "plus")
+                        .foregroundColor(.green)
+                }
+                
+                #if os(iOS)
+                EditButton()
+                    .foregroundColor(.red)
+                #endif
+            }
         }
     }
     
-//    private func addItem() {
-//        withAnimation {
-//            let action = Actions(context: viewContext)
-//            action.id = UUID()
-//            action.count = 5
-//
-//            do {
-//                try viewContext.save()
-//            } catch {
-//                // Replace this implementation with code to handle the error appropriately.
-//                // fatalError() causes the application to generate a crash log and terminate. You should not use this function in a shipping application, although it may be useful during development.
-//                let nsError = error as NSError
-//                fatalError("Unresolved error \(nsError), \(nsError.userInfo)")
-//            }
-//        }
-//    }
-//
-//    private func deleteItems(offsets: IndexSet) {
-//        withAnimation {
-//            offsets.map { items[$0] }.forEach(viewContext.delete)
-//
-//            do {
-//                try viewContext.save()
-//            } catch {
-//                // Replace this implementation with code to handle the error appropriately.
-//                // fatalError() causes the application to generate a crash log and terminate. You should not use this function in a shipping application, although it may be useful during development.
-//                let nsError = error as NSError
-//                fatalError("Unresolved error \(nsError), \(nsError.userInfo)")
-//            }
-//        }
-//    }
+    private func addItem() {
+        withAnimation {
+            let action = Actions(context: viewContext)
+            action.id = UUID()
+            action.count = 5
+
+            do {
+                try viewContext.save()
+            } catch {
+                // Replace this implementation with code to handle the error appropriately.
+                // fatalError() causes the application to generate a crash log and terminate. You should not use this function in a shipping application, although it may be useful during development.
+                let nsError = error as NSError
+                fatalError("Unresolved error \(nsError), \(nsError.userInfo)")
+            }
+        }
+    }
+
+    private func deleteItems(offsets: IndexSet) {
+        withAnimation {
+            offsets.map { items[$0] }.forEach(viewContext.delete)
+
+            do {
+                try viewContext.save()
+            } catch {
+                // Replace this implementation with code to handle the error appropriately.
+                // fatalError() causes the application to generate a crash log and terminate. You should not use this function in a shipping application, although it may be useful during development.
+                let nsError = error as NSError
+                fatalError("Unresolved error \(nsError), \(nsError.userInfo)")
+            }
+        }
+    }
     
 }
 
