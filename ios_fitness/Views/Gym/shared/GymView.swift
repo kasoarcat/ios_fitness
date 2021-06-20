@@ -25,26 +25,6 @@ struct GymView: View {
                     .font(.largeTitle)
                     .bold()
                     .foregroundColor(.yellow)
-                
-//                Picker(selection: $selectedIndex, label: Text("選擇動作")) {
-//                    ForEach(0..<actionNames.count) { index in
-//                        let i = Int(index)
-//                        Text(actionNames[i].rawValue)
-//                            .font(.largeTitle)
-//                            .bold()
-//                            .foregroundColor(.yellow)
-//                            .tag(i)
-//                    }
-//                }
-//                Button {
-//                    count = 0
-//                    actionEnum = actionNames[selectedIndex]
-//                } label: {
-//                    Text("設定")
-//                        .bold()
-//                        .font(.largeTitle)
-//                        .foregroundColor(.yellow)
-//                }
             }
         }
         .navigationTitle(actionEnum.rawValue)
@@ -64,22 +44,6 @@ struct GymView: View {
             Text(actionEnum.rawValue)
                 .font(.title)
                 .foregroundColor(.blue)
-            
-//            ZStack(alignment: .topTrailing) {
-//                TextView(text: $message, textStyle: $textStyle)
-//                    .padding(.horizontal)
-//                Button(action: {
-//                    self.textStyle = (self.textStyle == .body) ? .title1 : .body
-//                }) {
-//                    Image(systemName: "textformat")
-//                        .imageScale(.large)
-//                        .frame(width: 40, height: 40)
-//                        .foregroundColor(.white)
-//                        .background(Color.purple)
-//                        .clipShape(Circle())
-//                }
-//                .padding()
-//            }
         }
     }
 }

@@ -14,6 +14,7 @@ import ARKit
 import Combine
 
 class MyARView : ARView, ARSessionDelegate {
+    var audioManager: AudioManager
     // The 3D character to display.
     var theCharacter: BodyTrackedEntity?
     private let theCharacterOffset: SIMD3<Float> = [0, 0, 0] // Offset the character by one meter to the left
@@ -28,12 +29,17 @@ class MyARView : ARView, ARSessionDelegate {
     var left: String = ""
     var right: String = ""
     
-    init(frame: CGRect, handDelegate: PoseDelegate, actionEnum: ActionEnum) {
+    init(frame: CGRect, handDelegate: PoseDelegate, actionEnum: ActionEnum, audioManager: AudioManager) {
+        self.audioManager = audioManager
         self.handDelegate = handDelegate
         self.actionEnum = .開合跳
         self.action = JumpAction(delegate: handDelegate)
         super.init(frame: frame)
         changeAction(actionEnum: actionEnum)
+        
+        // 播放音樂
+        print("播放音樂")
+        audioManager.playMusic()
     }
     
     @objc required dynamic init?(coder decoder: NSCoder) {
@@ -161,6 +167,7 @@ class MyARView : ARView, ARSessionDelegate {
 var myArView: MyARView?
 
 struct ARViewContainer: UIViewRepresentable {
+    @EnvironmentObject var audioManager: AudioManager
     @Binding var actionEnum: ActionEnum
     @Binding var count: Int
     
@@ -177,10 +184,18 @@ struct ARViewContainer: UIViewRepresentable {
     }
     
     func makeUIView(context: Context) -> MyARView {
-        let arView = MyARView(frame: .zero, handDelegate: context.coordinator, actionEnum: actionEnum)
-        myArView = arView
-        arView.handDelegate = context.coordinator
-        arView.setupForBodyTracking()
+        var arView: MyARView?
+        
+        if let ar = myArView {
+            arView = ar
+            arView?.changeAction(actionEnum: actionEnum)
+        } else {
+            arView = MyARView(frame: .zero, handDelegate: context.coordinator, actionEnum: actionEnum, audioManager: audioManager)
+            myArView = arView
+        }
+        
+        arView!.handDelegate = context.coordinator
+        arView!.setupForBodyTracking()
         
         // If the iOS device doesn't support body tracking, raise a developer error for
         // this unhandled case.
@@ -190,8 +205,8 @@ struct ARViewContainer: UIViewRepresentable {
 
         // Run a body tracking configration.
         let configuration = ARBodyTrackingConfiguration()
-        arView.session.run(configuration)
-        arView.scene.addAnchor(arView.theCharacterAnchor)
+        arView!.session.run(configuration)
+        arView!.scene.addAnchor(arView!.theCharacterAnchor)
 
         // Asynchronously load the 3D character.
         var cancellable: AnyCancellable? = nil
@@ -205,14 +220,14 @@ struct ARViewContainer: UIViewRepresentable {
             if let character = character as? BodyTrackedEntity {
                 // Scale the character to human size
                 character.scale = [1.0, 1.0, 1.0]
-                arView.theCharacter = character
+                arView!.theCharacter = character
                 cancellable?.cancel()
             } else {
                 print("Error: Unable to load model as BodyTrackedEntity")
             }
         })
         
-        return arView
+        return arView!
     }
 
     func updateUIView(_ uiView: MyARView, context: Context) {
@@ -221,6 +236,11 @@ struct ARViewContainer: UIViewRepresentable {
         }
         
         uiView.changeAction(actionEnum: actionEnum)
+        
+        // 播放音效
+        if count > 0 && count % 2 == 0 {
+            audioManager.playSoundEffect()
+        }
     }
     
     func makeCoordinator() -> Coordinator {
