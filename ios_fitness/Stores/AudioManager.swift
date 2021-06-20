@@ -15,7 +15,8 @@ class AudioManager: ObservableObject {
     var userSetting: UserDefaultManager = UserDefaultManager()
     let speaker: AVSpeechSynthesizer = AVSpeechSynthesizer()
     
-    var songs: [String] = ["UNICORN", "&Z"]
+    var songs: [String] = ["UNICORN", "&Z", "Darktown Strutters Ball", "How it Began", "Lovable Clown Sit Com", "Lucid Dreamer", "Payday",
+                           "Quincas Moreira  Happy Music", "Spring In My Step  Silent Partner", "Sunspots", "Water Lily", "Whistling Down the Road"]
     @Published var musicIsPlaying: Bool = false
     @Published var music: Music = Music(enable: true, volume: 1.0, selection: 0)
     @Published var textToSpeech: TextToSpeech = TextToSpeech(enable: true, volume: 1.0)
