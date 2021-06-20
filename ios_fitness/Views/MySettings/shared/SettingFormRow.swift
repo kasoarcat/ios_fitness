@@ -8,8 +8,10 @@
 import SwiftUI
 
 struct SettingFormRow: View {
+    
     var icon: String
     var text: String
+    
     var body: some View {
         HStack {
             ZStack {

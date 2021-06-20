@@ -32,12 +32,10 @@ struct GymView: View {
         .navigationTitle(actionEnum.rawValue)
         .navigationBarTitleDisplayMode(.inline)
         .onAppear {
-            // 播放音樂
             print("播放音樂")
             audioManager.playMusic()
         }
         .onDisappear {
-            // 播放音樂
             print("停止音樂")
             audioManager.stopMusic()
         }
