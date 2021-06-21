@@ -23,9 +23,9 @@ protocol Action {
 #endif
 
 enum CaloriesSpec {
-    case light
-    case medium
-    case heavy
+    case light      // 10卡
+    case medium     // 25卡
+    case heavy      // 50卡
 }
 
 enum ActionEnum: String, CaseIterable {
@@ -41,4 +41,3 @@ enum ActionEnum: String, CaseIterable {
     case 弓步           // LungeAction
     case 交叉勾拳        // CrossUppercutAction
 }
-

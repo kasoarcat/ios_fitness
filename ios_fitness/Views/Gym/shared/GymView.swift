@@ -10,6 +10,7 @@ import SwiftUI
 #if arch(arm64)
 
 struct GymView: View {
+    @ObservedObject var userDefaultManager = UserDefaultManager()
     @Environment(\.managedObjectContext) private var viewContext
     @EnvironmentObject var audioManager: AudioManager
     
@@ -18,11 +19,17 @@ struct GymView: View {
     
     @State var actionEnum: ActionEnum
     @State var count: Int = 0
+    @State private var showSheetView = false
     
 //    @FetchRequest(
 //        sortDescriptors: [NSSortDescriptor(keyPath: \Actions.endDate, ascending: true)],
 //        animation: .default)
 //    private var items: FetchedResults<Actions>
+    
+//    @FetchRequest(
+//        sortDescriptors: [NSSortDescriptor(keyPath: \MySetting.weight, ascending: true)],
+//        animation: .default)
+//    private var setting: FetchedResults<MySetting>
     
     private func addAction(_ count: Int) {
         withAnimation {
@@ -79,6 +86,12 @@ struct GymView: View {
 //                    }
 //                }
                 
+//                List {
+//                    ForEach(setting) { item in
+//                        Text("weight: \(item.weight)")
+//                    }
+//                }
+                
                 Spacer()
                 Text("計數: \(count)")
                     .font(.largeTitle)
@@ -88,8 +101,15 @@ struct GymView: View {
         }
         .navigationTitle(actionEnum.rawValue)
         .navigationBarTitleDisplayMode(.inline)
+        .sheet(isPresented: $showSheetView) {
+            MySettingView()
+         }
         .onAppear {
             audioManager.playMusic()
+            
+            if userDefaultManager.weight == 0 {
+                showSheetView = true
+            }
         }
         .onDisappear {
             audioManager.stopMusic()

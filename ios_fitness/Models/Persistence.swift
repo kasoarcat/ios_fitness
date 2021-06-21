@@ -18,9 +18,9 @@ struct PersistenceController {
         
         let newItem = MySetting(context: viewContext)
         newItem.id = UUID()
-        newItem.height = 100
-        newItem.weight = 50
-        newItem.sex = "女"
+        newItem.height = 170
+        newItem.weight = 80
+        newItem.sex = "男"
         
         let formatter: DateFormatter = {
             let formatter = DateFormatter()
