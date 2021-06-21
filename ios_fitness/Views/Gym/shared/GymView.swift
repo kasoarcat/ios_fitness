@@ -10,8 +10,8 @@ import SwiftUI
 #if arch(arm64)
 
 struct GymView: View {
-    @ObservedObject var userDefaultManager = UserDefaultManager()
     @Environment(\.managedObjectContext) private var viewContext
+    @EnvironmentObject var userDefaultManager: UserDefaultManager
     @EnvironmentObject var audioManager: AudioManager
     
     var actionNames = ActionEnum.allCases

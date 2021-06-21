@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct UserDetailView: View {
-    @ObservedObject var userDefaultManager = UserDefaultManager()
+    @EnvironmentObject var userDefaultManager: UserDefaultManager
     
     private let heightFormat = "%d cm"
     private let weightFormat = "%d kg"
