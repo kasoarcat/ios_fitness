@@ -31,7 +31,7 @@ struct GymView: View {
 //        animation: .default)
 //    private var setting: FetchedResults<MySetting>
     
-    private func addAction(_ count: Int) {
+    private func addAction() {
         withAnimation {
             let action = Actions(context: viewContext)
             action.id = UUID()
@@ -126,7 +126,7 @@ struct GymView: View {
             audioManager.stopMusic()
             
             if count > 0 {
-                addAction(count)
+                addAction()
             }
         }
     }

@@ -175,7 +175,10 @@ struct ARViewContainer: UIViewRepresentable {
         }
         
         func counting(count: Int) {
-            self.count.wrappedValue = count
+            var c = count
+            c /= 2
+            
+            self.count.wrappedValue = c
             
             // 播放音效
             if count > 0 && count % 2 == 0 {
@@ -183,9 +186,10 @@ struct ARViewContainer: UIViewRepresentable {
             }
             
             // 播放完成次數
-            if count % 10 == 0 {
-                audioManager.playTTS(text: "已完成\(count)次", language: "zh-TW")
+            if c > 0 && c % 10 == 0 {
+                audioManager.playTTS(text: "已完成\(c)次", language: "zh-TW")
             }
+            
         }
     }
     

@@ -115,7 +115,7 @@ class AudioManager: ObservableObject {
     // 講中文：zh-TW, 講英文：en-US
     func playTTS(text: String, language: String) {
         if speaker.isSpeaking {
-            speaker.stopSpeaking(at: .immediate)
+//            speaker.stopSpeaking(at: .immediate)
         } else {
             let utterance = AVSpeechUtterance(string: text)
             utterance.voice = AVSpeechSynthesisVoice(language: language)
