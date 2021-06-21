@@ -40,23 +40,34 @@ struct GymView: View {
             action.endDate = Date()
             action.count = Int16(count)
             
+            var percent = 1.0
+            if userDefaultManager.weight >= 70 {
+                percent = 1.2
+            }
+            else if userDefaultManager.weight >= 60 {
+                percent = 1.0
+            }
+            else {
+                percent = 0.8
+            }
+            
             switch actionEnum {
             case .開合跳:
-                action.calories = 50 * Int32(count)
+                action.calories = Int32(Double(50 * count) * percent)
             case .蹲伏:
-                action.calories = 10 * Int32(count)
+                action.calories = Int32(Double(10 * count) * percent)
             case .蹲姿上伸:
-                action.calories = 25 * Int32(count)
+                action.calories = Int32(Double(25 * count) * percent)
             case .原地提膝踏步:
-                action.calories = 10 * Int32(count)
+                action.calories = Int32(Double(10 * count) * percent)
             case .蹲跳運動:
-                action.calories = 50 * Int32(count)
+                action.calories = Int32(Double(50 * count) * percent)
             case .深蹲:
-                action.calories = 10 * Int32(count)
+                action.calories = Int32(Double(10 * count) * percent)
             case .弓步:
-                action.calories = 10 * Int32(count)
+                action.calories = Int32(Double(10 * count) * percent)
             case .交叉勾拳:
-                action.calories = 10 * Int32(count)
+                action.calories = Int32(Double(10 * count) * percent)
             }
 
             do {

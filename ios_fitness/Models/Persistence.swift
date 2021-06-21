@@ -55,6 +55,11 @@ struct PersistenceController {
         
         for m in 1...6 { // 月
             for d in 1...28 { // 日
+                
+                if d == 21 {
+                    continue
+                }
+                
                 for _ in 0..<Int.random(in: 0...5) { // 每天運動次數
                     let action = Actions(context: viewContext)
                     action.id = UUID()
