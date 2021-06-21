@@ -9,29 +9,33 @@ import SwiftUI
 
 struct ContentView: View {
     @StateObject var audioManager = AudioManager()
+    @StateObject var userDefaultManager = UserDefaultManager()
     
     var body: some View {
         TabView {
             GymListView()
-//            ActionsDataView()
                 .tabItem {
                     Image(systemName: "music.house.fill")
                     Text("運動場")
                 }
                 .environmentObject(audioManager)
+                .environmentObject(userDefaultManager)
             ReportView()
                 .tabItem {
                     Image(systemName: "music.house.fill")
                     Text("報告")
                 }
                 .environmentObject(audioManager)
+                .environmentObject(userDefaultManager)
             MySettingView()
                 .tabItem {
                     Image(systemName: "music.house.fill")
                     Text("我的設定")
                 }
                 .environmentObject(audioManager)
+                .environmentObject(userDefaultManager)
         }
+        
     }
 }
 

@@ -15,7 +15,8 @@ class AudioManager: ObservableObject {
     var userSetting: UserDefaultManager = UserDefaultManager()
     let speaker: AVSpeechSynthesizer = AVSpeechSynthesizer()
     
-    var songs: [String] = ["UNICORN", "&Z"]
+    var songs: [String] = ["UNICORN", "&Z", "Darktown Strutters Ball", "How it Began", "Lovable Clown Sit Com", "Lucid Dreamer", "Payday",
+                           "Quincas Moreira  Happy Music", "Spring In My Step  Silent Partner", "Sunspots", "Water Lily", "Whistling Down the Road"]
     @Published var musicIsPlaying: Bool = false
     @Published var music: Music = Music(enable: true, volume: 1.0, selection: 0)
     @Published var textToSpeech: TextToSpeech = TextToSpeech(enable: true, volume: 1.0)
@@ -90,10 +91,15 @@ class AudioManager: ObservableObject {
                 return
             }
             
+            audioPlayer.numberOfLoops = 999
             audioPlayer.volume = music.volume
             audioPlayer.play()
             musicIsPlaying = true
             
+            self.music.selection += 1
+            if self.music.selection >= songs.count {
+                self.music.selection = 0
+            }
         } catch let error {
             print(error.localizedDescription)
         }
@@ -109,7 +115,7 @@ class AudioManager: ObservableObject {
     // 講中文：zh-TW, 講英文：en-US
     func playTTS(text: String, language: String) {
         if speaker.isSpeaking {
-            speaker.stopSpeaking(at: .immediate)
+//            speaker.stopSpeaking(at: .immediate)
         } else {
             let utterance = AVSpeechUtterance(string: text)
             utterance.voice = AVSpeechSynthesisVoice(language: language)

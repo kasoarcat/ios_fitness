@@ -7,6 +7,16 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A244A86C267F7C830073C63B /* Darktown Strutters Ball.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = A244A86B267F7C830073C63B /* Darktown Strutters Ball.mp3 */; };
+		A244A877267F7D2F0073C63B /* Quincas Moreira  Happy Music.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = A244A86E267F7D2D0073C63B /* Quincas Moreira  Happy Music.mp3 */; };
+		A244A878267F7D2F0073C63B /* Spring In My Step  Silent Partner.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = A244A86F267F7D2D0073C63B /* Spring In My Step  Silent Partner.mp3 */; };
+		A244A879267F7D2F0073C63B /* Lovable Clown Sit Com.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = A244A870267F7D2E0073C63B /* Lovable Clown Sit Com.mp3 */; };
+		A244A87A267F7D2F0073C63B /* How it Began.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = A244A871267F7D2E0073C63B /* How it Began.mp3 */; };
+		A244A87B267F7D2F0073C63B /* Lucid Dreamer.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = A244A872267F7D2E0073C63B /* Lucid Dreamer.mp3 */; };
+		A244A87C267F7D2F0073C63B /* Payday.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = A244A873267F7D2F0073C63B /* Payday.mp3 */; };
+		A244A87D267F7D2F0073C63B /* Whistling Down the Road.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = A244A874267F7D2F0073C63B /* Whistling Down the Road.mp3 */; };
+		A244A87E267F7D2F0073C63B /* Sunspots.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = A244A875267F7D2F0073C63B /* Sunspots.mp3 */; };
+		A244A87F267F7D2F0073C63B /* Water Lily.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = A244A876267F7D2F0073C63B /* Water Lily.mp3 */; };
 		A24DA5B32657D2C000A3B10C /* ARViewContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = A24DA5B22657D2C000A3B10C /* ARViewContainer.swift */; };
 		A270900C26580FB700C017DF /* MySettingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A270900B26580FB700C017DF /* MySettingView.swift */; };
 		A289B30A26577F5B0047A194 /* ios_fitnessApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = A289B30926577F5B0047A194 /* ios_fitnessApp.swift */; };
@@ -71,6 +81,16 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		A244A86B267F7C830073C63B /* Darktown Strutters Ball.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Darktown Strutters Ball.mp3"; sourceTree = "<group>"; };
+		A244A86E267F7D2D0073C63B /* Quincas Moreira  Happy Music.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Quincas Moreira  Happy Music.mp3"; sourceTree = "<group>"; };
+		A244A86F267F7D2D0073C63B /* Spring In My Step  Silent Partner.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Spring In My Step  Silent Partner.mp3"; sourceTree = "<group>"; };
+		A244A870267F7D2E0073C63B /* Lovable Clown Sit Com.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Lovable Clown Sit Com.mp3"; sourceTree = "<group>"; };
+		A244A871267F7D2E0073C63B /* How it Began.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "How it Began.mp3"; sourceTree = "<group>"; };
+		A244A872267F7D2E0073C63B /* Lucid Dreamer.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Lucid Dreamer.mp3"; sourceTree = "<group>"; };
+		A244A873267F7D2F0073C63B /* Payday.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = Payday.mp3; sourceTree = "<group>"; };
+		A244A874267F7D2F0073C63B /* Whistling Down the Road.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Whistling Down the Road.mp3"; sourceTree = "<group>"; };
+		A244A875267F7D2F0073C63B /* Sunspots.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = Sunspots.mp3; sourceTree = "<group>"; };
+		A244A876267F7D2F0073C63B /* Water Lily.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Water Lily.mp3"; sourceTree = "<group>"; };
 		A24DA5B22657D2C000A3B10C /* ARViewContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARViewContainer.swift; sourceTree = "<group>"; };
 		A270900B26580FB700C017DF /* MySettingView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MySettingView.swift; sourceTree = "<group>"; };
 		A289B30626577F5B0047A194 /* ios_fitness.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ios_fitness.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -290,6 +310,16 @@
 			children = (
 				C3F23830267344CD0057542B /* UNICORN.mp3 */,
 				C3F2382E2673439B0057542B /* &Z.mp3 */,
+				A244A86B267F7C830073C63B /* Darktown Strutters Ball.mp3 */,
+				A244A871267F7D2E0073C63B /* How it Began.mp3 */,
+				A244A870267F7D2E0073C63B /* Lovable Clown Sit Com.mp3 */,
+				A244A872267F7D2E0073C63B /* Lucid Dreamer.mp3 */,
+				A244A873267F7D2F0073C63B /* Payday.mp3 */,
+				A244A86E267F7D2D0073C63B /* Quincas Moreira  Happy Music.mp3 */,
+				A244A86F267F7D2D0073C63B /* Spring In My Step  Silent Partner.mp3 */,
+				A244A875267F7D2F0073C63B /* Sunspots.mp3 */,
+				A244A876267F7D2F0073C63B /* Water Lily.mp3 */,
+				A244A874267F7D2F0073C63B /* Whistling Down the Road.mp3 */,
 			);
 			path = Songs;
 			sourceTree = "<group>";
@@ -473,12 +503,22 @@
 			buildActionMask = 2147483647;
 			files = (
 				C3240B36267C726300EC732B /* beep.wav in Resources */,
+				A244A87F267F7D2F0073C63B /* Water Lily.mp3 in Resources */,
+				A244A87D267F7D2F0073C63B /* Whistling Down the Road.mp3 in Resources */,
 				A289B3502657B3E00047A194 /* character in Resources */,
 				A289B31126577F5E0047A194 /* Preview Assets.xcassets in Resources */,
 				C3097191266CC51400FDC536 /* SoundEffect.mp3 in Resources */,
 				C3F23831267344CD0057542B /* UNICORN.mp3 in Resources */,
 				C3F2382F2673439B0057542B /* &Z.mp3 in Resources */,
+				A244A87E267F7D2F0073C63B /* Sunspots.mp3 in Resources */,
+				A244A87A267F7D2F0073C63B /* How it Began.mp3 in Resources */,
+				A244A879267F7D2F0073C63B /* Lovable Clown Sit Com.mp3 in Resources */,
+				A244A878267F7D2F0073C63B /* Spring In My Step  Silent Partner.mp3 in Resources */,
+				A244A86C267F7C830073C63B /* Darktown Strutters Ball.mp3 in Resources */,
 				A289B30E26577F5E0047A194 /* Assets.xcassets in Resources */,
+				A244A87C267F7D2F0073C63B /* Payday.mp3 in Resources */,
+				A244A877267F7D2F0073C63B /* Quincas Moreira  Happy Music.mp3 in Resources */,
+				A244A87B267F7D2F0073C63B /* Lucid Dreamer.mp3 in Resources */,
 				C3B13E922663563A0079EDF9 /* .gitattributes in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -675,7 +715,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"ios_fitness/Preview Content\"";
-				DEVELOPMENT_TEAM = 4L7C3QD67C;
+				DEVELOPMENT_TEAM = 4DQ2P92QE7;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = ios_fitness/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
@@ -683,7 +723,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.jakey.fitness;
+				PRODUCT_BUNDLE_IDENTIFIER = com.jakey2.fitness;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -697,7 +737,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"ios_fitness/Preview Content\"";
-				DEVELOPMENT_TEAM = 4L7C3QD67C;
+				DEVELOPMENT_TEAM = 4DQ2P92QE7;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = ios_fitness/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
@@ -705,7 +745,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.jakey.fitness;
+				PRODUCT_BUNDLE_IDENTIFIER = com.jakey2.fitness;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";

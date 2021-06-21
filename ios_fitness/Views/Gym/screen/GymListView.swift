@@ -13,6 +13,9 @@ struct GymListView: View {
     var buttActions = buttActionsData
     var feetActions = feetActionsData
     
+    @EnvironmentObject var userDefaultManager: UserDefaultManager
+    @State private var showAlert = false
+        
     var body: some View {
         NavigationView {
             ScrollView {
@@ -24,8 +27,20 @@ struct GymListView: View {
                 .padding(.top, 78)
             }
             .navigationTitle("運動")
+            .alert(isPresented: $showAlert) { () -> Alert in
+                return Alert(title: Text(userDefaultManager.message))
+            }
+            .onAppear {
+                // Delay of 1 seconds
+                DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
+                    if userDefaultManager.message.count > 0 {
+                        showAlert = true
+                    }
+//                    print("message2: \(userDefaultManager.message)")
+                }
+                
+            }
         }
-        
     }
 }
 

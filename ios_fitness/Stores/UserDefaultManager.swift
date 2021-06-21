@@ -8,6 +8,8 @@ import SwiftUI
 import UIKit
 
 class UserDefaultManager: ObservableObject {
+    @Published var message: String = ""
+    
     @Published var height: Int = UserDefaults.standard.integer(forKey: "height") {
         didSet {
             UserDefaults.standard.set(self.height, forKey: "height")
