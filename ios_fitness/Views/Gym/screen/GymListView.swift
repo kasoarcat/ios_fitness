@@ -36,7 +36,7 @@ struct GymListView: View {
                     if userDefaultManager.message.count > 0 {
                         showAlert = true
                     }
-//                    print("message2: \(userDefaultManager.message)")
+                    print("message2: \(userDefaultManager.message)")
                 }
                 
             }

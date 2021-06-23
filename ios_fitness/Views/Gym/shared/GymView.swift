@@ -77,21 +77,9 @@ struct GymView: View {
                 fatalError("Unresolved error \(nsError), \(nsError.userInfo)")
             }
             
-//            let formatter: DateFormatter = {
-//                let formatter = DateFormatter()
-//                formatter.dateFormat = "HH:mm:ss" //  HH:mm:ss
-//                return formatter
-//            }()
-//
-//            let calendar = Calendar.current
-//            let date1 = calendar.startOfDay(for: startDate)
-//            let date2 = calendar.startOfDay(for: Date())
-//            let components = calendar.dateComponents([.hour, .minute, .second], from: date2, to: date1)
-//            print(components)
-            
             let interval = Int(action.endDate!.timeIntervalSince1970 - startDate.timeIntervalSince1970)
             let min = Int(interval / 60)
-            let sec = Int(interval - min * 60)
+            let sec = Int(interval % 60)
             
             return "總共\(min)分\(sec)秒\n\(actionEnum.rawValue)\(count)次\n卡路里\(action.calories)卡"
         }
@@ -150,7 +138,7 @@ struct GymView: View {
             }
             
             audioManager.stopMusic()
-//            print("message1:\(userDefaultManager.message)")
+            print("message1:\(userDefaultManager.message)")
         }
     }
 }
